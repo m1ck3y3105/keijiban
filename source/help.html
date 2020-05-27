@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles//style.css">
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("./header.html");
+            $("#footer").load("./footer.html");
+        });
+    </script>
+    <title>ヘルプページ</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="content_menu">
+        <h2 id="pagetitle">シス設掲示板(R2_5I_2班)デバック用ヘルプページ</h2>
+        <h2>エラー一覧</h2>
+        <ul>
+            <li><a href="#err01">E01 タイトルには使用できない文字が含まれています。</a></li>
+            <li><a href="#err02">E02 タイトルは必須項目です。</a></li>
+            <li><a href="#err03">E03 パスワードは少なくとも8文字以上でないといけません。</a></li>
+            <li><a href="#err04">E04 パスワードには使用できない文字が含まれています。</a></li>
+            <li><a href="#err05">E05 パスワードは必須項目です。</a></li>
+            <li><a href="#err06">E06 ニックネームには使用できない文字が含まれています。</a></li>
+        </ul>
+    </div>
+    <div id="content_main">
+        <div>
+            <h3 id="err01">E01 タイトルには使用できない文字が含まれています。</h3>
+            <p>タイトルには、<br>
+                a~z,A~Z,0~9,?,!,@,#,^,+,=,-,_,<,>,<br>
+                または日本語を使用することが出来ます。
+            </p>
+            <br>
+        </div>
+        <div>
+            <h3 id="err02">E02 タイトルは必須項目です。</h3>
+            <p>タイトルの欄には必ず記入する必要があります。</p>
+            <br>
+        </div>
+        <div>
+            <h3 id="err03">E03 パスワードは少なくとも8文字以上でないといけません。</h3>
+            <p>パスワードは安全性のため、8文字以上ではないといけません。</p>
+            <br>
+        </div>
+        <div>
+            <h3 id="err04">E04 パスワードには使用できない文字が含まれています。</h3>
+            <p>パスワードには、<br>
+                a~z,A~Z,0~9,?,!,@,#,^,+,=,-,_,<,><br>
+                を使用することが出来ます。
+            </p>
+            <br>
+        </div>
+        <div>
+            <h3 id="err05">E05 パスワードは必須項目です。</h3>
+            <p>タイトルの欄には必ず記入する必要があります。</p>
+            <br>
+        </div>
+        <div>
+            <h3 id="err06">E06 ニックネームには使用できない文字が含まれています。</h3>
+            <p>ニックネームには、<br>
+                a~z,A~Z,0~9,?,!,@,#,^,+,=,-,_,<,>,<br>
+                または日本語を使用することが出来ます。
+            </p>
+            <br>
+        </div>
+    </div>
+    <div id="footer">
+        <button ></button>
+    </div>
+</body>
+</html>

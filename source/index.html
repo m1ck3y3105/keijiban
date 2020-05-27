@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>掲示板サイト</title>
+        <link rel="stylesheet" href="../styles//style.css">
+        <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("./header.html");
+                $("#footer").load("./footer.html");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+            <main>
+                <div class="main">
+                    <article class="article">
+                        <a class="button2" href="./reserch.php">スレッド検索</a>
+                        <a class="button4">スレッド</a>
+                    </article>
+                    <aside class="aside">
+                        <a class="button2" href="">スレッド主はこちら</a>
+                        <a class="button3" href="">スレッドアクセス履歴</a>
+                        <a class="button3" href="./new.php">スレッド新規作成</a>
+                    </aside>
+                </div>
+            </main>
+        <div id="footer"></div>
+    </body>
+</html>

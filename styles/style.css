@@ -1,0 +1,111 @@
+/*<!--header-->*/
+.headermenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    gap:5px;
+}
+.headermenu .button1 {
+    text-decoration: none;
+    background: orange;
+    color: #fff;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+
+}
+.headermenu .button1:hover {
+    color: rgb(100, 48, 6);
+}
+/*main*/
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-content: center;
+}
+.button2 {
+    text-decoration: none;
+    text-align: center;
+    background-color: royalblue;
+    color: #fff;
+    padding: 12px;
+}
+.button3 {
+    text-decoration: none;
+    text-align: center;
+    background-color: royalblue;
+    color: #fff;
+    padding-top: 90px;
+}
+.button4 {
+    text-decoration: none;
+    text-align: center;
+    background-color: royalblue;
+    color: #fff;
+    padding: 150px;
+    font-size: 40px;
+}
+.button2:hover {
+    color: rgb(31, 19, 138);
+}
+.button3:hover {
+    color: rgb(31, 19, 138);
+}
+article{
+    width: 72%;
+}
+aside{
+    width: 25%;
+}
+.article{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:15px;
+    grid-template-rows: 50px 455px;
+}
+.aside{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    grid-template-rows: 50px 220px 220px;
+}
+.img img{
+    display: grid;
+}
+/*name*/
+.nameForm {
+    text-align: center;
+    border-width: thick;
+    border-style: double;
+    border-color: royalblue;
+}
+/*reserch*/
+.researchForm {
+    padding: 20px;
+    text-align: center;
+    border-width: medium;
+    border-style: double;
+    border-color: royalblue;
+}
+/*new*/
+#new {
+    text-align:left;
+    padding-top: 20px;
+    padding-left: 100px;
+    border-color: royalblue;
+    color: #fff;
+    background-color: rgb(123, 144, 204);
+}
+textarea{
+    resize : both; 
+}
+/*header*/
+#header {
+    text-align: center;
+}
+/*footer*/
+#footer {
+    text-align: left;
+}
