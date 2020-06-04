@@ -1,4 +1,9 @@
 /*<!--header-->*/
+html{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
 .headermenu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -107,5 +112,5 @@ textarea{
 }
 /*footer*/
 #footer {
-    text-align: left;
+    text-align: center;
 }
