@@ -25,7 +25,6 @@
             <body id="reserch">
                 <h3><label for="reserch">スレッド検索</label></h3>
                 <input type="text"　placeholder="スレッド名を入力してください。" name="reserchkey">
-                <?php echo $comment ?>
                 <input type="submit" value="検索">
             </body>
         </form>   
