@@ -1,0 +1,21 @@
+.tile1 {
+    border: groove;
+    border-radius: 25px;
+    background: linear-gradient(#90f090, #f5f5f5);
+    width: 35vw;
+    height: 500px;
+    margin: 30px;
+}
+.tile2 {
+    display: inline-block;
+    margin: 20px;
+    border: groove;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: darkmagenta;
+}
+.tile_title {
+    font-size: 30px;
+    text-align: center;
+    vertical-align: text-top;
+}
