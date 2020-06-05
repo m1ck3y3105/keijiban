@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>掲示板サイト</title>
-        <link rel="stylesheet" href="../styles//style.css">
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/tiles.css">
         <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
             $(function () {
@@ -14,17 +15,27 @@
     </head>
     <body>
         <div id="header"></div>
-            <main>
+            <div style="text-align: center;">
+                <div class="tile2">
+                    <form action="" method="post" name="reserch-form">
+                        <body id="reserch">
+                            <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
+                            <input id="searchbtn" type="submit" value="検索">
+                        </body>
+                    </form>   
+                </div>
+            </div>
                 <div class="main">
-                    <article class="article">
-                        <a class="button2" href="./reserch.php">スレッド検索</a>
-                        <a class="button4">スレッド</a>
-                    </article>
-                    <aside class="aside">
-                        <a class="button2" href="">スレッド主はこちら</a>
-                        <a class="button3" href="">スレッドアクセス履歴</a>
-                        <a class="button3" href="./new.php">スレッド新規作成</a>
-                    </aside>
+                    <div class="ar_pop">
+                        <div class="tile1">
+                            <h2 class="tile_title">人気スレッド</h2>
+                        </div>
+                    </div>
+                    <div class="ar_new">
+                        <div class="tile1">
+                            <h2 class="tile_title">新着スレッド</h2>
+                        </div>
+                    </div>
                 </div>
             </main>
         <div id="footer"></div>

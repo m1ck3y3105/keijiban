@@ -28,7 +28,6 @@ html{
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
-    align-content: center;
 }
 .button2 {
     text-decoration: none;
@@ -44,37 +43,11 @@ html{
     color: #fff;
     padding-top: 90px;
 }
-.button4 {
-    text-decoration: none;
-    text-align: center;
-    background-color: royalblue;
-    color: #fff;
-    padding: 150px;
-    font-size: 40px;
-}
 .button2:hover {
     color: rgb(31, 19, 138);
 }
 .button3:hover {
     color: rgb(31, 19, 138);
-}
-article{
-    width: 72%;
-}
-aside{
-    width: 25%;
-}
-.article{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap:15px;
-    grid-template-rows: 50px 455px;
-}
-.aside{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    grid-template-rows: 50px 220px 220px;
 }
 .img img{
     display: grid;
@@ -87,12 +60,23 @@ aside{
     border-color: royalblue;
 }
 /*reserch*/
-.researchForm {
-    padding: 20px;
-    text-align: center;
-    border-width: medium;
-    border-style: double;
-    border-color: royalblue;
+
+#inputkeyword {
+    height: 20px;
+    width: 240px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 2px 8px;
+}
+#searchbtn {
+    height: 24px;
+    width: 60px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 2px 8px;
 }
 /*new*/
 #new {
