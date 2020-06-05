@@ -13,7 +13,7 @@ html{
 }
 .headermenu .button1 {
     text-decoration: none;
-    background: orange;
+    background: #7bd65f;
     color: #fff;
     margin: 0px;
     padding: 10px;
@@ -67,10 +67,12 @@ html{
     border: none;
     border-radius: 4px;
     box-shadow: none;
-    padding: 2px 8px;
+    padding: 6px 24px;
+    font-size: 20px;
+
 }
 #searchbtn {
-    height: 24px;
+    height: 32px;
     width: 60px;
     margin-left: 10px;
     border: none;
@@ -97,4 +99,8 @@ textarea{
 /*footer*/
 #footer {
     text-align: center;
+}
+#returnbtn {
+    padding: 6px 24px;
+    font-size: 20px;
 }
