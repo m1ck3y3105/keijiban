@@ -15,29 +15,29 @@
     </head>
     <body>
         <div id="header"></div>
-            <div style="text-align: center;">
-                <div class="tile2">
-                    <form action="" method="post" name="reserch-form">
-                        <body id="reserch">
-                            <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
-                            <input id="searchbtn" type="submit" value="検索">
-                        </body>
-                    </form>   
+        <div style="text-align: center;">
+            <div class="tile2">
+                <form action="" method="post" name="reserch-form">
+                    <body id="reserch">
+                        <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
+<!--                        <input id="searchbtn" type="submit" value="検索"> -->
+                        <input id="searchbtn" type="button" value="検索" onclick="location.href='./reserch.php'">
+                    </body>
+                </form>   
+            </div>
+        </div>
+        <div class="main">
+            <div class="ar_pop">
+                <div class="tile1">
+                    <h2 class="tile_title">人気スレッド</h2>
                 </div>
             </div>
-                <div class="main">
-                    <div class="ar_pop">
-                        <div class="tile1">
-                            <h2 class="tile_title">人気スレッド</h2>
-                        </div>
-                    </div>
-                    <div class="ar_new">
-                        <div class="tile1">
-                            <h2 class="tile_title">新着スレッド</h2>
-                        </div>
-                    </div>
+            <div class="ar_new">
+                <div class="tile1">
+                    <h2 class="tile_title">新着スレッド</h2>
                 </div>
-            </main>
+            </div>
+        </div>
         <div id="footer"></div>
     </body>
 </html>
