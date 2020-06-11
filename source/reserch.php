@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php 
+    $hit = 0;
+    $comment = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if(isset($_POST['reserchkey'])) {
             $comment = $_POST['reserchkey'];
@@ -31,8 +33,21 @@
             </form>   
         </div>
     </div>
+    <div class="search_res">
+        <?php echo $comment."の検索結果 : ".$hit."件" ?>
+    </div>
     <div class="tile3">
-
+        <div class="sortmenu">
+            <div class="tile4">
+                <input type="radio" name="sort" checked="checked">50音順
+            </div>
+            <div class="tile4">
+                <input type="radio" name="sort">人気順
+            </div>
+            <div class="tile4">
+                <input type="radio" name="sort">新着順
+            </div>
+        </div>
     </div>
     <div id="footer"></div>
 </html>
