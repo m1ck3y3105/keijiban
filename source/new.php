@@ -57,6 +57,7 @@
         <meta charset="UTF-8">
         <title>スレッド新規作成</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/tiles.css">
         <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
             $(function () {
@@ -66,17 +67,23 @@
         </script>
     </head>
     <div id="header"></div>
-    <div class="create_thrForm">
-        <form action="" method="post" name="create_thr-form">
-            <body id="new">
-                <h3><label for="title">タイトル</label></h3><input type="text" name="title">
-                <?php echo $err_titmes ?>
-                <h3><label for="password">管理者パスワード</h3></label><input type="password" name="password">
-                <?php echo $err_passmes ?>
-                <h3><label for="comment">内容</label></h3><textarea id="comment" name="comment"></textarea>
+    <form action="" method="post" name="create_thr-form">
+        <body>
+            <div id="new">
+                <div class="newthr">
+                    <h3><label for="title">タイトル : </label></h3><input id="title" type="text" name="title">
+                    <?php echo $err_titmes ?>
+                </div>
+                <div class="newthr">
+                    <h3><label for="password">管理者パスワード : </h3></label><input id="pass" type="password" name="password">
+                    <?php echo $err_passmes ?>
+                </div>
+                <div class="newthr">
+                    <h3><label for="comment">内容 : </label></h3><textarea id="comment" name="comment"></textarea>
+                </div>
                 <input type="submit" value="スレッド新規作成">
-            </body>
-        </form>   
-    </div>
+            </div>
+        </body>
+    </form>   
     <div id="footer"></div>
 </html>

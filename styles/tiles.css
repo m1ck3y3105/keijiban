@@ -24,8 +24,11 @@
     margin-left: 20%;
     margin-right: 20%;
 }
-.tile_title {
-    font-size: 30px;
+.tile4 {
+    text-decoration: none;
+    background: rgb(121, 214, 95);
+    color: #fff;
+    padding: 10px;
     text-align: center;
-    vertical-align: text-top;
 }
+
