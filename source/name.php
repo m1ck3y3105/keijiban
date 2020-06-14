@@ -11,7 +11,7 @@
             foreach($comment as $value) {
                 foreach($banarr as $banchar) {
                     if(strcmp($value, $banchar) == 0) {
-                        $errmes = 'E06 ニックネームには使用できない文字が含まれています。';
+                        $errmes = 'E06:ニックネームには使用できない文字が含まれています。';
                         $banfl = true;
                         break;
                     }
