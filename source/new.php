@@ -13,7 +13,7 @@
             foreach($title as $value) {
                 foreach($banarr as $banchar) {
                     if(strcmp($value, $banchar) == 0) {
-                        $err_titmes = 'E01 タイトルには使用できない文字が含まれています。';
+                        $err_titmes = 'E01:タイトルには使用できない文字が含まれています。';
                         $banfl = true;
                         break;
                     }
@@ -24,19 +24,19 @@
            }
         }
         else {
-            $err_titmes = 'E02 タイトルは必須項目です。';
+            $err_titmes = 'E02:タイトルは必須項目です。';
         }
 
         if(!empty($_POST['password'])) {
             $pass = str_split($_POST['password']);
             echo count($pass);
             if(count($pass) < 8) {
-                $err_passmes = 'E03 パスワードは少なくとも8文字以上でないといけません。';
+                $err_passmes = 'E03:パスワードは少なくとも8文字以上でないといけません。';
             }
             foreach($pass as $value) {
                 foreach($banarr as $banchar) {
                     if(strcmp($value, $banchar) == 0) {
-                        $err_passmes = 'E04 パスワードには使用できない文字が含まれています。';
+                        $err_passmes = 'E04:パスワードには使用できない文字が含まれています。';
                         $banfl = true;
                         break;
                     }
@@ -47,7 +47,7 @@
             }
         }
         else {
-            $err_passmes = 'E05 パスワードは必須項目です。';
+            $err_passmes = 'E05:パスワードは必須項目です。';
         }
     }
 ?>
