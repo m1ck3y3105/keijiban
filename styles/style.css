@@ -144,8 +144,9 @@ textarea{
     text-align: center;
 }
 #returnbtn {
-    padding: 6px 24px;
-    font-size: 20px;
+    margin-top: 25px;
+    padding: auto;
+    font-size: 15px;
 }
 /*name*/
 #name{
@@ -171,9 +172,26 @@ textarea{
     grid-template-columns: 0.4fr 0.5fr;
 }
 #newname{
+    border: none;
     border-radius: 10px;
     font-size: 20px;
 }
 h1{
     font-size: 50px;
+}
+.make{
+    text-align: center;
+}
+.button5{
+
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    background: #7bd65f;
+    color: #fff;
+    margin: 0px;
+    padding: 10px;
+}
+.button5:hover {
+    color: rgb(31, 19, 138);
 }
