@@ -26,6 +26,7 @@
 }
 .tile4 {
     text-decoration: none;
+    border-radius: 5px;
     background: rgb(121, 214, 95);
     color: #fff;
     padding: 10px;
