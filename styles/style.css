@@ -60,10 +60,18 @@ html{
 }
 /*name*/
 .nameForm {
-    text-align: center;
-    border-width: thick;
+    margin-left: auto;
+    margin-right: auto;
+    /*text-align: center;*/
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    background: linear-gradient(#7bd65f, #f5f5f5);
+    width: 70vw;
+    height: 350px;
+    /*border-width: thick;
     border-style: double;
-    border-color: royalblue;
+    border-color: royalblue;*/
 }
 /*reserch*/
 .sortmenu {
@@ -102,7 +110,7 @@ html{
     border-width: 2px;
     border-radius: 10px;
     background: linear-gradient(#7bd65f, #f5f5f5);
-    width: 75vw;
+    width: 70vw;
     height: 500px;
 }
 textarea{
@@ -130,9 +138,7 @@ textarea{
     box-shadow: none;
 }
 /*header*/
-#header {
-    text-align: center;
-}
+
 /*footer*/
 #footer {
     text-align: center;
@@ -140,4 +146,34 @@ textarea{
 #returnbtn {
     padding: 6px 24px;
     font-size: 20px;
+}
+/*name*/
+#name{
+    text-align: center;
+}
+#chenge{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:10px;
+    border: solid;
+    border-width: 2px;
+    background: #b7e5a8;
+    width: 35vw;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.namae{
+    text-align: center;
+}
+.nic{
+    text-align: right;
+    display: grid;
+    grid-template-columns: 0.4fr 0.5fr;
+}
+#newname{
+    border-radius: 10px;
+    font-size: 20px;
+}
+h1{
+    font-size: 50px;
 }
