@@ -37,12 +37,18 @@
         </script>
     </head>
     <div id="header"></div>
+    <div id="chenge"><h3>ニックネーム変更</h3></div>
     <form class="nameForm" action="" method="post" name="name-form">
         <body id="name">
-            <h3>新しいニックネームを入力してください</h3>
-            <h6><input type="text" name="newname"></h6>
-            <?php echo $errmes ?>
-            <h1><input type="submit" value="更新"></h1>
+            <div class="namae">
+                <h4>新しいニックネームを入力してください</h4>
+                <h5>（全角、半角15文字以内）</h5>
+                <div class="nic"><h3><label for="title">ニックネーム : </label></h3>
+                    <input id="newname" type="text" name="newname">
+                </div>
+                <?php echo $errmes ?>
+                <h1><input type="submit" value="更新"></h1>
+            </div>
         </body>
     </form>   
     <div id="footer"></div>
