@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <?php 
     $hit = 0;
-    $comment = "";
+    $key = '';
+    /*
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if(isset($_POST['reserchkey'])) {
             $comment = $_POST['reserchkey'];
         }
+    }
+    */
+    if(isset($_GET['key'])) {
+        $key = $_GET['key'];
     }
 ?>
 <html lang="ja">
@@ -21,6 +26,12 @@
                 $("#footer").load("./footer.html");
             });
         </script>
+        <script type="text/javascript">
+            function Set_searchkey() {
+                const key = document.getElementById("inputkeyword").value;
+                history.pushState("","","./reserch.php?key=" + key);
+            }
+        </script>
     </head>
     <div id="header"></div>
     <div style="text-align: center;">
@@ -28,13 +39,13 @@
             <form action="" method="post" name="reserch-form">
                 <body id="reserch">
                     <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
-                    <input id="searchbtn" type="submit" value="検索">
+                    <input id="searchbtn" type="submit" value="検索" onclick="Set_searchkey()">
                 </body>
             </form>   
         </div>
     </div>
     <div class="search_res">
-        <?php echo $comment."の検索結果 : ".$hit."件" ?>
+        <?php echo $key."の検索結果 : ".$hit."件" ?>
     </div>
     <div class="time">
                 <label>時間指定 </label>
