@@ -120,10 +120,17 @@ textarea{
     resize : both; 
 }
 .newthr{
-    text-align: right;
+    text-align: center;
     display: grid;
     grid-template-columns: 0.2fr 0.5fr;
     margin: 20px;
+}
+.ispublic{
+    margin: auto;
+}
+.submitbtn{
+    margin-top: 5vh;
+    text-align: center;
 }
 #title{
     border: none;
