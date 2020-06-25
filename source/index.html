@@ -23,7 +23,23 @@
 <!--                        <input id="searchbtn" type="submit" value="検索"> -->
                         <input id="searchbtn" type="button" value="検索" onclick="location.href='./reserch.php'">
                     </body>
-                </form>   
+                </form> 
+            </div>
+            <div class="time">
+                <label>時間指定 </label>
+                <input type="radio"  name="time" onclick="func1()"checked><label> なし</label>
+                <input type="radio" name="time"onclick="func2()"><label> あり</label>
+                <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                <script>
+                function func1() {
+                    document.getElementById("not").disabled = true;
+                    document.getElementById("no").disabled = true;
+                }/*アリとなしの選択*/
+                function func2() {
+                    document.getElementById("not").disabled = false;
+                    document.getElementById("no").disabled = false;
+                }
+                </script>
             </div>
         </div>
         <div class="main">

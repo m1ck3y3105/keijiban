@@ -36,6 +36,22 @@
     <div class="search_res">
         <?php echo $comment."の検索結果 : ".$hit."件" ?>
     </div>
+    <div class="time">
+                <label>時間指定 </label>
+                <input type="radio"  name="time" onclick="func1()"checked><label> なし</label>
+                <input type="radio" name="time"onclick="func2()"><label> あり</label>
+                <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                <script>
+                function func1() {
+                    document.getElementById("not").disabled = true;
+                    document.getElementById("no").disabled = true;
+                }/*アリとなしの選択*/
+                function func2() {
+                    document.getElementById("not").disabled = false;
+                    document.getElementById("no").disabled = false;
+                }
+                </script>
+            </div>
     <div class="tile3">
         <div class="sortmenu">
             <div class="tile4">

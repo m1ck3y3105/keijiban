@@ -23,6 +23,10 @@ html{
 .headermenu .button1:hover {
     color: rgb(100, 48, 6);
 }
+/*index time*/
+.time{
+    margin: 10px;
+}
 /*main*/
 .main {
     display: flex;
