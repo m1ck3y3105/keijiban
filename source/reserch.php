@@ -37,10 +37,12 @@
         <?php echo $comment."の検索結果 : ".$hit."件" ?>
     </div>
     <div class="time">
+                <div class="time2">
                 <label>時間指定 </label>
-                <input type="radio"  name="time" onclick="func1()"checked><label> なし</label>
-                <input type="radio" name="time"onclick="func2()"><label> あり</label>
-                <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                    <input type="radio"  name="time" onclick="func1()"checked id="r1"><label for="r1">なし</label>
+                    <input type="radio" name="time"onclick="func2()" id="r2"><label for="r2"> あり</label>
+                    <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                </div>
                 <script>
                 function func1() {
                     document.getElementById("not").disabled = true;

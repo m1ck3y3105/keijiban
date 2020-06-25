@@ -24,9 +24,15 @@ html{
     color: rgb(100, 48, 6);
 }
 /*index time*/
-.time{
-    margin: 10px;
+.time {
+    font-size: 20px;
+    margin: 5px;
 }
+.time2 input[type="radio"] + label{
+    cursor        : pointer;                    /* カーソル設定 */
+    transition    : .2s;                        /* なめらか変化 */
+}
+
 /*main*/
 .main {
     display: flex;
