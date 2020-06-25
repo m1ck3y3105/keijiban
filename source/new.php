@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-    $banarr = array(
+ /*   $banarr = array(
         ",","\"","'",".","`","~","$","%","&","*","(",")","{","}","\\","/"
     );
     $banfl = false;
@@ -29,9 +29,8 @@
 
         if(!empty($_POST['password'])) {
             $pass = str_split($_POST['password']);
-            echo count($pass);
-            if(count($pass) < 8) {
-                $err_passmes = 'E03:パスワードは少なくとも8文字以上でないといけません。';
+            if(count($pass) < 6) {
+                $err_passmes = 'E03:パスワードは少なくとも6文字以上でないといけません。';
             }
             foreach($pass as $value) {
                 foreach($banarr as $banchar) {
@@ -49,7 +48,7 @@
         else {
             $err_passmes = 'E05:パスワードは必須項目です。';
         }
-    }
+    }*/
 ?>
 
 <html lang="ja">
@@ -65,23 +64,54 @@
                 $("#footer").load("./footer.html");
             });
         </script>
+        <script>
+            function ispublic_check1(ischecked){
+                if(ischecked == true){
+                    document.getElementById("pass").disabled = true;
+                }
+                else{
+                    document.getElementById("pass").disabled = false;
+                }
+            }
+
+            function ispublic_check2(ischecked){
+                if(ischecked == true){
+                    document.getElementById("pass").disabled = false;
+                }
+                else{
+                    document.getElementById("pass").disabled = true;
+                }
+            }
+        </script>
     </head>
     <div id="header"></div>
     <form action="" method="post" name="create_thr-form">
         <body>
             <div id="new">
                 <div class="newthr">
-                    <h3><label for="title">タイトル : </label></h3><input id="title" type="text" name="title">
+                    <h3><label for="title">タイトル : </label></h3>
+                    <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" required>
                     <?php echo $err_titmes ?>
                 </div>
                 <div class="newthr">
-                    <h3><label for="password">管理者パスワード : </h3></label><input id="pass" type="password" name="password">
+                    <h3><label for="checkrange">公開範囲 : </label></h3>
+                    <div class="ispublic">
+                        <input type="radio" name="ispublic" title="スレッドを全体に公開します"　onClick="ispublic_check1(this.checked)" checked >全体公開</input>
+                        <input type="radio" name="ispublic" title="スレッドを指定した範囲にのみ公開します" onClick="ispublic_check2(this.checked)">限定公開</input>
+                    </div>
+                </div>
+                <div class="newthr">
+                    <h3><label for="password">管理者パスワード : </h3></label>
+                    <input id="pass" type="password" name="password" title="半角英数字6~15文字以内" pattern="([0-9a-zA-Z]{6,15})" disabled required>
                     <?php echo $err_passmes ?>
                 </div>
                 <div class="newthr">
-                    <h3><label for="comment">内容 : </label></h3><textarea id="comment" name="comment"></textarea>
+                    <h3><label for="comment">内容 : </label></h3>
+                    <textarea id="comment" name="comment" title="スレッドの内容"></textarea>
                 </div>
-                <input type="submit" value="スレッド新規作成">
+                <div class="submitbtn">
+                    <input type="submit" value="スレッド新規作成">
+                </div>
             </div>
         </body>
     </form>   
