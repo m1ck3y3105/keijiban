@@ -43,8 +43,9 @@
             <div class="namae">
                 <h4>新しいニックネームを入力してください</h4>
                 <h5>（全角、半角15文字以内）</h5>
-                <div class="nic"><h3><label for="title">ニックネーム : </label></h3>
-                    <input id="newname" type="text" name="newname">
+                <div class="nic">
+                    <h3><label for="title">ニックネーム : </label></h3>
+                    <input id="newname" type="text" name="newname" title="15文字以内" maxlength="15" required >
                 </div>
                 <?php echo $errmes ?>
                 <h1><input type="submit" value="更新"></h1>
