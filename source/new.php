@@ -90,7 +90,7 @@
             <div id="new">
                 <div class="newthr">
                     <h3><label for="title">タイトル : </label></h3>
-                    <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" required>
+                    <input id="title" type="text" name="title" title="30文字以内" maxlength="30" required>
                     <?php echo $err_titmes ?>
                 </div>
                 <div class="newthr">
@@ -102,7 +102,7 @@
                 </div>
                 <div class="newthr">
                     <h3><label for="password">管理者パスワード : </h3></label>
-                    <input id="pass" type="password" name="password" title="半角英数字6~15文字以内" pattern="([0-9a-zA-Z]{6,15})" disabled required>
+                    <input id="pass" type="password" name="password" title="半角英数字6~15文字以内" maxlength="15" pattern="([0-9a-zA-Z]{6,15})" disabled required>
                     <?php echo $err_passmes ?>
                 </div>
                 <div class="newthr">
