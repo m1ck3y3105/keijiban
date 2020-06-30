@@ -1,26 +1,7 @@
 <!DOCTYPE html>
 <?php 
-    $banarr = array(
-        "\"","'",".","`","~","$","%","&","*","(",")","{","}","\\","/"
-    );
-    $errmes = '';
-    $banfl = false;
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if(isset($_POST['newname'])) {
-            $comment = str_split($_POST['newname']);
-            foreach($comment as $value) {
-                foreach($banarr as $banchar) {
-                    if(strcmp($value, $banchar) == 0) {
-                        $errmes = 'E06:ニックネームには使用できない文字が含まれています。';
-                        $banfl = true;
-                        break;
-                    }
-                }
-                if($banfl) {
-                    break;
-                }
-            }
-        }
+        //code
     }
 ?>
 <html lang="ja">
@@ -45,9 +26,8 @@
                 <h5>（全角、半角15文字以内）</h5>
                 <div class="nic">
                     <h3><label for="title">ニックネーム : </label></h3>
-                    <input id="newname" type="text" name="newname" title="15文字以内" maxlength="15" required >
+                    <input id="newname" type="text" name="newname" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required >
                 </div>
-                <?php echo $errmes ?>
                 <h1><input type="submit" value="更新"></h1>
             </div>
         </body>
