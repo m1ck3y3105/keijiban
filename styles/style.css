@@ -157,6 +157,12 @@ textarea{
     border-radius: 4px;
     box-shadow: none;
 }
+
+.password-check{
+    margin-left: 125px;
+    font-size: 15px;
+
+}
 /*header*/
 
 /*footer*/
