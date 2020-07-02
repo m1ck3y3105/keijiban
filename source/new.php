@@ -16,25 +16,6 @@
                 $("#footer").load("./footer.html");
             });
         </script>
-        <script>
-            function ispublic_check1(ischecked){
-                if(ischecked == true){
-                    document.getElementById("pass").disabled = true;
-                }
-                else{
-                    document.getElementById("pass").disabled = false;
-                }
-            }
-
-            function ispublic_check2(ischecked){
-                if(ischecked == true){
-                    document.getElementById("pass").disabled = false;
-                }
-                else{
-                    document.getElementById("pass").disabled = true;
-                }
-            }
-        </script>
     </head>
     <div id="header"></div>
     <form action="" method="post" name="create_thr-form">
