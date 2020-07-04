@@ -37,6 +37,11 @@ html{
     cursor        : pointer;                    /* カーソル設定 */
     transition    : .2s;                        /* なめらか変化 */
 }
+.time2 input[type="radio"] + label:hover{
+    background:  #b6dac5;
+    border-radius: 5px;
+    padding: 3px;
+}
 .search_container{
     position: relative;
     box-sizing: border-box;
