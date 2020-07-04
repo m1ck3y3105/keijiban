@@ -36,6 +36,32 @@
             }
         }
         ?>
+        <div class="thred">
+            <h2>スレッド</h2>
+            <h3 class="aab">[郎報]　吉川匠、斎藤工に間違えられる！？
+            <dt>作成者：guuu</dt>
+            </h3>
+            <div class="abc">
+                <dt>投稿者：yu</dt>
+                <h4>え～～～～！</h4>
+                <dt>投稿日</dt>
+            </div>
+            <div class="abcd">
+                <dt>投稿者：su</dt>
+                <h4>わあ～～～～～！</h4>                <dt>投稿日</dt>
+            </div>
+            <div class="abc">
+                <dt>投稿者：ku</dt>
+                <h4>嘘～～～</h4>
+                <dt>投稿日</dt>
+            </div>
+            <div class="abcd">
+                <dt>投稿者：fu</dt>
+                <h4>おおおおお！</h4>
+                <dt>投稿日</dt>
+            </div>
+
+        </div>
         <div id="footer"></div>
     </body>
 </html>
