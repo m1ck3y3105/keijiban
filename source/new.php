@@ -33,21 +33,21 @@
         </script>
     </head>
     <div id="header"></div>
-    <form action="" method="post" name="create_thr-form">
+    <form action="new_check.php" method="post" name="create_thr-form">
         <body>
             <div id="new">
                 <div class="newthr">
                     <h3><label for="title">タイトル : </label></h3>
                     <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" required>
-                    <?php echo $err_titmes ?>
+                    <?php //echo $err_titmes ?>
                 </div>
                 <div class="password-all">
                     <div class="newthr">
                         <h3><label for="password">管理者パスワード : </h3></label>
-                            <input type="password" placeholder="Password" id="password">
+                            <input type="password" placeholder="Password" name="password" id="password">
                         </form>
 
-                    <?php echo $err_passmes ?>
+                    <?php //echo $err_passmes ?>
                     </div>
                     <div class="password-check">
                     <input type="checkbox" id="password-check" />パスワードを表示する
