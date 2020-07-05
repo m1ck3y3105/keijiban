@@ -12,22 +12,20 @@
 </head>
 <body>
     <header>
-        <h2 id="top">掲示板</h2>
-        <li><?php echo "{$user_name}さん" ?></li>
+        <a href="index.html"><img src="../images/S__1517240371.jpg" alt="次へ"></a>
+        <li class="login_name"><?php echo "{$user_name}さん" ?></li>
 
 
         <div class="headermenu">
             <?php if($user_name != "匿名"){ 
-                  echo '<a class="button1" href="./index.html">トップ</a>';
                   echo '<a class="button1" href="./name.php">ニックネーム変更</a>';
-                  echo '<a class="button1" href="./help.html">ヘルプ</a>';
                   echo '<a class="button1" href="./logout.php">ログアウト</a>';
+                  echo '<a class="button1" href="./help.html">ヘルプ</a>';
               }
               else{
-                  echo'<a class="button1" href="./index.html">トップ</a>';
-                  echo'<a class="button1" href="./help.html">ヘルプ</a>';
-                  echo '<a class="button1" href="./login.php">ログイン</a>';
                   echo '<a class="button1" href="./newaccount.php">アカウント作成</a>';
+                  echo '<a class="button1" href="./login.php">ログイン</a>';
+                  echo '<a class="button1" href="./help.html">ヘルプ</a>';
               }
 
             ?>
