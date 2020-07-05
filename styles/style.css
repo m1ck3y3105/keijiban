@@ -273,15 +273,10 @@ textarea{
 h1{
     font-size: 50px;
 }
-.make{
+.make .button5{
     margin-left: auto;
     margin-right: auto;
-
-}
-.make .button5{
-
     text-align: center;
-    position: relative;
     display: inline-block;
     font-weight: bold;
     padding: 8px 10px 5px 10px;
