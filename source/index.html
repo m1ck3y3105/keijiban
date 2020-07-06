@@ -12,6 +12,12 @@
                 $("#footer").load("./footer.html");
             });
         </script>
+        <script type="text/javascript">
+            function Set_searchkey() {
+                const key = document.getElementById("inputkeyword").value;
+                window.location = "./reserch.php?key=" + key
+            }
+        </script>
     </head>
     <body>
         <div id="header"></div>
@@ -20,7 +26,6 @@
                 <form action="" method="post" name="reserch-form" id="reserch-form">
                     <div id="reserch">
                         <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
-<!--                        <input id="searchbtn" type="submit" value="検索"> -->
                         <input id="searchbtn" type="button" value="検索" onclick="location.href='./reserch.php'">
                     </div>
                 </form> 

@@ -64,7 +64,6 @@
                         </script>
                     </div>
                 </div>
-                
                 <div class="newthr">
                     <h3><label for="comment">内容 : </label></h3>
                     <textarea id="comment" name="comment" title="スレッドの内容"></textarea>
