@@ -12,16 +12,21 @@ html{
     gap:5px;
 }
 .headermenu .button1 {
-    text-decoration: none;
-    background: #7bd65f;
-    color: #fff;
-    margin: 0px;
-    padding: 10px;
     text-align: center;
-
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
+    text-decoration: none;
+    color: #2bb866;
+    background: #e1f3e0;
+    border-bottom: solid 4px#2bb866;
+    border-radius: 15px 15px 0 0;
+    transition: .4s;
 }
 .headermenu .button1:hover {
-    color: rgb(100, 48, 6);
+    background: #2bb866;
+    color: #FFF;
 }
 /*index time*/
 .time {
@@ -32,7 +37,47 @@ html{
     cursor        : pointer;                    /* カーソル設定 */
     transition    : .2s;                        /* なめらか変化 */
 }
-
+.time2 input[type="radio"] + label:hover{
+    background:  #b6dac5;
+    border-radius: 5px;
+    padding: 3px;
+}
+.search_container{
+    position: relative;
+    box-sizing: border-box;
+  }
+  .search_container input[type="text"]{
+    border: none;
+    height: 1.8em;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+  }
+  .search_container{
+    border: 2px solid #3879D9;
+    padding: 3px 5px;
+    border-radius: 20px;
+    height: 2.2em;
+    width: 265px;
+    overflow: hidden;
+  }
+  .search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    border: none;
+    background: #3879D9;
+    color: #fff;
+    position: absolute;
+    width: 3.5em;
+    height: 3.0em;
+    right:0px;
+    top: -5px;
+    outline : none;
+  }
+  .search_container ::-webkit-input-placeholder {
+    color: #3879D9;
+  }
+  
 /*main*/
 .main {
     display: flex;
@@ -95,25 +140,42 @@ html{
     font-size: 24px;
     text-align: center;
 }
+#reserch{
+    font-size: 10px;
+}
+.reserch-form{
+   /* position:relative;/*フォームの相対位置*/	
+    max-width:270px;/*フォームのサイズ*/
+    margin-bottom:15px;/*フォームの下に余白*/  
+}
 #inputkeyword {
-    height: 20px;
-    width: 240px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: none;
-    padding: 6px 24px;
-    font-size: 20px;
+    /*position:absolute;/*フォームの絶対位置*/
+    left:0;
+    top:0; 	
+    border:none;
+    outline:0;/*クリック時の青い枠線消す*/	
+    height:50px;/*検索ボックスの高さ*/	
+    padding:0 10px;/*テキスト位置調整*/	 
+    border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
+    background:#eee;/*検索ボックスの背景カラー*/		
 
 }
 #searchbtn {
-    height: 32px;
-    width: 60px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: none;
-    padding: 2px 8px;
+    width:70px;/*検索ボタンの横幅*/ 
+    height:50px;/*検索ボタンの縦幅*/ 
+    /*position:absolute;/*検索ボタンの絶対位置*/  
+    left:270px;/*検索ボタンの位置調整*/  
+    top:0;
+    border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
+    background:#5ead76;/*検索ボタンの背景カラー*/ 
+    border:none;/*検索ボタンの枠線を消す*/ 
+    color:#fff;/*検索ボタンのテキストカラー*/ 
+    font-weight:bold;/*検索ボタンのテキスト太字*/ 
+    font-size:16px;/*検索ボタンのフォントサイズ*/ 
 }
+#searchbtn:hover{
+    color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/ 
+    }
 /*new*/
 #new {
     margin-left: auto;
@@ -133,6 +195,7 @@ textarea{
     text-align: center;
     display: grid;
     grid-template-columns: 0.2fr 0.5fr;
+    /*position: fixed;*/
     margin: 20px;
 }
 .ispublic{
@@ -156,6 +219,17 @@ textarea{
     border: none;
     border-radius: 4px;
     box-shadow: none;
+}
+#password{
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+
+}
+.password-check{
+    margin-left: 15vw;
+    font-size: 15px;
+
 }
 /*header*/
 
@@ -199,19 +273,21 @@ textarea{
 h1{
     font-size: 50px;
 }
-.make{
-    text-align: center;
-}
-.button5{
-
+.make .button5{
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
     text-decoration: none;
-    background: #7bd65f;
-    color: #fff;
-    margin: 0px;
-    padding: 10px;
+    color: #2bb866;
+    background: #e1f3e0;
+    border-bottom: solid 4px#2bb866;
+    border-radius: 15px 15px 0 0;
+    transition: .4s;
 }
-.button5:hover {
-    color: rgb(31, 19, 138);
+.make .button5:hover {
+    background: #2bb866;
+    color: #FFF;
 }
