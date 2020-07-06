@@ -1,0 +1,56 @@
+/*thred*/
+.thred{
+    padding: 10px;
+    background-color: rgb(219, 233, 181);
+}
+.aab{
+    border: 10px;
+    text-align: left;
+    background-color: rgb(73, 134, 60);
+    padding: 10px;
+}
+.abc{
+    border: 10px;
+    text-align: left;
+    background-color: rgb(185, 185, 185);
+    padding: 10px;
+}
+.abcd{
+    border: 10px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.aab dt{
+    text-align: right;
+}
+textarea{
+    margin: 10px;
+    background: rgba(255, 255, 255, .5);
+    border: 1px rgb(11, 53, 11) solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 70vw;
+}
+label{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="submit"]{
+    /*text-align: right;*/
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(255, 255, 255);
+    background-color: yellowgreen;
+    border-color: rgb(114, 180, 15);
+    cursor: pointer;
+    line-height: 2;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+input[type="submit"]:hover{
+    background-color: teal;
+
+}
