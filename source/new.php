@@ -38,7 +38,7 @@
             <div id="new">
                 <div class="newthr">
                     <h3><label for="title">タイトル : </label></h3>
-                    <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" required>
+                    <input id="title" type="text" name="title" title="30文字以内" maxlength="30" required>
                     <?php echo $err_titmes ?>
                 </div>
                 <div class="password-all">
