@@ -2,11 +2,14 @@
 html{
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 85%;
+}
+.header{
+    width: 100%;
 }
 .headermenu {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin-top: 5px;
     margin-bottom: 20px;
     gap:5px;
@@ -236,6 +239,10 @@ textarea{
 /*footer*/
 #footer {
     text-align: center;
+}
+.copylight{
+    background-color: rgb(159, 197, 175);
+    border-radius: 3px;
 }
 #returnbtn {
     margin-top: 25px;
