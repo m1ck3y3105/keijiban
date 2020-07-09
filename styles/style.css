@@ -4,6 +4,10 @@ body{
     margin-right: auto;
    width: 85%;
 }
+main{
+    width: 100;
+    padding: 20px;
+}
  .header img{
     width: 50vw;
     margin-left: auto;
@@ -52,7 +56,8 @@ body{
 .time2 input[type="radio"] + label:hover{
     background:  #b6dac5;
     border-radius: 5px;
-    padding: 3px;
+    padding: 1px;
+    color: #106433;
 }
 .search_container{
     position: relative;
@@ -247,16 +252,32 @@ textarea{
 
 /*footer*/
 #footer {
-    text-align: center;
+    text-align: center;;
 }
 .copylight{
     background-color: rgb(159, 197, 175);
     border-radius: 3px;
+    padding: 5px;
 }
 #returnbtn {
-    margin-top: 25px;
+    margin-top: 105px;
     padding: auto;
     font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+   /* display: inline-block;*//*横に並んでいる*/
+    font-weight: bold;
+    padding: 8px 20px 5px 20px;
+    text-decoration: none;
+    color: #fff;
+    background:#757575;
+    border-bottom: solid 4px#a3e6bf;
+    border-radius: 15px 15px 0 0;
+    transition: .4s;  
+}
+#returnbtn:hover {
+    background: #a5a4a4;
+    color: #FFF;
 }
 /*name*/
 #name{
@@ -289,13 +310,16 @@ textarea{
 h1{
     font-size: 50px;
 }
+.make{
+    width: 50vw;
+}
 .make .button5{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    display: inline-block;
+   /* display: inline-block;*//*横に並んでいる*/
     font-weight: bold;
-    padding: 8px 10px 5px 10px;
+    padding: 8px 50px 5px 50px;
     text-decoration: none;
     color: #2bb866;
     background: #e1f3e0;
