@@ -131,10 +131,9 @@ html{
 /*reserch*/
 .sortmenu {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     margin: 5px;
     gap:5px;
-
+    text-align: right;
 }
 .search_res{
     font-size: 24px;

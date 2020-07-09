@@ -67,15 +67,15 @@
             </div>
     <div class="tile3">
         <div class="sortmenu">
-            <div class="tile4">
-                <input type="radio" name="sort" checked="checked">50音順
-            </div>
-            <div class="tile4">
-                <input type="radio" name="sort">人気順
-            </div>
-            <div class="tile4">
-                <input type="radio" name="sort">新着順
-            </div>
+            <h2>ソート順</h2>
+            <p>
+                <select>
+                    <option value="old">古い順</option>
+                    <option value="new">新しい順</option>
+                    <option value="cmy">コメントの多い順</option>
+                    <option value="cfw">コメントの少ない順</option>
+                </select>
+            </p>
         </div>
     </div>
     <div id="footer"></div>
