@@ -9,11 +9,11 @@
 .tile2 {
     display: inline-block;
     margin: 20px;
-    border: solid;
+    text-decoration: none;
     border-width: 2px;
     border-radius: 5px;
     padding: 10px;
-    background-color: rgb(87, 126, 87);
+    /*background-color: rgb(140, 214, 140);*/
 }
 .tile3 {
     border: solid;

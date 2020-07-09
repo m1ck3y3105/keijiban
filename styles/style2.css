@@ -1,0 +1,26 @@
+/*thred*/
+.thred{
+    padding: 10px;
+    background-color: rgb(219, 233, 181);
+}
+.aab{
+    border: 10px;
+    text-align: left;
+    background-color: rgb(73, 134, 60);
+    padding: 10px;
+}
+.abc{
+    border: 10px;
+    text-align: left;
+    background-color: rgb(185, 185, 185);
+    padding: 10px;
+}
+.abcd{
+    border: 10px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.aab dt{
+    text-align: right;
+}
