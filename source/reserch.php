@@ -34,6 +34,15 @@
                 }
             }
         </script>
+        <script type="text/javascript">
+            function Change_sort() {
+                const key = JSON.parse('<?php echo json_encode($key) ?>');
+                const sort = document.getElementById("s_menu").value;
+                if(key !== ""){
+                    history.pushState("","","./reserch.php?key=" + key + "&sort=" + sort);
+                }
+            }
+        </script>
     </head>
     <div id="header"></div>
     <div style="text-align: center;">
@@ -71,7 +80,7 @@
         <div class="sortmenu">
             <h2>ソート順</h2>
             <p>
-                <select>
+                <select id="s_menu" onChange="Change_sort()">
                     <option value="old">古い順</option>
                     <option value="new">新しい順</option>
                     <option value="cmy">コメントの多い順</option>
