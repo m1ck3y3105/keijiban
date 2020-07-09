@@ -15,7 +15,9 @@
         <script type="text/javascript">
             function Set_searchkey() {
                 const key = document.getElementById("inputkeyword").value;
-                window.location = "./reserch.php?key=" + key
+                if(key !== ""){
+                    window.location = "./reserch.php?key=" + key
+                }
             }
         </script>
     </head>

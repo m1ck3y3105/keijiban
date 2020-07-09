@@ -29,7 +29,9 @@
         <script type="text/javascript">
             function Set_searchkey() {
                 const key = document.getElementById("inputkeyword").value;
-                history.pushState("","","./reserch.php?key=" + key);
+                if(key !== ""){
+                    history.pushState("","","./reserch.php?key=" + key);
+                }
             }
         </script>
     </head>
