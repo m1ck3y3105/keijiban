@@ -29,7 +29,18 @@
         <script type="text/javascript">
             function Set_searchkey() {
                 const key = document.getElementById("inputkeyword").value;
-                history.pushState("","","./reserch.php?key=" + key);
+                if(key !== ""){
+                    history.pushState("","","./reserch.php?key=" + key);
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            function Change_sort() {
+                const key = JSON.parse('<?php echo json_encode($key) ?>');
+                const sort = document.getElementById("s_menu").value;
+                if(key !== ""){
+                    history.pushState("","","./reserch.php?key=" + key + "&sort=" + sort);
+                }
             }
         </script>
     </head>
@@ -67,15 +78,15 @@
             </div>
     <div class="tile3">
         <div class="sortmenu">
-            <div class="tile4">
-                <input type="radio" name="sort" checked="checked">50音順
-            </div>
-            <div class="tile4">
-                <input type="radio" name="sort">人気順
-            </div>
-            <div class="tile4">
-                <input type="radio" name="sort">新着順
-            </div>
+            <h2>ソート順</h2>
+            <p>
+                <select id="s_menu" onChange="Change_sort()">
+                    <option value="old">古い順</option>
+                    <option value="new">新しい順</option>
+                    <option value="cmy">コメントの多い順</option>
+                    <option value="cfw">コメントの少ない順</option>
+                </select>
+            </p>
         </div>
     </div>
     <div id="footer"></div>
