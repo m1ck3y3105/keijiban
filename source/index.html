@@ -24,31 +24,38 @@
     <body>
         <div id="header"></div>
         <div style="text-align: center;">
-            <div class="tile2">
-                <form action="" method="post" name="reserch-form" id="reserch-form">
+            <div class="timer">
+               <div class="tile2">
+                  <form action="" method="post" name="reserch-form" id="reserch-form">
+                    <div id="reserch">
+                      <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
+                      <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()"> 
+                    </div>
+                  </form> 
+                </div>
+                <div class="time">
+                    <div class="time2">
+                        <label>時間指定 :  </label>
+                        <input type="radio"  name="time" onclick="func1()"checked id="r1"><label for="r1">なし</label>
+                        <input type="radio" name="time"onclick="func2()" id="r2"><label for="r2">あり</label>
+                        <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                <div class="tile2">
+                  <form action="" method="post" name="reserch-form" id="reserch-form">
                     <div id="reserch">
                         <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
                         <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
                     </div>
-                </form> 
-            </div>
-            <div class="time">
-                <div class="time2">
-                    <label>時間指定 </label>
-                    <input type="radio"  name="time" onclick="func1()"checked id="r1"><label for="r1">なし</label>
-                    <input type="radio" name="time"onclick="func2()" id="r2"><label for="r2">あり</label>
-                    <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                    <script>
+                    function func1() {
+                        document.getElementById("not").disabled = true;
+                        document.getElementById("no").disabled = true;
+                    }/*アリとなしの選択*/
+                    function func2() {
+                        document.getElementById("not").disabled = false;
+                        document.getElementById("no").disabled = false;
+                    }
+                    </script>
                 </div>
-                <script>
-                function func1() {
-                    document.getElementById("not").disabled = true;
-                    document.getElementById("no").disabled = true;
-                }/*アリとなしの選択*/
-                function func2() {
-                    document.getElementById("not").disabled = false;
-                    document.getElementById("no").disabled = false;
-                }
-                </script>
             </div>
         </div>
         <div class="main">
@@ -63,8 +70,9 @@
                 </div>
             </div>
         </div>
-        <div class=make><a class="button5" href="./help.html">ヘルプ</a></div>
+        <!--<div class=make><a  href="./help.html">ヘルプ</a></div>-->
+        <div class=make><input type="submit" class="button5" value="ヘルプ" onclick="location.href='./help.html'"></div>
 
-        <div id="footer"></div>
     </body>
+    <div id="footer"></div>
 </html>
