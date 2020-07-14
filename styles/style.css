@@ -41,16 +41,17 @@ main{
 .time {
     font-size: 20px;
     margin: 5px;
-
+    text-align: center;
 }
 .timer{
     border:2px solid #666; 
-    padding: 5px;
+    padding: 7px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 .time2 input[type="radio"] + label{
-    cursor        : pointer;                    /* カーソル設定 */
+    cursor        : pointer;           
+        /* カーソル設定 */
     transition    : .2s;  /* なめらか変化 */
 }
 .time2 input[type="radio"] + label:hover{
