@@ -17,13 +17,16 @@
         <script type="text/javascript">
             function Set_searchkey() {
                 const key = document.getElementById("inputkeyword").value;
-                window.location = "./reserch.php?key=" + key
+                if(key !== ""){
+                    window.location = "./reserch.php?key=" + key
+                }
             }
         </script>
     </head>
     <body>
         <div id="header"></div>
         <div style="text-align: center;">
+            <div class="timer">
             <div class="tile2">
                 <form action="reserch.php" method="get" name="reserch-form">
                     <body id="reserch">
@@ -47,6 +50,7 @@
                     document.getElementById("no").disabled = false;
                 }
                 </script>
+
             </div>
         </div>
         <div class="main">
@@ -63,8 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class=make><a class="button5" href="./new.php">スレッド新規作成はコチラ</a></div>
-
-        <div id="footer"></div>
-    </body>
+          <div class=make><a class="button5" href="./new.php">スレッド新規作成はコチラ</a></div>
+    <div id="footer"></div>
+    </body></body>
 </html>
