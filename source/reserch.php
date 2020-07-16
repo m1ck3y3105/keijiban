@@ -38,6 +38,7 @@
             function Change_sort() {
                 const key = JSON.parse('<?php echo json_encode($key) ?>');
                 const sort = document.getElementById("s_menu").value;
+                alert(sort);
                 if(key !== ""){
                     history.pushState("","","./reserch.php?key=" + key + "&sort=" + sort);
                 }
