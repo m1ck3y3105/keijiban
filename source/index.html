@@ -9,8 +9,10 @@
         <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
             $(function () {
-                $("#header").load("./header.html");
+                $("#header").load("./header.php");
                 $("#footer").load("./footer.html");
+                $("#display_new_thread").load("./display_new_thread.php");
+                $("#display_popular_thread").load("./display_popular_thread.php");
             });
         </script>
         <script type="text/javascript">
@@ -27,16 +29,11 @@
         <div style="text-align: center;">
             <div class="timer">
             <div class="tile2">
-                <form action="" method="post" name="reserch-form" id="reserch-form">
-                    <div id="reserch">
-                        <div class="searchmenu">
-                            <h2>検索対象</h2>
-                            <input type="radio" name="s_target">スレッド</input>
-                            <input type="radio" name="s_target">レス</input>
-                        </div>
+                <form action="reserch.php" method="get" name="reserch-form">
+                    <body id="reserch">
                         <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
-                        <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()"> 
-                    </div>
+                        <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
+                    </body>
                 </form> 
                 </div>
                 <div class="time">
@@ -65,23 +62,22 @@
                 }
                 </script>
             </div>
-
         </div>
         <div class="main">
             <div class="ar_pop">
                 <div class="tile1">
                     <h2 class="tile_title">人気スレッド</h2>
+                    <div id=display_popular_thread></div>
                 </div>
             </div>
             <div class="ar_new">
                 <div class="tile1">
                     <h2 class="tile_title">新着スレッド</h2>
+                    <div id=display_new_thread></div>
                 </div>
             </div>
         </div>
-        <!--<div class=make><a  href="./help.html">ヘルプ</a></div>-->
-        <div class=make><input type="submit" class="button5" value="ヘルプ" onclick="location.href='./help.html'"></div>
-
-    </body>
+          <div class=make><a class="button5" href="./new.php">スレッド新規作成はコチラ</a></div>
     <div id="footer"></div>
+    </body></body>
 </html>
