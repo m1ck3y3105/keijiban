@@ -1,5 +1,164 @@
-/*thred*/
-.thred{
+/*--name.php reserch.php new.php thread.php--*/
+
+/*name.php*/
+/**/
+.nameForm {
+    margin-left: auto;
+    margin-right: auto;
+    /*text-align: center;*/
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    background: linear-gradient(#7bd65f, #f5f5f5);
+    width: 70vw;
+    height: 350px;
+    /*border-width: thick;
+    border-style: double;
+    border-color: royalblue;*/
+}
+#name{
+    text-align: center;
+}
+#chenge{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:10px;
+    border: solid;
+    border-width: 2px;
+    background: #b7e5a8;
+    width: 35vw;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.namae{
+    text-align: center;
+}
+.nic{
+    text-align: right;
+    display: grid;
+    grid-template-columns: 0.4fr 0.5fr;
+}
+#newname{
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+h1{
+    font-size: 50px;
+}
+/*---------------------------------------------------------*/
+
+/*reserch.php*/
+/**/
+.sortmenu {
+    display: grid;
+    margin: 5px;
+    gap:5px;
+    text-align: right;
+}
+.search_res{
+    font-size: 24px;
+    text-align: center;
+}
+#reserch{
+    font-size: 10px;
+}
+.reserch-form{
+   /* position:relative;/*フォームの相対位置*/	
+    max-width:270px;/*フォームのサイズ*/
+    margin-bottom:15px;/*フォームの下に余白*/  
+}
+#inputkeyword {
+    /*position:absolute;/*フォームの絶対位置*/
+    left:0;
+    top:0; 	
+    border:none;
+    outline:0;/*クリック時の青い枠線消す*/	
+    height:50px;/*検索ボックスの高さ*/	
+    padding:0 10px;/*テキスト位置調整*/	 
+    border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
+    background:#eee;/*検索ボックスの背景カラー*/		
+
+}
+#searchbtn {
+    width:70px;/*検索ボタンの横幅*/ 
+    height:50px;/*検索ボタンの縦幅*/ 
+    /*position:absolute;/*検索ボタンの絶対位置*/  
+    left:270px;/*検索ボタンの位置調整*/  
+    top:0;
+    border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
+    background:#5ead76;/*検索ボタンの背景カラー*/ 
+    border:none;/*検索ボタンの枠線を消す*/ 
+    color:#fff;/*検索ボタンのテキストカラー*/ 
+    font-weight:bold;/*検索ボタンのテキスト太字*/ 
+    font-size:16px;/*検索ボタンのフォントサイズ*/ 
+}
+#searchbtn:hover{
+    color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/ 
+}
+/*---------------------------------------------------------*/
+
+/*new.php*/
+/**/
+#new {
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    background: linear-gradient(#7bd65f, #f5f5f5);
+    width: 70vw;
+    height: 500px;
+}
+textarea{
+    resize : both; 
+}
+.newthr{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 0.2fr 0.5fr;
+    /*position: fixed;*/
+    margin: 20px;
+}
+.ispublic{
+    margin: auto;
+}
+.submitbtn{
+    margin-top: 5vh;
+    text-align: center;
+}
+#title{
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+}
+#pass{
+    border: none;
+    border-radius: 4px;
+    box-shadow: none; 
+}
+#comment{
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+}
+#password{
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+
+}
+.password-check{
+    margin-left: 15vw;
+    font-size: 15px;
+
+}
+/*---------------------------------------------------------*/
+
+/*thread.php*/
+/**/
+.thread{
     padding: 10px;
     background-color: rgb(219, 233, 181);
 }
@@ -24,3 +183,4 @@
 .aab dt{
     text-align: right;
 }
+/*---------------------------------------------------------*/

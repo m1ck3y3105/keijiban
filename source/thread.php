@@ -44,7 +44,7 @@
     }
     ?>
 
-    <div class="thred">
+    <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
         <h3 class="aab"><?php echo "{$thread_text}"; ?>
         <dt>作成者：<?php echo "{$thread_username}"; ?></dt>
