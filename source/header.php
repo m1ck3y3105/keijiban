@@ -18,7 +18,7 @@
 
         <div class="headermenu">
             <?php if($user_name != "匿名"){ 
-                  echo '<a class="button1" href="./name.php">ニックネーム変更</a>';
+                  echo '<a class="button1" href="./change_name.php">ニックネーム変更</a>';
                   echo '<a class="button1" href="./logout.php">ログアウト</a>';
                   echo '<a class="button1" href="./help.html">ヘルプ</a>';
               }
