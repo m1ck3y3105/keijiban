@@ -1,25 +1,26 @@
 <!doctype html>
 <html lang="ja">
     <head>
+        <base href="/"></base>
         <meta charset="UTF-8">
         <title>掲示板サイト</title>
-        <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/style2.css">
-        <link rel="stylesheet" href="../styles/tiles.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/style2.css">
+        <link rel="stylesheet" href="styles/tiles.css">
         <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
             $(function () {
-                $("#header").load("./header.php");
-                $("#footer").load("./footer.html");
-                $("#display_new_thread").load("./display_new_thread.php");
-                $("#display_popular_thread").load("./display_popular_thread.php");
+                $("#header").load("source/header.php");
+                $("#footer").load("source/footer.html");
+                $("#display_new_thread").load("source/thread/display_new_thread.php");
+                $("#display_popular_thread").load("source/thread/display_popular_thread.php");
             });
         </script>
         <script type="text/javascript">
             function Set_searchkey() {
                 const key = document.getElementById("inputkeyword").value;
                 if(key !== ""){
-                    window.location = "./reserch.php?key=" + key
+                    window.location = "source/reserch.php?key=" + key
                 }
             }
         </script>
@@ -29,7 +30,7 @@
         <div style="text-align: center;">
             <div class="timer">
             <div class="tile2">
-                <form action="reserch.php" method="get" name="reserch-form">
+                <form action="source/reserch.php" method="get" name="reserch-form">
                     <body id="reserch">
                         <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
                         <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
@@ -77,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div class=make><a class="button5" href="./create_thread.php">スレッド新規作成はコチラ</a></div>
+        <div class=make><a class="button5" href="source/thread/create_thread.php">スレッド新規作成はコチラ</a></div>
     <div id="footer"></div>
     </body></body>
 </html>

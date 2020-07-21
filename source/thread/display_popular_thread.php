@@ -10,7 +10,7 @@
        $thread_id=$row[0];
        $thread_name=$row[1];
        $comment_count=$row[2];    
-       echo "<form name='display_thread' action='thread.php' method='get'>
+       echo "<form name='display_thread' action='source/thread/thread.php' method='get'>
              <label for='thread_id'>{$i}、{$thread_name} 
              <h6>コメント数：{$comment_count}</h6>
              <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>
