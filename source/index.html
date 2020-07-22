@@ -63,7 +63,7 @@
                 </script>
             </div>
         </div>
-        <div class="main">
+        <!-- <div class="main">
             <div class="ar_pop">
                 <div class="tile1">
                     <h2 class="tile_title">人気スレッド</h2>
@@ -76,6 +76,29 @@
                     <div id=display_new_thread></div>
                 </div>
             </div>
+        </div> -->
+        <div class="cen">スレッド一覧</div>
+        <script type="text/javascript">
+            function Change_sort() {
+                const sort = document.getElementById("s_menu").value;
+                // if(key !== ""){
+                    history.pushState("","","./index.html?" + "sort=" + sort);
+                // }
+            }
+        </script>
+        <div class="tile3">
+            <div class="sortmenu">
+                <h2>ソート順</h2>
+                <p>
+                    <select id="s_menu" onChange="Change_sort()">
+                        <option value="new">新着順</option>
+                        <option value="pop">人気順</option>
+                        <option value="last">最終更新順</option>
+                        <option value="comment">コメントの多い順</option>
+                    </select>
+                </p>
+            </div>
+    
         </div>
         <div class=make><a class="button5" href="./create_thread.php">スレッド新規作成はコチラ</a></div>
     <div id="footer"></div>
