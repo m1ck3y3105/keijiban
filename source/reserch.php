@@ -24,22 +24,23 @@
 ?>
 <html lang="ja">
     <head>
+        <base href="/"></base>
         <meta charset="UTF-8">
         <title>スレッド検索</title>
-        <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/tiles.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/tiles.css">
         <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
             $(function () {
-                $("#header").load("./header.php");
-                $("#footer").load("./footer.html");
+                $("#header").load("source/header.php");
+                $("#footer").load("source/footer.html");
             });
         </script>
         <script type="text/javascript">
             function Set_searchkey() {
                 const key = document.getElementById("inputkeyword").value;
                 if(key !== ""){
-                    history.pushState("","","./reserch.php?key=" + key);
+                    history.pushState("","","source/reserch.php?key=" + key);
                 }
             }
         </script>
@@ -49,7 +50,7 @@
                 const sort = document.getElementById("s_menu").value;
                 alert(sort);
                 if(key !== ""){
-                    history.pushState("","","./reserch.php?key=" + key + "&sort=" + sort);
+                    history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
                 }
             }
         </script>
