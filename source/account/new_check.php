@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -58,8 +58,7 @@
     else{
         echo "入力してください。";
     }
-    echo  "<a href='index.html'>トップへ</a>";
-
+    echo  "<a href='source/index.html'>トップへ</a>";
     ?>
     <div id="footer"></div>
 </body>

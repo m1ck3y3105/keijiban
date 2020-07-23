@@ -7,7 +7,8 @@
 <body>
     <h1>ログアウトしました</h1>
     <a class="button1" href="source/index.html">トップへ</a>
-<?php
-    session_start();
-    unset($_SESSION["user_name"]);
-?>
+    <?php
+        session_start();
+        unset($_SESSION["user_name"]);
+    ?>
+</body>

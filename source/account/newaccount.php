@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <base></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
 </head>
 <body>

@@ -13,49 +13,42 @@
     $result1 = pg_query($connect,$sql1);
 
     $hit=pg_num_rows($result1);
-
-    /*
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if(isset($_POST['reserchkey'])) {
-            $comment = $_POST['reserchkey'];
-        }
-    }
-    */
 ?>
 <html lang="ja">
-    <head>
-        <base href="/"></base>
-        <meta charset="UTF-8">
-        <title>スレッド検索</title>
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/style2.css">
-        <link rel="stylesheet" href="styles/tiles.css">
-        <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script>
-            $(function () {
-                $("#header").load("source/header.php");
-                $("#footer").load("source/footer.html");
-            });
-        </script>
-        <script type="text/javascript">
-            function Set_searchkey() {
-                const key = document.getElementById("inputkeyword").value;
-                if(key !== ""){
-                    history.pushState("","","source/reserch.php?key=" + key);
-                }
+<head>
+    <base href="/"></base>
+    <meta charset="UTF-8">
+    <title>スレッド検索</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="styles/tiles.css">
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("source/header.php");
+            $("#footer").load("source/footer.html");
+        });
+    </script>
+    <script type="text/javascript">
+        function Set_searchkey() {
+            const key = document.getElementById("inputkeyword").value;
+            if(key !== ""){
+                history.pushState("","","source/reserch.php?key=" + key);
             }
-        </script>
-        <script type="text/javascript">
-            function Change_sort() {
-                const key = JSON.parse('<?php echo json_encode($key) ?>');
-                const sort = document.getElementById("s_menu").value;
-                alert(sort);
-                if(key !== ""){
-                    history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
-                }
+        }
+    </script>
+    <script type="text/javascript">
+        function Change_sort() {
+            const key = JSON.parse('<?php echo json_encode($key) ?>');
+            const sort = document.getElementById("s_menu").value;
+            alert(sort);
+            if(key !== ""){
+                history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
             }
-        </script>
-    </head>
+        }
+    </script>
+</head>
+<body>
     <div id="header"></div>
     <div style="text-align: center;">
         <div class="timer">
@@ -125,4 +118,5 @@
 
     </div>
     <div id="footer"></div>
+</body>
 </html>

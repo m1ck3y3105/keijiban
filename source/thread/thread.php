@@ -13,11 +13,6 @@
       $user_name=$_SESSION["user_name"];
   }
 
-  /*if(!empty($_POST["message-button"])){
-      echo "OKOK";
-    $thread_id=$_SESSION["thread_id"];
-  }*/
-
   $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
   // コメントが入力された時の処理
@@ -52,9 +47,6 @@
             WHERE thread_id={$thread_id} and user_id={$user_id})";
       $result3 = pg_query($connect,$sql3);
   }
-
-
-
 ?>
 
 <!doctype html>
