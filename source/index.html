@@ -59,27 +59,11 @@
                 </script>
             </div>
         </div>
-        <!-- <div class="main">
-            <div class="ar_pop">
-                <div class="tile1">
-                    <h2 class="tile_title">人気スレッド</h2>
-                    <div id=display_popular_thread></div>
-                </div>
-            </div>
-            <div class="ar_new">
-                <div class="tile1">
-                    <h2 class="tile_title">新着スレッド</h2>
-                    <div id=display_new_thread></div>
-                </div>
-            </div>
-        </div> -->
         <div class="cen">スレッド一覧</div>
         <script type="text/javascript">
             function Change_sort() {
                 const sort = document.getElementById("s_menu").value;
-                // if(key !== ""){
-                    history.pushState("","","./index.html?" + "sort=" + sort);
-                // }
+                history.pushState("","","source/index.html?" + "sort=" + sort);
             }
         </script>
         <div class="tile3">
