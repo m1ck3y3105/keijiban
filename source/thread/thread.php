@@ -60,18 +60,19 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>掲示板サイト</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/style2.css">
-    <link rel="stylesheet" href="../styles/tiles.css">
-    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script>
-        $(window).on('load', function() {
-            $("#header").load("./header.php");
-            $("#footer").load("./footer.html");
-        });
-    </script>
+  <base href="/"></base>
+  <meta charset="UTF-8">
+  <title>掲示板サイト</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style2.css">
+  <link rel="stylesheet" href="styles/tiles.css">
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+      $(window).on('load', function() {
+          $("#header").load("source/header.php");
+          $("#footer").load("source/footer.html");
+      });
+  </script>
 </head>
 <body>
     <div id="header"></div>
@@ -113,7 +114,7 @@
 
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
-        <form action="thread_login.php" method="POST">    
+        <form action="source/thread/thread_login.php" method="POST">    
             <div class="submitbtn">
                 <input name="no" type="submit" value="スレッド管理">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
@@ -141,7 +142,7 @@
             }
             //自分のコメントにだけ「コメント削除」ボタンが表示される
             if($user_name==$row2[0]){
-                echo "<form action='delete_comment.php' method='POST'>   
+                echo "<form action='source/thread/delete_comment.php' method='POST'>   
                         <div class='submitbtn'>
                           <input name='delete_comment' type='submit' value='コメント削除'>
                           <input type='hidden' name='comment_id' value='{$row2[3]}'>

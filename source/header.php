@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <base href="/"></base>
     <meta charset="UTF-8">
 </head>
 <body>
@@ -18,14 +19,14 @@
 
         <div class="headermenu">
             <?php if($user_name != "匿名"){ 
-                  echo '<a class="button1" href="./change_name.php">ニックネーム変更</a>';
-                  echo '<a class="button1" href="./logout.php">ログアウト</a>';
-                  echo '<a class="button1" href="./help.html">ヘルプ</a>';
+                  echo '<a class="button1" href="source/account/change_name.php">ニックネーム変更</a>';
+                  echo '<a class="button1" href="source/signin/logout.php">ログアウト</a>';
+                  echo '<a class="button1" href="source/help.html">ヘルプ</a>';
               }
               else{
-                  echo '<a class="button1" href="./newaccount.php">アカウント作成</a>';
-                  echo '<a class="button1" href="./login.php">ログイン</a>';
-                  echo '<a class="button1" href="./help.html">ヘルプ</a>';
+                  echo '<a class="button1" href="source/account/newaccount.php">アカウント作成</a>';
+                  echo '<a class="button1" href="source/signin/login.php">ログイン</a>';
+                  echo '<a class="button1" href="source/help.html">ヘルプ</a>';
               }
 
             ?>
