@@ -19,10 +19,5 @@
                 $_SESSION["user_name"]=$newname;
             }
         }
-
-    /*else{
-        echo "ログインしていないとニックネーム変更はできません";
-    }*/
-    echo '<a class="button1" href="./index.html">トップへ</a>';
-
+    echo '<a class="button1" href="../index.html">トップへ</a>';
 ?>

@@ -32,16 +32,17 @@
 <!doctype html>
 <html lang="ja">
 <head>
+    <base href="/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/style2.css">
-    <link rel="stylesheet" href="../styles/tiles.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="styles/tiles.css">
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
         $(window).on('load', function() {
-            $("#header").load("./header.php");
-            $("#footer").load("./footer.html");
+            $("#header").load("source/header.php");
+            $("#footer").load("source/footer.html");
         });
     </script>
 </head>

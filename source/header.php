@@ -13,9 +13,8 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="../images/S__1517240371.jpg" alt="次へ" title="ここをクリックするとトップに戻ります"></a>
+        <a href="source/index.html"><img src="images/S__1517240371.jpg" alt="次へ" title="ここをクリックするとトップに戻ります"></a>
         <li class="login_name"><?php echo "{$user_name}さん" ?></li>
-
 
         <div class="headermenu">
             <?php if($user_name != "匿名"){ 
@@ -28,7 +27,6 @@
                   echo '<a class="button1" href="source/signin/login.php">ログイン</a>';
                   echo '<a class="button1" href="source/help.html">ヘルプ</a>';
               }
-
             ?>
         </div>
     </header>

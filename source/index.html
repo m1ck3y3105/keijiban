@@ -29,57 +29,42 @@
         <div id="header"></div>
         <div style="text-align: center;">
             <div class="timer">
-            <div class="tile2">
-                <form action="source/reserch.php" method="get" name="reserch-form">
-                    <body id="reserch">
-                        <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
-                        <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
-                    </body>
-                </form> 
-                </div>
-                <div class="time">
-                    <div class="time2">
-                        <label>時間指定 :  </label>
-                        <input type="radio"  name="time" onclick="func1()"checked id="r1"><label for="r1">なし</label>
-                        <input type="radio" name="time"onclick="func2()" id="r2"><label for="r2">あり</label>
-                        <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                <div class="tile2">
+                    <form action="source/reserch.php" method="get" name="reserch-form">
+                        <body id="reserch">
+                            <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
+                            <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
+                        </body>
+                    </form> 
                     </div>
+                    <div class="time">
+                        <div class="time2">
+                            <label>時間指定 :  </label>
+                            <input type="radio"  name="time" onclick="func1()"checked id="r1"><label for="r1">なし</label>
+                            <input type="radio" name="time"onclick="func2()" id="r2"><label for="r2">あり</label>
+                            <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                        </div>
+                    </div>
+                </div>    
+                <div class="tile2">
+                    <script>
+                    function func1() {
+                        document.getElementById("not").disabled = true;
+                        document.getElementById("no").disabled = true;
+                    }/*アリとなしの選択*/
+                    function func2() {
+                        document.getElementById("not").disabled = false;
+                        document.getElementById("no").disabled = false;
+                    }
+                    </script>
                 </div>
-            </div>    
-            <div class="tile2">
-                <script>
-                function func1() {
-                    document.getElementById("not").disabled = true;
-                    document.getElementById("no").disabled = true;
-                }/*アリとなしの選択*/
-                function func2() {
-                    document.getElementById("not").disabled = false;
-                    document.getElementById("no").disabled = false;
-                }
-                </script>
             </div>
         </div>
-        <!-- <div class="main">
-            <div class="ar_pop">
-                <div class="tile1">
-                    <h2 class="tile_title">人気スレッド</h2>
-                    <div id=display_popular_thread></div>
-                </div>
-            </div>
-            <div class="ar_new">
-                <div class="tile1">
-                    <h2 class="tile_title">新着スレッド</h2>
-                    <div id=display_new_thread></div>
-                </div>
-            </div>
-        </div> -->
         <div class="cen">スレッド一覧</div>
         <script type="text/javascript">
             function Change_sort() {
                 const sort = document.getElementById("s_menu").value;
-                // if(key !== ""){
-                    history.pushState("","","./index.html?" + "sort=" + sort);
-                // }
+                history.pushState("","","source/index.html?" + "sort=" + sort);
             }
         </script>
         <div class="tile3">
@@ -97,6 +82,6 @@
     
         </div>
         <div class=make><a class="button5" href="source/thread/create_thread.php">スレッド新規作成はコチラ</a></div>
-    <div id="footer"></div>
-    </body></body>
+        <div id="footer"></div>
+    </body>
 </html>

@@ -23,18 +23,14 @@
         else{
             echo "新規登録できました。";
         }
-
-
     }
     else{
         echo "再入力されたパスワードが違います。";
     }
-
-
   }
   else{
       echo "入力の項目が足りていません。";
   }
-  echo '<a class="button1" href="./index.html">トップへ</a>';
+  echo '<a class="button1" href="../index.html">トップへ</a>';
 
 ?>
