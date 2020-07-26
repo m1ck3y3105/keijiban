@@ -17,7 +17,6 @@
 
   // コメントが入力された時の処理
   if(!empty($_POST["your-message"])){
-      $thread_id=$_SESSION["thread_id"];
       $your_message=$_POST["your-message"];
 
       //ユーザネームからユーザIDを取得

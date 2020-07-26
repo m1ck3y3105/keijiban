@@ -34,7 +34,7 @@
         </script>
     </head>
     <div id="header"></div>
-    <form action="source/account/new_check.php" method="post" name="create_thr-form">
+    <form action="source/thread/create_thread_check.php" method="post" name="create_thr-form">
         <body>
             <div id="new">
                 <div class="newthr">

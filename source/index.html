@@ -12,8 +12,7 @@
             $(function () {
                 $("#header").load("source/header.php");
                 $("#footer").load("source/footer.html");
-                $("#display_new_thread").load("source/thread/display_new_thread.php");
-                $("#display_popular_thread").load("source/thread/display_popular_thread.php");
+                $("#display_thread").load("source/thread/display_thread.php");
             });
         </script>
         <script type="text/javascript">
@@ -79,7 +78,7 @@
                     </select>
                 </p>
             </div>
-    
+            <div id="display_thread"></div>
         </div>
         <div class=make><a class="button5" href="source/thread/create_thread.php">スレッド新規作成はコチラ</a></div>
         <div id="footer"></div>

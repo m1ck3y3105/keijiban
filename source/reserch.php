@@ -55,7 +55,7 @@
             <div class="tile2">
                 <form action="source/reserch.php" method="get" name="reserch-form">
                     <body id="reserch">
-                            <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
+                            <input id="inputkeyword" type="text" name="key" placeholder="キーワードを入力">
                             <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
                     </body>
                 </form> 
@@ -101,7 +101,7 @@
             while($row = pg_fetch_row($result1)){
                 $thread_id=$row[0];
                 $thread_name=$row[1];    
-                echo "<form name='reserch_thread' action='thread.php' method='get'>";
+                echo "<form name='reserch_thread' action='source/thread/thread.php' method='get'>";
                 echo "  <div>";
                 echo "    <label for='thread_id'>$thread_name";
                 echo "    <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>";
