@@ -49,9 +49,9 @@
 <body>
     <div id="header"></div>
     <h3> <?php echo $string; ?> </h3>
-    <form action="thread.php" method="get">    
+    <form action="source/thread/thread.php" method="get">    
             <div class="submitbtn">
-                <input name="return_thread" type="submit" value="スレッド画面へ戻る">
+                <input type="submit" value="スレッド画面へ戻る">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>

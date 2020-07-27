@@ -22,5 +22,5 @@
   else{
       echo "入力されていません。";
   }
-  echo '<a class="button1" href="./index.html">トップへ</a>';
+  echo '<a class="button1" href="../index.html">トップへ</a>';
 ?>

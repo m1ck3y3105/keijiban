@@ -20,7 +20,7 @@
     </head>
     <div id="header"></div>
     <div id="chenge"><h3>ニックネーム変更</h3></div>
-    <form class="nameForm" action="" method="post" name="name-form">
+    <form class="nameForm" action="source/account/change_name_check.php" method="post" name="name-form">
         <body id="name">
             <div class="namae">
                 <h4>新しいニックネームを入力してください</h4>
