@@ -36,9 +36,9 @@
                 <input type='hidden' name='comment_id' value= <?php echo "{$comment_id}"; ?> >
             </div>
         </form>
-        <form action="source/thread/thread.php" method="POST">    
+        <form action="source/thread/thread.php" method="GET">    
             <div class="submitbtn">
-                <input name="no" type="submit" value="いいえ">
+                <input type="submit" value="いいえ">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
