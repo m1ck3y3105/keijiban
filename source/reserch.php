@@ -2,9 +2,14 @@
 <?php 
     $hit = 0;
     $key = '';
+    $sort = '';
 
     if(isset($_GET['key'])) {
         $key = $_GET['key'];
+    }
+
+    if(isset($_GET['sort'])) {
+        $sort = $_GET['sort'];
     }
 
     $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
@@ -29,21 +34,29 @@
             $("#footer").load("source/footer.html");
         });
     </script>
-    <script type="text/javascript">
+    <script>
+        window.onload = function() {
+            var key = JSON.parse('<?php echo json_encode($key) ?>'); 
+            var sort = JSON.parse('<?php echo json_encode($sort) ?>');
+            document.getElementById('s_menu').value = (sort !== '') ? (sort) : ('old');
+            document.getElementById('inputkeyword').value = key;
+        }
+
         function Set_searchkey() {
             const key = document.getElementById("inputkeyword").value;
+            const sort = JSON.parse('<?php echo json_encode($sort) ?>');
             if(key !== ""){
-                history.pushState("","","source/reserch.php?key=" + key);
+                history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
+                location.reload();
             }
         }
-    </script>
-    <script type="text/javascript">
+
         function Change_sort() {
             const key = JSON.parse('<?php echo json_encode($key) ?>');
             const sort = document.getElementById("s_menu").value;
-            alert(sort);
             if(key !== ""){
                 history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
+                location.reload();
             }
         }
     </script>
