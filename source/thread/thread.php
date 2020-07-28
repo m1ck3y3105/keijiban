@@ -105,9 +105,9 @@
 
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
-        <form action="source/thread/thread_login.php" method="POST">    
+        <form action="source/thread/thread_login.php" method="GET">    
             <div class="submitbtn">
-                <input name="no" type="submit" value="スレッド管理">
+                <input type="submit" value="スレッド管理">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>

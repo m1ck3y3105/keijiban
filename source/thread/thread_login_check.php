@@ -73,9 +73,9 @@
 
     <!-- パスワードを入力してないとき -->
     <h2>入力してください</h2>
-    <form action="source/thread/thread_login.php" method="POST">    
+    <form action="source/thread/thread_login.php" method="GET">    
         <div class="submitbtn">
-            <input name="no" type="submit" value="スレッド管理ログインページへ">
+            <input type="submit" value="スレッド管理ログインページへ">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
         </div>
     </form>
@@ -84,9 +84,9 @@
 
     <!-- 入力されたパスワードが違うとき -->
     <h2>入力されたパスワードが違います</h2>
-    <form action="source/thread/thread_login.php" method="POST">    
+    <form action="source/thread/thread_login.php" method="GET">    
         <div class="submitbtn">
-            <input name="no" type="submit" value="スレッド管理ログインページへ">
+            <input type="submit" value="スレッド管理ログインページへ">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
         </div>
     </form>
