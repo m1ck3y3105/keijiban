@@ -1,5 +1,5 @@
 <?php
-   $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+   $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
    
 /*
    if($_GET["sort"]=="new" || $_GET["sort"]==""){

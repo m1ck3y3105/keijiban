@@ -12,7 +12,7 @@
         $sort = $_GET['sort'];
     }
 
-    $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+    $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
     $sql1="SELECT thread_id,thread_name FROM thread_admin WHERE thread_name LIKE '%{$key}%'";
     $result1 = pg_query($connect,$sql1);

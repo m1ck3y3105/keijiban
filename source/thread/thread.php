@@ -13,7 +13,7 @@
       $user_name=$_SESSION["user_name"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
   // コメントが入力された時の処理
   if(!empty($_POST["your-message"])){

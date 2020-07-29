@@ -19,7 +19,7 @@
           $OK = 2 ;
           $password=$_POST["password"];
 
-          $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+          $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
           //スレッドIDからスレッドパスワードを取得
           $sql1="SELECT thread_pass FROM thread_admin WHERE thread_id=$1";
