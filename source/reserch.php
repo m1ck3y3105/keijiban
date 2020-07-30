@@ -2,7 +2,7 @@
 <?php 
     $hit = 0;
     $key = '';
-    $sort = '';
+    $sort = 'old';
 
     if(isset($_GET['key'])) {
         $key = $_GET['key'];
