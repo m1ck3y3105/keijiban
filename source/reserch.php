@@ -42,21 +42,33 @@
             document.getElementById('inputkeyword').value = key;
         }
 
-        function Set_searchkey() {
-            const key = document.getElementById("inputkeyword").value;
-            const sort = JSON.parse('<?php echo json_encode($sort) ?>');
-            if(key !== ""){
-                history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
+        function Set_search(mode) {
+            var inkey = document.getElementById('inputkeyword').value;
+
+            if(inkey !== ""){
+                var prmarr = new Object;
+                var prm = location.search.substring(1).split('&');
+                var key = '', sort = '';
+
+                for(var i = 0; prm[i]; i++){
+                    var keyvalue = prm[i].split('=');
+                    prmarr[keyvalue[0]] = keyvalue[1];
+                }
+
+                if(mode === 'key'){
+                    key = '?key=' + inkey;
+                    sort = '&sort=' + ((prmarr['sort'] === undefined)?('old'):(prmarr['sort']));
+                }
+                else if(mode === 'sort'){
+                    key = '?key=' + prmarr['key'];
+                    sort = '&sort=' + document.getElementById('s_menu').value;
+                }
+
+                history.pushState("","",location.pathname + key + sort);
                 location.reload();
             }
-        }
-
-        function Change_sort() {
-            const key = JSON.parse('<?php echo json_encode($key) ?>');
-            const sort = document.getElementById("s_menu").value;
-            if(key !== ""){
-                history.pushState("","","source/reserch.php?key=" + key + "&sort=" + sort);
-                location.reload();
+            else{
+                alert('検索するキーワードを入力してください')
             }
         }
     </script>
@@ -69,7 +81,7 @@
                 <form action="source/reserch.php" method="get" name="reserch-form">
                     <body id="reserch">
                             <input id="inputkeyword" type="text" name="key" placeholder="キーワードを入力">
-                            <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
+                            <input id="searchbtn" type="button" value="検索" onclick="Set_search('key')">
                     </body>
                 </form> 
             </div>
@@ -77,17 +89,17 @@
                 <div class="time2">
                     <label>時間指定 :  </label>
                     <input type="radio"  name="time" onclick="func1()"checked id="r1"><label for="r1">なし</label>
-                    <input type="radio" name="time"onclick="func2()" id="r2"><label for="r2">あり</label>
-                    <input type="datetime-local"id="not"disabled="disabled">～<input type="datetime-local"id="no"disabled="disabled">
+                    <input type="radio" name="time" onclick="func2()" id="r2"><label for="r2">あり</label>
+                    <input type="datetime-local" id="from" onChange="" disabled="disabled">～<input type="datetime-local" id="to" onChange="" disabled="disabled">
                 </div>
                 <script>
                     function func1() {
-                        document.getElementById("not").disabled = true;
-                        document.getElementById("no").disabled = true;
+                        document.getElementById("from").disabled = true;
+                        document.getElementById("to").disabled = true;
                     }
                     function func2() {
-                        document.getElementById("not").disabled = false;
-                        document.getElementById("no").disabled = false;
+                        document.getElementById("from").disabled = false;
+                        document.getElementById("to").disabled = false;
                     }
                 </script>
             </div>
@@ -100,7 +112,7 @@
         <div class="sortmenu">
             <h2>ソート順</h2>
             <p>
-                <select id="s_menu" onChange="Change_sort()">
+                <select id="s_menu" onChange="Set_search('sort')">
                     <option value="old">古い順</option>
                     <option value="new">新しい順</option>
                     <option value="cmy">コメントの多い順</option>
