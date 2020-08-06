@@ -9,15 +9,12 @@
     if(isset($_GET['key'])) {
         $key = $_GET['key'];
     }
-
     if(isset($_GET['sort'])) {
         $sort = $_GET['sort'];
     }
-
     if(isset($_GET['from'])) {
         $from = $_GET['from'];
     }
-
     if(isset($_GET['to'])) {
         $to = $_GET['to'];
     }
@@ -158,6 +155,7 @@
         ?> 
 
     </div>
-    <div id="footer"></div>
+
 </body>
+<div id="footer"></div>
 </html>

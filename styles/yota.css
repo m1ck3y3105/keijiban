@@ -5,7 +5,7 @@
     border: solid;
     border-width: 2px;
     border-radius: 10px;
-    background: linear-gradient(#ff0000, #000000);
+    background: linear-gradient(#7bd65f, #f5f5f5);
     width: 70vw;
     height: 220px;
 }
@@ -57,4 +57,7 @@
 }
 #thread_1{
     text-align: left;
+}
+.submitbtn{
+    text-align: center;
 }

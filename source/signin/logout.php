@@ -25,5 +25,6 @@
     <h1>ログアウトしました</h1>
     <a class="button1" href="source/index.html">トップへ</a>
 
-    <div id="footer"></div>
+
 </body>
+<div id="footer"></div>
