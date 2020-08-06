@@ -3,6 +3,8 @@
     $hit = 0;
     $key = '';
     $sort = 'old';
+    $from = '';
+    $to = '';
 
     if(isset($_GET['key'])) {
         $key = $_GET['key'];
@@ -10,6 +12,14 @@
 
     if(isset($_GET['sort'])) {
         $sort = $_GET['sort'];
+    }
+
+    if(isset($_GET['from'])) {
+        $from = $_GET['from'];
+    }
+
+    if(isset($_GET['to'])) {
+        $to = $_GET['to'];
     }
 
     $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
@@ -38,12 +48,18 @@
         window.onload = function() {
             var key = JSON.parse('<?php echo json_encode($key) ?>'); 
             var sort = JSON.parse('<?php echo json_encode($sort) ?>');
+            var t_from = JSON.parse('<?php echo json_encode($from) ?>');
+            var t_to = JSON.parse('<?php echo json_encode($to) ?>');
             document.getElementById('s_menu').value = (sort !== '') ? (sort) : ('old');
             document.getElementById('inputkeyword').value = key;
+            document.getElementById('from').value = (t_from !== '') ? (t_from) : ('');
+            document.getElementById('to').value = (t_to !== '') ? (t_to) : ('');
         }
 
         function Set_search(mode) {
             var inkey = document.getElementById('inputkeyword').value;
+            var from = document.getElementById('from').value;
+            var to = document.getElementById('to').value
 
             if(inkey !== ""){
                 var prmarr = new Object;
@@ -64,7 +80,7 @@
                     sort = '&sort=' + document.getElementById('s_menu').value;
                 }
 
-                history.pushState("","",location.pathname + key + sort);
+                history.pushState("","",location.pathname + key + sort + '&from=' + from + '&to=' + to);
                 location.reload();
             }
             else{
