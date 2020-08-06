@@ -8,7 +8,7 @@
       $user_name = $_POST["user_name"];
       $password = $_POST["password"];
 
-      $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
       $sql1="SELECT login_pass FROM user_admin where user_name= $1";
       $array1 = array("user_name" => "{$user_name}");
@@ -62,6 +62,7 @@
     <?php } ?>
     </div>
 
-    <div id="footer"></div>
+
 </body>
+<div id="footer"></div>
 </html>

@@ -107,7 +107,7 @@ h1{
     border: solid;
     border-width: 2px;
     border-radius: 10px;
-    background: linear-gradient(#7bd65f, #f5f5f5);
+    background: linear-gradient( #2bb866,  #e1f3e0);
     width: 70vw;
     height: 500px;
 }
@@ -182,5 +182,11 @@ textarea{
 }
 .aab dt{
     text-align: right;
+}
+.thread_id{
+    text-align: center;
+}
+#s_menu{
+    padding: 5px;
 }
 /*---------------------------------------------------------*/

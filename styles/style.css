@@ -2,15 +2,17 @@
 /*html主要なデザイン変更*/
 /*<!--header-->*/
 body{
+    display: grid;
     margin-left: auto;
     margin-right: auto;
-   width: 85%;
+    width: 85%;
 }
 main{
     width: 100;
     padding: 20px;
 }
 header img{
+    display: grid;
     margin-left: auto;
     margin-right: auto; 
     width: 50vw;  
@@ -38,6 +40,9 @@ header img{
 .headermenu .button1:hover {
     background: #2bb866;
     color: #FFF;
+}
+.login_name{
+    font-size: 20px;
 }
 /*index time*/
 .time {
@@ -142,9 +147,12 @@ header img{
 
 /*footer*/
 #footer {
-    text-align: center;;
+    display: grid;
+    text-align: center;
+    width: 100%;
 }
 .copylight{
+    display: grid;
     background-color: rgb(159, 197, 175);
     border-radius: 3px;
     padding: 5px;
@@ -171,6 +179,7 @@ header img{
 }
 
 .make{
+    display: grid;
     width: 50vw;
 }
 .make .button5{
