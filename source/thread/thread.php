@@ -2,18 +2,33 @@
   session_start();
 
   $thread_id=0;
+  $restrict_user=0;
+  $user_name='匿名';
+
+  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+
   //現在見ているスレッドのIDを保存
   if(!empty($_GET["thread_id"])){
     $thread_id=$_GET["thread_id"];
   }
 
-  $user_name='匿名';
   // ログインしているユーザ名を取得 + スレッド作成者による制限情報をチェック
-  if(!empty($_SESSION["user_name"])){
+  if(!empty($_SESSION["user_name"]) && $thread_id!=0 ){
       $user_name=$_SESSION["user_name"];
+      
+      $sql0="SELECT restrict_status FROM restrict_admin,user_admin 
+             WHERE user_admin.user_name=$1 and restrict_admin.user_id=user_admin.user_id
+             and restrict_admin.thread_id=$thread_id";
+      $array0 = array("user_name" => "{$user_name}");
+      $result0 = pg_query_params($connect,$sql0,$array0);
+      $row0 = pg_fetch_row($result0);
+      $restrict_status = $row0[0];
+      
+      if($restrict_status=='t'){
+          $restrict_user=1;
+      }
+      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
   }
-
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
   // コメントが入力された時の処理
   if(!empty($_POST["your-message"])){
@@ -169,13 +184,19 @@
       ?> 
  
     
-    <?php if($user_name!='匿名'){ ?>
+    <?php if($restrict_user==1){  ?>
+    <h5><br>スレッド作成者によって投稿を制限されています</h5>
+
+    <?php }else if($user_name!='匿名' ){ ?>
     <form action="" method="POST">
       <textarea id="message" name="your-message" placeholder="コメント入力" value=""></textarea>
       <input type="submit" name="message-button" class="button" value="投稿">
     </form>
 
-    <?php }else{ echo "<br>スレッドにコメントをする場合はログインしてください"; } ?>
+    <?php }else{ ?>
+    <h5><br>スレッドにコメントをする場合はログインしてください</h5>
+
+    <?php } ?>
     
 
 </body>
