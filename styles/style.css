@@ -11,6 +11,7 @@ main{
     padding: 20px;
 }
 header img{
+    display: grid;
     margin-left: auto;
     margin-right: auto; 
     width: 50vw;  
