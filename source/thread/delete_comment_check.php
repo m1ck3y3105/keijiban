@@ -55,6 +55,7 @@
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
-    <div id="footer"></div>
+
 </body>
+<div id="footer"></div>
 </html>

@@ -60,6 +60,7 @@
     }
     echo  "<a href='source/index.html'>トップへ</a>";
     ?>
-    <div id="footer"></div>
+
 </body>
+<div id="footer"></div>
 </html>

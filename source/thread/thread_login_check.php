@@ -106,6 +106,7 @@
 
     </div>
 
-    <div id="footer"></div>
-</body>
+
+</body>]
+<div id="footer"></div>
 </html>

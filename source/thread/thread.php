@@ -102,6 +102,25 @@
         die("スレッドが存在しません");
       }
     ?>
+        <div style="text-align: center;">
+          <form action="source/reserch.php" method="get" name="reserch-form">
+              <div id="reserch">
+              <h2>スレッド内検索:<input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
+                  <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
+                      <select id="s_menu" onChange="Change_sort()">
+                          <option value="main">コメント本文</option>
+                          <option value="user">投稿者</option>
+                      </select></h2>
+              </div>
+          </form> 
+          </div>
+          <div class="time">
+              <div class="time2">
+                  <label>時間指定 :  </label>
+                  <input type="datetime-local"id="not">～<input type="datetime-local"id="no">
+              </div>
+          </div>
+       </div>
 
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
@@ -158,6 +177,7 @@
 
     <?php }else{ echo "<br>スレッドにコメントをする場合はログインしてください"; } ?>
     
-    <div id="footer"></div>
+
 </body>
+<div id="footer"></div>
 </html>
