@@ -128,8 +128,11 @@
             echo "<h2>タイトルに「{$key}」が含まれるスレッドは存在していませんでした</h2>";
         }
         ?> 
-
-    </div>
+    <div class="arrow">
+        <input type="submit" name="return" class="btn-sticky1" value="前へ">
+        <input type="submit" name="next" class="btn-sticky2" value="次へ">
+    </div>    
+</div>
 
 </body>
 <div id="footer"></div>
