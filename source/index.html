@@ -32,14 +32,16 @@
     </head>
     <body>
         <div id="header"></div>
+        
+        <div class="cen">スレッド検索</div>
         <div style="text-align: center;">
             <div class="timer">
                 <div class="tile2">
                     <form action="source/reserch.php" method="get" name="reserch-form">
-                        <div id="reserch">
+                        <body id="reserch">
                             <input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
                             <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
-                        </div>
+                        </body>
                     </form> 
                     </div>
                     <div class="time">
@@ -66,21 +68,8 @@
             </div>
         </div>
         <div class="cen">スレッド一覧</div>
-        <div class="tile3">
-            <div class="sortmenu">
-                <h2>ソート順</h2>
-                <p>
-                    <select id="s_menu" onChange="Change_sort()">
-                        <option value="new">新着順</option>
-                        <option value="pop">人気順</option>
-                        <option value="last">最終更新順</option>
-                        <option value="comment">コメントの多い順</option>
-                    </select>
-                </p>
-            </div>
-            <div id="display_thread"></div>
-        </div>
+        <div id="display_thread"></div>
         <div class=make><a class="button5" href="source/thread/create_thread.php">スレッド新規作成はコチラ</a></div>
+        <div id="footer"></div>
     </body>
-    <div id="footer"></div>
 </html>

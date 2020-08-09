@@ -15,7 +15,7 @@
           $OK = 2;
           error_reporting(0);
  
-          $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+          $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
           $sql1="INSERT INTO user_admin(user_name,login_pass) VALUES($1,$2)";
           $array1 = array("user_name" => "{$user_name}", "password" => "{$password}");
           $result1 = pg_query_params($connect,$sql1,$array1);
@@ -69,12 +69,11 @@
     <?php }else if($OK == 3){ ?>
     <!-- 正常にアカウント作成できた時の表示 -->
     <h2>新規アカウント登録ができました</h2>
-    <a class="button1" href="source/index.html">トップへ</a>
+    <a class="button1" href="source/index.php">トップへ</a>
     <?php } ?>
 
     </div>
   
-
+    <div id="footer"></div>
 </body>
-<div id="footer"></div>
 </html>

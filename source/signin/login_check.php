@@ -8,14 +8,13 @@
       $user_name = $_POST["user_name"];
       $password = $_POST["password"];
 
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+      $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
       $sql1="SELECT login_pass FROM user_admin where user_name= $1";
       $array1 = array("user_name" => "{$user_name}");
       $result1 = pg_query_params($connect,$sql1,$array1);
 
       $row = pg_fetch_row($result1);
-      echo $row[0];
       if($row[0]==$password){
           $OK = 2;
           $_SESSION["user_name"] = $user_name;
@@ -57,12 +56,11 @@
     <?php }else if($OK == 2){ ?>
     <!-- ログインに成功した時の表示 -->
     <h2>ログインできました</h2>
-    <a class="button1" href="source/index.html">トップへ</a>
+    <a class="button1" href="source/index.php">トップへ</a>
 
     <?php } ?>
     </div>
 
-
+    <div id="footer"></div>
 </body>
-<div id="footer"></div>
 </html>

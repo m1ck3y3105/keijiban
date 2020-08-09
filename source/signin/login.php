@@ -5,6 +5,7 @@
     <title>掲示板サイト</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
@@ -27,7 +28,6 @@
             </div>
         </form>
     </div>
-
+    <div id="footer"></div>
 </body>
-<div id="footer"></div>
 </html>

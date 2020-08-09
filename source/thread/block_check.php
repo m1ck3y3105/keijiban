@@ -14,7 +14,7 @@
       $thread_id=$_SESSION["thread_id"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
   //スレッドIDからスレッドタイトルを取得
   $sql1="SELECT thread_name,thread_userid FROM thread_admin WHERE thread_id=$1";
@@ -82,7 +82,7 @@
     <!-- いろいろ対策 -->
 
     <h1>エラーが発生しました</h1>
-    <a class="button1" href="source/index.html">トップへ</a>
+    <a class="button1" href="source/index.php">トップへ</a>
 
     <?php }else if($OK==1 || $error==1){?>
     <!-- DBにブロックに関する情報を正常に保存できなかったとき -->
