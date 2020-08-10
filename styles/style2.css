@@ -54,7 +54,7 @@ h1{
     display: grid;
     margin: 5px;
     gap:5px;
-    text-align: right;
+    text-align: right; 
 }
 .search_res{
     font-size: 24px;
@@ -190,7 +190,69 @@ textarea{
 #s_menu{
     padding: 5px;
 }
+
+/* ともき追加分 */
+.favbtn{
+    display: flex;
+}
+.favbtn input[type='radio']{
+    display: none;
+}
+.favbtn label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: gray;
+    cursor: pointer;
+    font-size: 50px;
+}
+.favbtn label:hover, .favbtn label:hover ~ label, .favbtn input[type='radio']:checked ~ label{
+    color: gold;
+}
 /*---------------------------------------------------------*/
+/* 前へ次へボタン */
+
+.btn-sticky1 {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px #eca5a5;/*左線*/
+    color: #eca5a5;/*文字色*/
+    font-weight: bold;
+    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29); */
+  }
+  .btn-sticky1:active {
+    /* box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1); */
+    transform: translateY(2px);
+  }
+  .btn-sticky1:hover{
+    background-color: #eca5a5;
+    color: #e1f3e0;
+    transition: .4s;
+   }
+  .btn-sticky2 {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-right: solid 6px  #838de9;/*右線*/
+    color:  #838de9;/*文字色*/
+    font-weight: bold;
+    /*box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);*/
+  }
+  .btn-sticky2:active {
+    /*box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);*/
+    transform: translateY(2px);
+  }
+  .btn-sticky2:hover{
+   background-color: #838de9;
+   color: #e1f3e0;
+   transition: .4s;
+  }
+  .arrow{
+      text-align: center;
+  }
+
 /* 吉川追加分 */
 /* index.php */
 
@@ -203,4 +265,14 @@ textarea{
     text-align: center;
     background-color: rgb(60, 134, 130);
     padding: 5px;
+}
+
+.count {
+    display: grid;
+    margin-top: 5px;
+    text-align: center; 
+}
+
+.thread_status{
+    margin: 5px;
 }

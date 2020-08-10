@@ -5,7 +5,7 @@
     border: solid;
     border-width: 2px;
     border-radius: 10px;
-    background: linear-gradient(#7bd65f, #f5f5f5);
+    background: linear-gradient(#7bd65f, #4a81b4);
     width: 35vw;
     height: 500px;
 }
@@ -22,7 +22,7 @@
     border: solid;
     border-width: 2px;
     border-radius: 10px;
-    background: linear-gradient(#7bd65f, #f5f5f5);
+    background: linear-gradient(#38e438, #ffffff);
     height: 700px; 
     margin-left: 20%;
     margin-right: 20%;

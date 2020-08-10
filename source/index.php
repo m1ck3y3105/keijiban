@@ -1,42 +1,66 @@
 <?php
+
+   $sort="new";
+
+   if(!empty($_GET["first"]) && $_GET["first"]>0){
+       $first =$_GET["first"];
+       $last  =$first + 3;
+       $offset=$first - 1;
+   }
+   else{
+       $first = 1;
+       $last  = 4;
+       $offset= 0;
+   }
+   $limit = 4;
+
    $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
-   //$sql1="SELECT thread_id,thread_name,thread_date FROM thread_admin ORDER BY thread_date DESC";
-   
+   #スレッドがいくつあるか数える
+   $sql1="SELECT COUNT(thread_id) FROM thread_admin";
+   $result1 = pg_query($connect,$sql1);
+   $row1 = pg_fetch_row($result1);
+   $count = $row1[0];
+
+   if($count<$last){
+       $last=$count;
+   }
 
    if(!empty($_GET["sort"])){
+       $sort=$_GET["sort"];
+
         if($_GET["sort"]=="new"){
             $sort_num=1;
             #スレッド名、スレッド作成日時
-            $sql1="SELECT thread_id,thread_name,thread_date FROM thread_admin ORDER BY thread_date DESC";
+            $sql2="SELECT thread_id,thread_name,thread_date FROM thread_admin ORDER BY thread_date DESC ";
         }
         else if($_GET["sort"]=="pop"){
             $sort_num=2;
             #スレッド名、いいねの数（未実装）
-            $sql1="SELECT thread_id,thread_name,good_count FROM thread_admin ORDER BY good_count DESC";
+            $sql2="SELECT thread_id,thread_name,good_count FROM thread_admin ORDER BY good_count DESC ";
     
         }
         else if($_GET["sort"]=="last"){
             $sort_num=3;
             #スレッド名、最新コメント投稿日時（未実装）
-            $sql1="SELECT thread_id,thread_name,last_date FROM thread_admin ORDER BY last_date DESC";
+            $sql2="SELECT thread_id,thread_name,last_date FROM thread_admin ORDER BY last_date DESC ";
         }
         else if($_GET["sort"]=="comment"){
             $sort_num=4;
             #スレッド名、コメント数
-            $sql1="SELECT thread_id,thread_name,comment_count FROM thread_admin ORDER BY comment_count DESC";
+            $sql2="SELECT thread_id,thread_name,comment_count FROM thread_admin ORDER BY comment_count DESC ";
         }
    }
    else{
        $sort_num=1;
-       $sql1="SELECT thread_id,thread_name,thread_date FROM thread_admin ORDER BY thread_date DESC";
+       $sql2="SELECT thread_id,thread_name,thread_date FROM thread_admin ORDER BY thread_date DESC ";
    }
 
-   
+   $sql2 .= "OFFSET {$offset} LIMIT {$limit}";
 
-   $result1 = pg_query($connect,$sql1);
+   $result2 = pg_query($connect,$sql2);
  
-   $i=1;
+   $i=$first;
 
 ?>
 
@@ -106,7 +130,7 @@
         <div class="cen">スレッド一覧</div>
         <div class="tile3">
             <div class="sortmenu">
-                <h4>ソート順：
+                <?php echo"<h4>{$first}件目から{$last}件目　　　　　　　　 ソート順："; ?>
                     <select id="s_menu" onChange="Change_sort()">
                         <option value="new"     <?php if($sort_num==1){ echo "selected";} ?> >新着順</option>
                         <option value="pop"     <?php if($sort_num==2){ echo "selected";} ?> >人気順</option>
@@ -117,7 +141,7 @@
             </div>
 
             <?php
-            while($row = pg_fetch_row($result1)){
+            while($row = pg_fetch_row($result2)){
                $thread_id=$row[0];
                $thread_name=$row[1];
                $thread_status=$row[2];    
@@ -125,7 +149,7 @@
                      <form name='display_thread' action='source/thread/thread.php' method='get'>
                      <label for='thread_id' id='thread_menu'>{$i}、{$thread_name}";
                if($sort_num==1){
-                   echo "<h6>作成日：{$thread_status}</h6>";
+                   echo "<div class=thread_status>作成日：{$thread_status}<div>";
                }
                else if($sort_num==2){
                    echo "<h6>いいねの数：{$thread_status}</h6>";
@@ -144,6 +168,27 @@
                 $i++;
            }  
            ?>
+
+           <div class="arrow">
+
+               <?php if($first > 4){?>
+
+               <form action="" method="GET">
+                  <input type="submit" class="btn-sticky1" value="前へ">
+                  <input type="hidden" name="sort" value=<?php echo $sort; ?>>
+                  <input type="hidden" name="first" value=<?php echo $first - 4; ?>>
+               </form>
+
+               <?php }  if($count > $last){?>
+
+                <form action="" method="GET">
+                  <input type="submit" class="btn-sticky2" value="次へ">  
+                  <input type="hidden" name="sort" value=<?php echo $sort; ?>>
+                  <input type="hidden" name="first" value=<?php echo $first + 4; ?>>
+               </form>  
+               
+               <?php } ?>
+           </div>  
 
         </div>
         <div class=make><a class="button5" href="source/thread/create_thread.php">スレッド新規作成はコチラ</a></div>

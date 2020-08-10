@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    $OK = 0;
+    
+    /*ログインされているかチェック*/
+    if(!empty($_SESSION["user_name"])){
+        $OK = 1;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -7,6 +18,8 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/style2.css">
         <link rel="stylesheet" href="styles/tiles.css">
+        <link rel="stylesheet" href="styles/yota.css">
+        <link rel="stylesheet" href="styles/login.css">
         <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
             $(function () {
@@ -35,6 +48,17 @@
         </script>
     </head>
     <div id="header"></div>
+
+    <?php if($OK == 0){ ?>
+    <!--ログインしていないときの表示 -->
+    <div id="loginch">
+    <h2>スレッド新規作成をする場合はログインしてください</h2>
+    <a class="button1" href="source/signin/login.php">ログイン画面へ</a>
+    </div>
+
+    <?php }else if($OK == 1){ ?>
+    <!-- 正常な表示 -->
+
     <form action="source/thread/create_thread_check.php" method="post" name="create_thr-form">
         <body>
             <div id="new">
@@ -73,5 +97,8 @@
             </div>
         </body>
     </form>   
+
+    <?php  } ?>
+
     <div id="footer"></div>
 </html>

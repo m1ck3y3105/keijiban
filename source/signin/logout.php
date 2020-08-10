@@ -27,5 +27,6 @@
     <a class="button1" href="source/index.php">トップへ</a>
     </div>
 
-    <div id="footer"></div>
 </body>
+<div id="footer"></div>
+</html>

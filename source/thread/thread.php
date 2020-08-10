@@ -134,15 +134,21 @@
         $thread_date = $row1[2];
         $thread_username = $row1[3];
 
-        //search=0　→　通常のコメント表示、search=1　→　スレッド内検索結果の表示
+        //search=0　→　通常のコメント表示
+        //search=1　→　スレッド内検索結果の表示
+        //search=2　→　時間範囲指定の表示
+
+        #GETしたスレッドIDのコメント情報（作成者、内容、作成日時）を取得し、時間の順番で並び替えて保存
         if($search==0){
-            //GETしたスレッドIDのコメント情報（作成者、内容、作成日時）を取得し、時間の順番で並び替えて保存
+            
             $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
             FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id ORDER BY comment_date ASC";
             $result2 = pg_query($connect,$sql2);
         }
+
+        #キーワード、時間、設定をもとにDBからコメントを検索
         else if($search==1){
-           #キーワード、時間、設定をもとにDBからコメントを検索
+           
             if($menu=="main"){
                 $main_key="%"."{$key}"."%";
                 $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
@@ -173,8 +179,9 @@
             $sql2 .= "ORDER BY comment_date ASC";
             $result2 = pg_query_params($connect,$sql2,$array2);
         }
+
+        # キーワードが入力されず、時間範囲指定のみ
         else if($search==2){
-            // キーワードが入力されず、時間範囲指定のみ
             $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
             FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id ";
 
@@ -242,6 +249,13 @@
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
+        <!-- いいねボタン -->
+        <form action="">
+            <div class="favbtn">
+              <input id="fav" type="radio" name="star" />
+              <label for="fav">★</label>
+            </div>
+        </form>  
         <h3 class="aab"><?php echo "{$thread_text}"; ?>
         <dt>作成者：<?php echo "{$thread_username}"; ?></dt>
         <dt>作成日：<?php echo "{$thread_date}"; ?></dt>
@@ -321,6 +335,6 @@
 
     <?php } ?>
     
-    <div id="footer"></div>
 </body>
+<div id="footer"></div>
 </html>

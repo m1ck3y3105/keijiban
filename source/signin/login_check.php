@@ -30,6 +30,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/yota.css">
+    <link rel="stylesheet" href="styles/login.css">
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
         $(function () {
@@ -55,7 +56,7 @@
 
     <?php }else if($OK == 2){ ?>
     <!-- ログインに成功した時の表示 -->
-    <h2>ログインできました</h2>
+    <h3>ログインできました</h3>
     <a class="button1" href="source/index.php">トップへ</a>
 
     <?php } ?>

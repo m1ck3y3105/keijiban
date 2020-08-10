@@ -74,6 +74,7 @@
 
     </div>
   
-    <div id="footer"></div>
+    
 </body>
+<div id="footer"></div>
 </html>

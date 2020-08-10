@@ -42,70 +42,77 @@
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
+    <link rel="stylesheet" href="styles/block-dis.css">
 </head>
 
 <body>
+    <div id="sample">
+        <?php if($thread_id == 0 || $user_name == ''){  ?>
+        <!-- いろいろ対策 -->
 
-    <?php if($thread_id == 0 || $user_name == ''){  ?>
-    <!-- いろいろ対策 -->
+        <h1>エラーが発生しました</h1>
+        <a class="button1" href="source/index.html">トップへ</a>
 
-    <h1>エラーが発生しました</h1>
-    <a class="button1" href="source/index.php">トップへ</a>
-
-    <?php }else{ ?>
-    <!-- 正常に遷移すればこっちが表示される -->
-
-    <h1>投稿制限者設定画面</h1>
-    <h3>管理対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
-    <br>
-
-    <!-- ブロック中の制限者を表示 -->
-    <h4>スレッド投稿者制限状態一覧</h4>
-    <form action="source/thread/block_check.php" method="POST">
-        <div id="login">
-            <?php 
-                $i=1; 
-                while($row2 = pg_fetch_row($result2)){ 
-                $block_id=$row2[0];
-                $block_name=$row2[1];
-                $block_status=$row2[2]; 
-            ?>
-            <div>
-                <?php echo "{$block_name}"; ?>
-                <!-- 現在の状態が「制限中」のユーザはラジオボタンの初期値が「制限」となる -->
-                <?php if($block_status=="t"){ ?>
-                <input type="radio" name="block_status<?php echo $i; ?>" value="block" checked> 制限
-                <input type="radio" name="block_status<?php echo $i; ?>" value="release"> 解除
-                <input type='hidden' name='block_id<?php echo $i; ?>' value= <?php echo "{$block_id}"; ?> >
-
-                <!-- 現在の状態が「解除中」のユーザはラジオボタンの初期値が「解除」となる -->
-                <?php }else if($block_status=="f"){ ?>
-                <input type="radio" name="block_status<?php echo $i; ?>" value="block"> 制限
-                <input type="radio" name="block_status<?php echo $i; ?>" value="release" checked> 解除
-                <input type='hidden' name='block_id<?php echo $i; ?>' value= <?php echo "{$block_id}"; ?> >
-
-                <?php }else{ echo "error"; } ?>
-            </div> 
-            <?php
-                 $i++; 
-                 } 
-                 if($i<=1){
-                     echo "<h4>このスレッドに投稿している人はいません</h4>";
-                 }
-            ?>
-
+        <?php }else{ ?>
+        <!-- 正常に遷移すればこっちが表示される -->
+        <div class="block-dis">
+        投稿制限者設定画面
         </div>
+        <div class="block-thread">
+            <div class="block-threadid">
+            管理対象スレッド：<?php echo "{$thread_name}"; ?>
+            <br>
+            </div>
 
-        <?php if($i>=2){ ?>
-        <input name="block" type="submit" value="変更内容を保存">
+        <!-- ブロック中の制限者を表示 -->
+        <h4>スレッド投稿者制限状態一覧</h4>
+        <form action="source/thread/block_check.php" method="POST">
+            <div id="block-display">
+                <?php 
+                    $i=1; 
+                    while($row2 = pg_fetch_row($result2)){ 
+                    $block_id=$row2[0];
+                    $block_name=$row2[1];
+                    $block_status=$row2[2]; 
+                ?>
+                <div>
+                    <?php echo "{$block_name}"; ?>
+                    <!-- 現在の状態が「制限中」のユーザはラジオボタンの初期値が「制限」となる -->
+                    <?php if($block_status=="t"){ ?>
+                    <input type="radio" name="block_status<?php echo $i; ?>" id="block-status" value="block" checked> 制限
+                    <input type="radio" name="block_status<?php echo $i; ?>" id="block-status" value="release"> 解除
+                    <input type='hidden' name='block_id<?php echo $i; ?>' value= <?php echo "{$block_id}"; ?> >
+
+                    <!-- 現在の状態が「解除中」のユーザはラジオボタンの初期値が「解除」となる -->
+                    <?php }else if($block_status=="f"){ ?>
+                    <input type="radio" name="block_status<?php echo $i; ?>" id="block-status" value="block"> 制限
+                    <input type="radio" name="block_status<?php echo $i; ?>" id="block-status" value="release" checked> 解除
+                    <input type='hidden' name='block_id<?php echo $i; ?>' value= <?php echo "{$block_id}"; ?> >
+
+                    <?php }else{ echo "error"; } ?>
+                </div> 
+                <?php
+                    $i++; 
+                    } 
+                    if($i<=1){
+                        echo "<h4>このスレッドに投稿している人はいません</h4>";
+                    }
+                ?>
+
+            </div>
+
+            <?php if($i>=2){ ?>
+            <div id="block">
+            <input class="block-save"name="block" type="submit" value="変更内容を保存">
+            </div>
+            <?php } ?>
+        </form>
+        </div>
+        <br>
+        <a class="button6" href="source/thread/thread_admin.php">スレッド管理者トップ画面へ</a>
+
         <?php } ?>
-    </form>
-
-    <br>
-    <a class="button1" href="source/thread/thread_admin.php">スレッド管理者トップ画面へ</a>
-
-    <?php } ?>
-
+    </div>
 </body>
 
 </html>
