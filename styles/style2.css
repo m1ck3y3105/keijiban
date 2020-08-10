@@ -191,6 +191,7 @@ textarea{
 }
   .btn-sticky1 {
     display: inline-block;
+    margin-right: 10px;
     /* padding: 0.5em 1em; */
     text-decoration: none;
     background: #f7f7f7;
@@ -210,6 +211,7 @@ textarea{
    }
   .btn-sticky2 {
     display: inline-block;
+    margin-left: 10px;
     /* padding: 0.5em 1em; */
     text-decoration: none;
     background: #f7f7f7;
@@ -229,5 +231,6 @@ textarea{
   }
   .arrow{
       text-align: center;
+      margin: 15px;
   }
 /*---------------------------------------------------------*/
