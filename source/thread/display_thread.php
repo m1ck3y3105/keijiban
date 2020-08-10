@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
+<head>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style2.css">
+  <link rel="stylesheet" href="styles/tiles.css">
+</head>
 <div class="thread_id"> 
 <?php
    $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
@@ -40,5 +45,9 @@
    }  
    //echo <a class='button1' href='./thread.php'>トップ</a> 
 ?>
+<div class="arrow">
+   <input type="submit" name="return" class="btn-sticky1" value="前へ">
+   <input type="submit" name="next" class="btn-sticky2" value="次へ">
+</div>
 </div>
 </html>

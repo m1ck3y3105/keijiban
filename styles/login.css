@@ -1,0 +1,18 @@
+.button1{
+    font-size: 20px;
+    text-decoration: none;
+    background-color:#e1f3e0;;
+    color: #319473;
+    padding: 2px;
+    border-radius: 10px;
+    border: solid;
+    transition: .4s;
+}
+.button1:hover{
+    background-color: #319473;
+    color: cornsilk;
+}
+#loginch{
+    border: double;
+    padding: 15px;
+}

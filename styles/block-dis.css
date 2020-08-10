@@ -1,0 +1,86 @@
+html{
+    background-color: #ffffeb;
+}
+#block-display{
+    margin-left: auto;
+    margin-right: auto;
+    /* border: solid #ffc0c0; */
+    border-width: 2px;
+    border-radius: 10px;
+    width: 70vw;
+    height: 100px;
+    padding: 15px;
+}
+.block-dis{
+    background: #dfefff;
+    box-shadow: 0px 0px 0px 5px #dfefff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    text-align: center;
+    font-size: 30px;
+}
+.block-thread{
+    margin: 20px;
+    background: #e4ffdf;
+    box-shadow: 0px 0px 0px 5px #e4ffdf;
+    border: dashed 2px rgb(0, 0, 0);
+    padding: 0.2em 0.5em;
+}
+.block-threadid{
+    border-bottom: solid 1px rgb(66, 2, 66);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
+}
+#block-status{
+    cursor: url(/images/133/通常.cur), auto;
+}
+#block{
+    margin:10px;
+    text-align: center;
+}
+.block-save{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+   /* display: inline-block;*//*横に並んでいる*/
+    font-weight: bold;
+    padding: 8px 30px 5px 30px;
+    text-decoration: none;
+    color: #221e1f;
+    background: #e1f3e0;
+    border: none;
+    border-bottom: solid 3px#b82ba5;
+    transition: .4s;
+}
+.block-save:hover{
+    background: #b82ba5;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
+.button6{
+
+    margin-top:50px ;
+    margin-left: 10px;
+    margin-right: auto;
+    text-align: center;
+   /* display: inline-block;*//*横に並んでいる*/
+    font-weight: bold;
+    padding: 8px 50px 5px 50px;
+    text-decoration: none;
+    color: #104426;
+    background: #e1f3e0;
+    border-bottom: solid 2px#104426;
+    border-radius: 15px 15px 0 0;
+    transition: .2s;
+}
+.button6:hover{
+    background: #104426;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
+#sample {
+    margin: 30px;
+    cursor: url(/images/133/通常.cur), auto;
+}

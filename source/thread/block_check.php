@@ -74,57 +74,66 @@
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
+    <link rel="stylesheet" href="styles/block-dis.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
-
+<div id="sample">
     <?php if($OK==0){  ?>
     <!-- いろいろ対策 -->
 
     <h1>エラーが発生しました</h1>
-    <a class="button1" href="source/index.html">トップへ</a>
+    <a class="button6" href="source/index.html">トップへ</a>
 
     <?php }else if($OK==1 || $error==1){?>
     <!-- DBにブロックに関する情報を正常に保存できなかったとき -->
 
     <h1>制限に関する情報を保存できませんでした</h1>
-    <a class="button1" href="source/thread/block_display.php">投稿制限者設定画面へ</a>
-    <a class="button1" href="source/thread/thread_admin.php">スレッド管理者トップ画面へ</a>
+    <a class="button6" href="source/thread/block_display.php">投稿制限者設定画面へ</a>
+    <a class="button6" href="source/thread/thread_admin.php">スレッド管理者トップ画面へ</a>
 
 
     <?php }else if($OK==2){ ?>
     <!-- 正常に遷移すればこっちが表示される -->
-
-    <h1>投稿制限者設定が正常に行われました</h1>
-    <h3>管理対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
-    <br>
-
-    <!-- ブロック中の制限者を表示 -->
-    <h4>制限中投稿者一覧</h4>
-    <div id="login">
-        <?php 
-            $count=0;
-            while($row3 = pg_fetch_row($result3))
-            { 
-                $block_name=$row3[0]; 
-                $count++;
-
-                echo "<div>
-                        {$block_name}
-                      </div> ";
-            }
-            if($count==0){
-                echo "<h3>現在ブロックしている投稿者はいません</h3>";
-            } 
-        ?>
+    <div class="block-dis">
+        投稿制限者設定が正常に行われました
     </div>
 
+    <div class="block-thread">
+        <div class="block-threadid">
+
+            管理対象スレッド：<?php echo "{$thread_name}"; ?>
+            <br>
+        </div>
+
+
+        <!-- ブロック中の制限者を表示 -->
+        <h4>制限中投稿者一覧</h4>
+        <div id="block-display">
+            <?php 
+                $count=0;
+                while($row3 = pg_fetch_row($result3))
+                { 
+                    $block_name=$row3[0]; 
+                    $count++;
+
+                    echo "<div>
+                            {$block_name}
+                        </div> ";
+                }
+                if($count==0){
+                    echo "<h3>現在ブロックしている投稿者はいません</h3>";
+                } 
+            ?>
+        </div>
+    </div>
     <br>
-    <a class="button1" href="source/thread/block_display.php">投稿制限者設定画面へ</a>
-    <a class="button1" href="source/thread/thread_admin.php">スレッド管理者トップ画面へ</a>
+    <a class="button6" href="source/thread/block_display.php">投稿制限者設定画面へ</a>
+    <a class="button6" href="source/thread/thread_admin.php">スレッド管理者トップ画面へ</a>
 
     <?php } ?>
-
+    </div>
 </body>
 
 </html>
