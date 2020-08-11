@@ -19,7 +19,7 @@
           $OK = 2 ;
           $password=$_POST["password"];
 
-          $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+          $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
           //スレッドIDからスレッドパスワードを取得
           $sql1="SELECT thread_pass FROM thread_admin WHERE thread_id=$1";
@@ -63,7 +63,7 @@
     <!-- -1 : ログインしていないユーザに対する表示 -->
     <!--  0 : 直接遷移されたときの表示 -->
     <h2>不正な実行です</h2>
-    <form action="index.html" method="POST">
+    <form action="index.php" method="POST">
         <div class="submitbtn">
             <input name="login" type="submit" value="トップへ">
         </div>
@@ -106,7 +106,6 @@
 
     </div>
 
-
-</body>]
+</body>
 <div id="footer"></div>
 </html>

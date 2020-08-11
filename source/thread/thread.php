@@ -3,6 +3,7 @@
 
   $thread_id=0;
   $restrict_user=0;
+  $search = 0;
   $user_name='匿名';
 
   $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
@@ -25,9 +26,9 @@
       $restrict_status = $row0[0];
       
       if($restrict_status=='t'){
-          $restrict_user=1;
+        $restrict_user=1;
       }
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+
   }
 
   // コメントが入力された時の処理
@@ -60,7 +61,42 @@
             (SELECT restrict_id FROM restrict_admin
             WHERE thread_id={$thread_id} and user_id={$user_id})";
       $result3 = pg_query($connect,$sql3);
+
+      $sql4="UPDATE thread_admin SET last_date = '{$datetime}' WHERE thread_id='{$thread_id}'";
+      $result4 = pg_query($connect,$sql4);
   }
+
+  # スレッド内検索ボタンが押されたときにパラメータをURLから取得
+      
+  if(!empty($_GET["key"]) || !empty($_GET["from"]) || !empty($_GET["to"])){
+      if(!empty($_GET["key"])){
+          $search = 1;
+      }
+      else{
+          $search = 2;
+      }
+      $key = $_GET["key"];
+      $menu = $_GET["menu"];
+      $from="";
+      $to="";
+      $from_db="";
+      $to_db="";
+
+      if(!empty($_GET["from"])){
+          $from = $_GET["from"];
+          $from_front=substr($from,0,10);
+          $from_back=substr($from,11,5);
+          $from_db = "{$from_front}" . " " . "{$from_back}" . ":00";
+      }
+
+      if(!empty($_GET["to"])){
+          $to = $_GET["to"];
+          $to_front=substr($to,0,10);
+          $to_back=substr($to,11,5);
+          $to_db = "{$to_front}" . " " . "{$to_back}" . ":00";
+      }
+  }
+
 ?>
 
 <!doctype html>
@@ -98,10 +134,74 @@
         $thread_date = $row1[2];
         $thread_username = $row1[3];
 
-        //GETしたスレッドIDのコメント情報（作成者、内容、作成日時）を取得し、時間の順番で並び替えて保存
-        $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
-        FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id ORDER BY comment_date ASC";
-        $result2 = pg_query($connect,$sql2);
+        //search=0　→　通常のコメント表示
+        //search=1　→　スレッド内検索結果の表示
+        //search=2　→　時間範囲指定の表示
+
+        #GETしたスレッドIDのコメント情報（作成者、内容、作成日時）を取得し、時間の順番で並び替えて保存
+        if($search==0){
+            
+            $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
+            FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id ORDER BY comment_date ASC";
+            $result2 = pg_query($connect,$sql2);
+        }
+
+        #キーワード、時間、設定をもとにDBからコメントを検索
+        else if($search==1){
+           
+            if($menu=="main"){
+                $main_key="%"."{$key}"."%";
+                $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
+                       FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id 
+                       and comment_admin.comment_text LIKE $1 ";
+                $array2 = array("main_key" => "{$main_key}");
+            }
+            else if($menu=="user"){
+                $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
+                       FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id 
+                       and user_admin.user_name=$1 ";
+                $array2 = array("key" => "{$key}");
+            }
+
+            if($from!=""){
+                $sql2   .= "and comment_admin.comment_date >= $2 ::timestamp ";
+                $array2 += array('from'=>"{$from_db}");
+                if($to!=""){
+                    $sql2   .= "and comment_admin.comment_date <= $3 ::timestamp ";
+                    $array2 += array('to'=>"{$to_db}");
+                }
+            }
+            else if($to!=""){
+                $sql2   .= "and comment_admin.comment_date <= $2 ::timestamp ";
+                $array2 += array('to'=>"{$to_db}");
+            }
+
+            $sql2 .= "ORDER BY comment_date ASC";
+            $result2 = pg_query_params($connect,$sql2,$array2);
+        }
+
+        # キーワードが入力されず、時間範囲指定のみ
+        else if($search==2){
+            $sql2="SELECT user_admin.user_name, comment_admin.comment_text, comment_admin.comment_date ,comment_admin.comment_id
+            FROM comment_admin,user_admin WHERE thread_id={$thread_id} and comment_userid=user_id ";
+
+            if($from!=""){
+                $sql2   .= "and comment_admin.comment_date >= $1 ::timestamp ";
+                $array2 = array('from'=>"{$from_db}");
+                if($to!=""){
+                    $sql2   .= "and comment_admin.comment_date <= $2 ::timestamp ";
+                    $array2 += array('to'=>"{$to_db}");
+                }
+            }
+            else if($to!=""){
+                $sql2   .= "and comment_admin.comment_date <= $1 ::timestamp ";
+                $array2 = array('to'=>"{$to_db}");
+            }
+
+            $sql2 .= "ORDER BY comment_date ASC";
+            $result2 = pg_query_params($connect,$sql2,$array2);
+
+        }
 
         //スレッド内のコメントの数を数える
         $sql3="SELECT COUNT(comment_id) FROM comment_admin WHERE thread_id={$thread_id}";
@@ -117,25 +217,29 @@
         die("スレッドが存在しません");
       }
     ?>
-        <div style="text-align: center;">
-          <form action="source/reserch.php" method="get" name="reserch-form">
-              <div id="reserch">
-              <h2>スレッド内検索:<input id="inputkeyword" type="text" name="reserchkey" placeholder="キーワードを入力">
-                  <input id="searchbtn" type="button" value="検索" onclick="Set_searchkey()">
-                      <select id="s_menu" onChange="Change_sort()">
-                          <option value="main">コメント本文</option>
-                          <option value="user">投稿者</option>
-                      </select></h2>
+
+
+      <form action="" method="get" name="reserch-form">
+          <div id="reserch">
+              <h2>スレッド内検索 :
+                  <input type='hidden' id='thread_id' name='thread_id' value=<?php echo "{$thread_id}"; ?> >  
+                  <input id="inputkeyword" type="text" name="key" placeholder="キーワードを入力">
+                  <input id="searchbtn" type="submit" value="検索">
+              </h2>
+              <h3>検索設定 : 
+                  <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" checked>コメント本文</label>
+                  <label for="r2"><input type="radio"  name="menu"  id="r2" value="user"        >投稿者ID</label>
+              </h3>
+              <div class="time">
+                  <div class="time2">
+                      <h3>時間指定 : 
+                      <input type="datetime-local" name="from" id="not">～<input type="datetime-local" name="to" id="no">
+                      </h3>
+                  </div>
               </div>
-          </form> 
           </div>
-          <div class="time">
-              <div class="time2">
-                  <label>時間指定 :  </label>
-                  <input type="datetime-local"id="not">～<input type="datetime-local"id="no">
-              </div>
-          </div>
-       </div>
+       </form> 
+
 
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
@@ -145,12 +249,45 @@
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
+        <!-- いいねボタン -->
+        <form action="">
+            <div class="favbtn">
+              <input id="fav" type="radio" name="star" />
+              <label for="fav">★</label>
+            </div>
+        </form>  
         <h3 class="aab"><?php echo "{$thread_text}"; ?>
         <dt>作成者：<?php echo "{$thread_username}"; ?></dt>
         <dt>作成日：<?php echo "{$thread_date}"; ?></dt>
         </h3>
 
         <?php
+        if($search==1){
+            if($menu=='main'){
+                $research_settings="コメント本文";
+            }
+            else if($menu=='user'){
+                $research_settings="投稿者ID";
+            }
+            else{
+                $research_settings="不明";
+            }
+            echo "<div class='thread_research'>
+                  <h3>「{$key}」の検索結果</h3>
+                  <h5>検索設定：{$research_settings}";
+            
+            if($from!="" || $to!=""){
+                echo "</h5><h5>時間範囲：{$from_db}～{$to_db}";
+            }
+
+            echo "</h5></div>";
+        }
+        else if($search==2){
+            echo "<div class='thread_research'><h5>
+                  時間範囲：{$from_db}～{$to_db}</h5></div>";
+        }
+
+
         $i=1;
         while($row2 = pg_fetch_row($result2)){
             if($i%2==1){
@@ -198,7 +335,6 @@
 
     <?php } ?>
     
-
 </body>
 <div id="footer"></div>
 </html>

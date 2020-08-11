@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <a href="source/index.html"><img src="images/S__1517240371.jpg" alt="次へ" title="ここをクリックするとトップに戻ります"></a>
+        <a href="source/index.php"><img src="images/S__1517240371.jpg" alt="次へ" title="ここをクリックするとトップに戻ります"></a>
         <li class="login_name"><?php echo "{$user_name}さん" ?></li>
 
         <div class="headermenu">

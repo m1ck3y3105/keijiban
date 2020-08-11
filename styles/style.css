@@ -43,18 +43,19 @@ header img{
 }
 .login_name{
     font-size: 20px;
+    text-align: left;
 }
 /*index time*/
 .time {
-    font-size: 20px;
-    margin: 5px;
+    font-size: 10px;
+    margin: 1px;
     text-align: center;
 }
 .timer{
     border:2px solid #666; 
-    padding: 7px;
+    padding: 2px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
 .time2 input[type="radio"] + label{
     cursor        : pointer;           

@@ -26,7 +26,7 @@
 
         <?php if(empty($_POST["comment_id"])){
             echo "<h3>不正な実行です。</h3>";
-            die("<a href='source/index.html'>トップへ</a>");
+            die("<a href='source/index.php'>トップへ</a>");
         } ?>
         <h3>本当に削除しますか？</h3>
         <form action="source/thread/delete_comment_check.php" method="POST">    
@@ -44,7 +44,6 @@
         </form>
     </div>
     
-
 </body>
 <div id="footer"></div>
 </html>

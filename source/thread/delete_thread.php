@@ -13,7 +13,7 @@
       $thread_id=$_SESSION["thread_id"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
   //スレッドIDからスレッドタイトルを取得
   $sql1="SELECT thread_name,thread_userid FROM thread_admin WHERE thread_id=$1";
@@ -41,7 +41,7 @@
 
         <?php if($thread_id == 0 || $user_name == ''){ ?>
             <h3>不正な実行です。</h3>
-            <a href='source/index.html'>トップへ</a>
+            <a href='source/index.php'>トップへ</a>
 
         <?php }else{ ?>
         <h3>削除対象スレッド：<?php echo "{$thread_name}"; ?> </h3>

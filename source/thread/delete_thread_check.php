@@ -17,7 +17,7 @@
     if($thread_id != 0 && $user_name != ''){
       $OK=1;
       
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+      $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
       $sql1="DELETE FROM restrict_admin WHERE thread_id= {$thread_id}";
       $result1 = pg_query($connect,$sql1);
@@ -50,7 +50,7 @@
     <?php if($OK == 0){ ?>
     <!-- いろいろ対策 -->
     <h2>不正な実行です</h2>
-    <a class="button1" href="source/index.html">トップへ</a>
+    <a class="button1" href="source/index.php">トップへ</a>
 
     <?php }else if($OK == 1){ ?>
     <!-- 削除失敗 -->
@@ -63,7 +63,7 @@
 
     <?php }else if($OK == 2){ ?>
     <h2>スレッドが正常に削除されました</h2>
-    <a class="button1" href="source/index.html">トップへ</a>
+    <a class="button1" href="source/index.php">トップへ</a>
     <?php } ?> 
     
 </body>

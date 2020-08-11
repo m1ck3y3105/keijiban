@@ -15,7 +15,7 @@
     text-decoration: none;
     border-width: 2px;
     border-radius: 5px;
-    padding: 10px;
+    /* padding: 10px; */
     /*background-color: rgb(140, 214, 140);*/
 }
 .tile3 {
@@ -23,7 +23,7 @@
     border-width: 2px;
     border-radius: 10px;
     background: linear-gradient(#38e438, #ffffff);
-    height: 500px;
+    height: 700px; 
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 20px;

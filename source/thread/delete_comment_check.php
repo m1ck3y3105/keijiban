@@ -2,7 +2,7 @@
     
     $string="";
     if(!empty($_POST["thread_id"]) && !empty($_POST["comment_id"])){
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+      $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
       $thread_id = $_POST["thread_id"];
       $comment_id = $_POST["comment_id"];
@@ -55,7 +55,6 @@
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
-
 </body>
 <div id="footer"></div>
 </html>
