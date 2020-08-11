@@ -23,7 +23,7 @@
    $i=1;
 
 ?>
-   
+
 <html lang="ja">
     <head>
         <base href="/"></base>
@@ -71,7 +71,10 @@
                 $i++;
            }  
            ?>
-
          </div>
-      </body>
+      <div class="arrow">
+          <input type="submit" name="return" class="btn-sticky1" value="前へ">
+          <input type="submit" name="next" class="btn-sticky2" value="次へ">
+      </div>
+</body>
 </html>
