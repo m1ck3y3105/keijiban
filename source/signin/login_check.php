@@ -58,6 +58,7 @@
     <!-- ログインに成功した時の表示 -->
     <h3>ログインできました</h3>
     <a class="button1" href="source/index.php">トップへ</a>
+
     <?php } ?>
     </div>
 

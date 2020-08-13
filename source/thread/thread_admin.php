@@ -38,28 +38,48 @@
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
+    <link rel="stylesheet" href="styles/block-dis.css">
 </head>
 
 <body>
+    <div id="sample">
 
-    <?php if($thread_id == 0 || $user_name == ''){  ?>
-    <!-- いろいろ対策 -->
+        <?php if($thread_id == 0 || $user_name == ''){  ?>
+        <!-- いろいろ対策 -->
 
-    <h1>エラーが発生しました</h1>
-    <a class="button1" href="source/index.php">トップへ</a>
+        <h1>エラーが発生しました</h1>
+        <a class="button7" href="source/index.php">トップへ</a>
 
-    <?php }else{ ?>
-    <!-- 正常に遷移すればこっちが表示される -->
+        <?php }else{ ?>
+        <!-- 正常に遷移すればこっちが表示される -->
 
-    <h1>スレッド管理者トップ画面</h1>
-    <h3>管理対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
-    <a class="button1" href="source/thread/block_display.php">投稿制限者設定画面へ</a>
-    <a class="button1" href="source/thread/delete_thread.php">スレッドを削除</a>
-    <!-- <a class="button1" href="">管理用パスワードを変更</a> -->
-    <a class="button1" href="source/thread/thread_logout.php">ログアウト</a>
+        <div class=thread_ad>
+            スレッド管理者トップ画面
+        </div>
 
-    <?php } ?>
+        <div class="block-thread">
+            <div class="block-threadid">
+            管理対象スレッド：<?php echo "{$thread_name}"; ?>
+            <br>
+            </div>
+        </div>
 
+        <br>
+
+        <center>
+            <h2>スレッド管理メニュー</h2>
+        </center>
+
+        <!-- <img src="images/keijiban_otera.jpg" alt="掲示板"> -->
+
+        <div class=admin_menu>
+            <div class=menu_item><a class="button7" href="source/thread/block_display.php">投稿制限者設定</a></div>
+            <div class=menu_item><a class="button7" href="source/thread/delete_thread.php">スレッド削除</a></div>
+            <div class=menu_item><a class="button7" href="source/thread/thread_logout.php">ログアウト</a></div>
+        </div>
+
+        <?php } ?>
+    </div>
 </body>
 
 </html>
