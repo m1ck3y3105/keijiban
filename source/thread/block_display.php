@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
     <link rel="stylesheet" href="styles/block-dis.css">
+  　<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
