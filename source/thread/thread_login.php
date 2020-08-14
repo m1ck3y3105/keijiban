@@ -92,9 +92,9 @@
         <div class="loginbox">
             <h3>管理用パスワード：<input name="password" type="password"></h3>
         </div>    
-        <div class="submitbtn">
+        <div class="submit">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
-            <input name="login" type="submit" value="ログイン">
+            <input class="submitbtn" name="login" type="submit" value="ログイン">
         </div>
     </form>
 

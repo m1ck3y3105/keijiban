@@ -151,7 +151,7 @@
                                 <div class='thread_title'>{$thread_name}</div>
                                 <div class='thread_user'>作成者：{$thread_user}</div>
                                 <div class='thread_info'>作成日：{$thread_date}　いいね:{$good_count}　コメント数：{$comment_count}</div>
-                                <div class='move_thread'><input  type='submit' id='thread_submit' value='移動'></div>
+                                <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit' value='移動 >'></div>
                                 <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>
                             </form>
                         </div>";

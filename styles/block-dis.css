@@ -141,6 +141,11 @@ html{
     border-radius: 15px 15px 0 0;
     transition: .2s;
 }
+.button7:hover{
+    background: #104426;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
 
 .logout{
     background: #dff0ff;
@@ -155,23 +160,6 @@ html{
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-}
-
-
-.button7{
-    margin-top: 150px ;
-    margin-left: 10px;
-    margin-right: auto;
-    text-align: center;
-   /* display: inline-block;*//*横に並んでいる*/
-    font-weight: bold;
-    padding: 6px 30px 4px 30px;
-    text-decoration: none;
-    color: #104426;
-    background: #e1f3e0;
-    border-bottom: solid 2px#080003;
-    border-radius: 15px 15px 0 0;
-    transition: .2s;
 }
 
 

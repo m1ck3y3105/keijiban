@@ -244,8 +244,8 @@
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
         <form action="source/thread/thread_login.php" method="GET">    
-            <div class="submitbtn">
-                <input type="submit" value="スレッド管理">
+            <div class="submit">
+                <input class="submitbtn" type="submit" value="スレッド管理">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
@@ -305,8 +305,8 @@
             //自分のコメントにだけ「コメント削除」ボタンが表示される
             if($user_name==$row2[0]){
                 echo "<form action='source/thread/delete_comment.php' method='POST'>   
-                        <div class='submitbtn'>
-                          <input name='delete_comment' type='submit' value='コメント削除'>
+                        <div class='submit_com'>
+                          <input class=submitbtn_com name='delete_comment' type='submit' value='コメント削除'>
                           <input type='hidden' name='comment_id' value='{$row2[3]}'>
                           <input type='hidden' name='thread_id' value='$thread_id'>
                         </div>

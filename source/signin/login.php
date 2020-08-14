@@ -23,8 +23,8 @@
                 <h3>ユーザID：<input name="user_name" type="text"></h3>
                 <h3>パスワード：<input name="password" type="password"></h3>
             </div>    
-            <div class="submitbtn">
-                <input name="login" type="submit" value="ログイン">
+            <div class="submit">
+                <input class="submitbtn" name="login" type="submit" value="ログイン">
             </div>
         </form>
     </div>
