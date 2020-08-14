@@ -143,7 +143,7 @@ textarea{
      border: none;
      text-align: center;
      font-weight: bold;
-     padding: 3px 10px 4px 10px;
+     padding: 3px 10px 3px 10px;
      text-decoration: none;
      color: #000a64;
      background: #d7e2f3;
@@ -152,6 +152,25 @@ textarea{
 }
 .submitbtn:hover{
     background: #4d61b8;
+    color: #FFF;
+}
+.submitbtn_own{
+    /* margin-top: 5vh;
+    text-align: center;
+     */
+     text-align: center;
+    /* display: inline-block;*//*横に並んでいる*/
+     font-weight: bold;
+     padding: 8px 10px 5px 10px;
+     text-decoration: none;
+     color: #41393b;
+     background: #e1f3e0;
+     border: none;
+     border-bottom: solid 3px#b165a7;
+     transition: .4s;
+}
+.submitbtn_own:hover{
+    background: #b165a7;
     color: #FFF;
 }
 .submitbtn_com{
