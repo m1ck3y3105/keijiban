@@ -91,8 +91,8 @@
                     <h3><label for="comment">内容 : </label></h3>
                     <textarea id="comment" name="comment" title="スレッドの内容"></textarea>
                 </div>
-                <div class="submitbtn">
-                    <input type="submit" value="スレッド新規作成">
+                <div class="submit">
+                <input class="submitbtn"type="submit" value="スレッド新規作成">
                 </div>
             </div>
         </body>
