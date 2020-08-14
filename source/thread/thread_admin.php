@@ -17,7 +17,7 @@
       $thread_id=$_SESSION["thread_id"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
   //スレッドIDからスレッドタイトルを取得
   $sql1="SELECT thread_name FROM thread_admin WHERE thread_id=$1";
