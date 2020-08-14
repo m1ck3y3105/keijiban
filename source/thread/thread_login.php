@@ -68,8 +68,8 @@
     <!-- ログインしていないユーザに対する表示 -->
     <h2>ログインしてください</h2>
     <form action="source/thread/thread.php" method="GET">    
-        <div class="submitbtn">
-            <input type="submit" value="スレッド画面へ戻る">
+        <div class="submit">
+            <input class="submitbtn" type="submit" value="スレッド画面へ戻る">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
         </div>
     </form>
