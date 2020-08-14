@@ -24,7 +24,7 @@
                 <h3>パスワード：<input name="password" type="password"></h3>
             </div>    
             <div class="submit">
-                <input class="submitbtn" name="login" type="submit" value="ログイン">
+                <input class="submitbtn_mv" name="login" type="submit" value="ログイン">
             </div>
         </form>
     </div>

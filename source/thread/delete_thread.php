@@ -47,13 +47,13 @@
         <h3>削除対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
         <h3>本当に削除しますか？</h3>
         <form action="source/thread/delete_thread_check.php" method="POST">    
-            <div class="submitbtn">
-                <input name="yes" type="submit" value="はい">
+            <div class="submit">
+                <input class="submitbtn" name="yes" type="submit" value="はい">
             </div>
         </form>
         <form action="source/thread/thread_admin.php" method="POST">    
-            <div class="submitbtn">
-                <input name="no" type="submit" value="いいえ">
+            <div class="submit">
+                <input class="submitbtn" name="no" type="submit" value="いいえ">
             </div>
         </form>
 
