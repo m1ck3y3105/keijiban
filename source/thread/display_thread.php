@@ -1,5 +1,5 @@
 <?php
-   $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+   $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
    //$sql1="SELECT thread_id,thread_name,thread_date FROM thread_admin ORDER BY thread_date DESC";
    
@@ -23,7 +23,7 @@
    $i=1;
 
 ?>
-
+   
 <html lang="ja">
     <head>
         <base href="/"></base>
@@ -71,10 +71,7 @@
                 $i++;
            }  
            ?>
+
          </div>
-      <div class="arrow">
-          <input type="submit" name="return" class="btn-sticky1" value="前へ">
-          <input type="submit" name="next" class="btn-sticky2" value="次へ">
-      </div>
-</body>
+      </body>
 </html>

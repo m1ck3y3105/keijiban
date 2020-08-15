@@ -84,3 +84,99 @@ html{
     margin: 30px;
     cursor: url(/images/133/通常.cur), auto;
 }
+
+
+/* 吉川追加分 */
+#thread_admin{
+    margin-left: auto;
+    margin-right: auto;
+    /* border: solid #ffc0c0; */
+    border-width: 2px;
+    border-radius: 10px;
+    width: 70vw;
+    height: 100px;
+    padding: 15px;
+}
+
+.thread_ad{
+    background: #ffdfec;
+    box-shadow: 0px 0px 0px 5px #f9dfff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    text-align: center;
+    font-size: 30px;
+}
+
+.admin_menu{
+    background: #dff0ff;
+    box-shadow: 0px 0px 0px 5px #dff0ff;
+    border: dashed 2px white;
+    font-size: 30px;
+    width:70vw;
+    height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu_item{
+    text-align: left;
+    margin-left: 150px;
+    height: 70px;
+    padding-top: 50px;
+}
+
+.button7{
+    margin: auto;
+    text-align: left;
+   /* display: inline-block;*//*横に並んでいる*/
+    font-weight: bold;
+    padding: 6px 30px 4px 30px;
+    text-decoration: none;
+    color: #4e1e75;
+    background: #fdfff4;
+    border-bottom: solid 3px#2b1044;
+    border-radius: 15px 15px 0 0;
+    transition: .2s;
+    font-size: 25px;
+}
+.button7:hover{
+    background: #2b1044;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
+.button8{
+    margin: auto;
+    text-align: left;
+   /* display: inline-block;*//*横に並んでいる*/
+    font-weight: bold;
+    padding: 6px 30px 4px 30px;
+    text-decoration: none;
+    color: #4e1e75;
+    background: #fdfff4;
+    border-bottom: solid 3px#2b1044;
+    border-radius: 15px 15px 0 0;
+    transition: .2s;
+    font-size: 15px;
+}
+.button8:hover{
+    background: #2b1044;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
+.logout{
+    background: #dff0ff;
+    box-shadow: 0px 0px 0px 5px #dff0ff;
+    border: dashed 2px white;
+    padding: 0.5em 0.5em;
+    text-align: center;
+    font-size: 30px;
+    width:70vw;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+

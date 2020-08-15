@@ -13,7 +13,7 @@
       $thread_id=$_SESSION["thread_id"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
   //スレッドIDからスレッドタイトルを取得
   $sql1="SELECT thread_name,thread_userid FROM thread_admin WHERE thread_id=$1";
@@ -47,13 +47,13 @@
         <h3>削除対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
         <h3>本当に削除しますか？</h3>
         <form action="source/thread/delete_thread_check.php" method="POST">    
-            <div class="submitbtn">
-                <input name="yes" type="submit" value="はい">
+            <div class="submit">
+                <input class="submitbtn" name="yes" type="submit" value="はい">
             </div>
         </form>
         <form action="source/thread/thread_admin.php" method="POST">    
-            <div class="submitbtn">
-                <input name="no" type="submit" value="いいえ">
+            <div class="submit">
+                <input class="submitbtn" name="no" type="submit" value="いいえ">
             </div>
         </form>
 

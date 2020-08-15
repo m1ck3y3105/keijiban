@@ -30,15 +30,15 @@
         } ?>
         <h3>本当に削除しますか？</h3>
         <form action="source/thread/delete_comment_check.php" method="POST">    
-            <div class="submitbtn">
-                <input name="yes" type="submit" value="はい">
+            <div class="submit">
+                <input class="submitbtn" name="yes" type="submit" value="はい">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
                 <input type='hidden' name='comment_id' value= <?php echo "{$comment_id}"; ?> >
             </div>
         </form>
         <form action="source/thread/thread.php" method="GET">    
-            <div class="submitbtn">
-                <input type="submit" value="いいえ">
+            <div class="submit">
+                <input class="submitbtn" type="submit" value="いいえ">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>

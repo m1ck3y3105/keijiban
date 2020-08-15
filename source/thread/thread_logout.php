@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
+    <link rel="stylesheet" href="styles/block-dis.css">
+</head>
 </head>
 
 <body>
-    <h1>スレッド管理画面からログアウトしました</h1>
-    <a class="button1" href="source/index.php">トップへ</a>
+
+    <div id="sample">
+            <h2>スレッド管理画面からログアウトしました</h2>
+            <br>
+            <a class="button8" href="source/index.php">トップへ</a>
+    </div>
 </body>
 </html>
 
