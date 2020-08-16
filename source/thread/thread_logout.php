@@ -15,9 +15,9 @@
 <body>
 
     <div id="sample">
-            <h1>スレッド管理画面からログアウトしました</h1>
+            <h2>スレッド管理画面からログアウトしました</h2>
             <br>
-            <a class="button7" href="source/index.php">トップへ</a>
+            <a class="button8" href="source/index.php">トップへ</a>
     </div>
 </body>
 </html>

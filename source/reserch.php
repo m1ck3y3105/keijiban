@@ -5,6 +5,8 @@
     $sort = 'new';
     $from = '';
     $to = '';
+    $search=0;
+    $menu='';
 
     /*
     if(isset($_GET['key'])) {
@@ -117,7 +119,6 @@
                 $sql1 .= " ORDER BY comment_count DESC ";
             }
         }
-        echo $sql1;
 
         $result1 = pg_query_params($connect,$sql1,$array1);
 
@@ -284,12 +285,13 @@
     </div>
 
     <div class="search_res">
-        <?php echo $key."の検索結果 : ".$hit."件" ?>
+        <?php if($search!=0){
+            echo $key."の検索結果 : ".$hit."件"; } ?>
     </div>
     <div class="tile3">
         <div class='search_result'>
             <div class="sortmenu">
-                <h4>ソート順：
+                <h4>ソート順<br>
                     <select id="s_menu" onChange="Change_sort()">
                         <option value="new"     <?php if($sort=='new')    { echo "selected";} ?> >新着順</option>
                         <option value="pop"     <?php if($sort=='pop')    { echo "selected";} ?> >人気順</option>
@@ -314,16 +316,16 @@
                 $thread_id=$row[0];
                 $thread_name=$row[1];
                 $thread_user=$row[2];
-                $thread_date=$row[3]; 
+                $thread_date=substr($row[3],0,16); 
                 $good_count=$row[4];    
                 $comment_count=$row[5]; 
                         
                 echo "<div class = 'display_thread'>
                         <form name='display_thread' action='source/thread/thread.php' method='get'>
                             <div class='thread_title'>{$thread_name}</div>
-                            <div class='thread_user'>作成者：{$thread_user}</div>
-                            <div class='thread_info'>作成日：{$thread_date}　いいね:{$good_count}　コメント数：{$comment_count}</div>
-                            <div class='move_thread'><input  type='submit' id='thread_submit' value='移動'></div>
+                            <div class='thread_user'>作成者:{$thread_user}</div>
+                            <div class='thread_info'>作成日:{$thread_date}　いいね:{$good_count}　コメント数:{$comment_count}</div>
+                            <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit' value='移動 >'></div>
                             <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>
                         </form>
                     </div>";
@@ -368,8 +370,11 @@
             if($menu=='main'){
                 echo "<h2>タイトルに「{$key}」が含まれるスレッドは存在していませんでした</h2>";
             }
-            else if($menu='user'){
-                echo "「{$key}」が作成したスレッドは存在していませんでした</h2>";
+            else if($menu=='user'){
+                echo "<h2>「{$key}」が作成したスレッドは存在していませんでした</h2>";
+            }
+            else if($menu==''){
+                echo "<h2>スレッド検索欄に何も入力されていません</h2>";
             }        
         }  
         ?> 

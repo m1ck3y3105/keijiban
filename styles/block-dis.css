@@ -1,5 +1,5 @@
 html{
-    background-color: #ffffeb;
+    background-color:#ffffeb;
 }
 #block-display{
     margin-left: auto;
@@ -111,37 +111,58 @@ html{
     background: #dff0ff;
     box-shadow: 0px 0px 0px 5px #dff0ff;
     border: dashed 2px white;
-    padding: 0.2em 0.5em;
-    text-align: center;
     font-size: 30px;
-    width:35vw;
-    height: 450px;
+    width:70vw;
+    height: 380px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .menu_item{
-    width:35vw;
-    height: 100px;
+    text-align: left;
+    margin-left: 150px;
+    height: 70px;
     padding-top: 50px;
 }
 
 .button7{
-    margin-top: 50px ;
-    margin-left: 10px;
-    margin-right: auto;
-    text-align: center;
+    margin: auto;
+    text-align: left;
    /* display: inline-block;*//*横に並んでいる*/
     font-weight: bold;
     padding: 6px 30px 4px 30px;
     text-decoration: none;
-    color: #104426;
-    background: #e1f3e0;
-    border-bottom: solid 2px#104426;
+    color: #4e1e75;
+    background: #fdfff4;
+    border-bottom: solid 3px#2b1044;
     border-radius: 15px 15px 0 0;
     transition: .2s;
+    font-size: 25px;
 }
-
+.button7:hover{
+    background: #2b1044;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
+.button8{
+    margin: auto;
+    text-align: left;
+   /* display: inline-block;*//*横に並んでいる*/
+    font-weight: bold;
+    padding: 6px 30px 4px 30px;
+    text-decoration: none;
+    color: #4e1e75;
+    background: #fdfff4;
+    border-bottom: solid 3px#2b1044;
+    border-radius: 15px 15px 0 0;
+    transition: .2s;
+    font-size: 15px;
+}
+.button8:hover{
+    background: #2b1044;
+    color: #FFF;
+    cursor: url(/images/133/通常.cur), auto;
+}
 .logout{
     background: #dff0ff;
     box-shadow: 0px 0px 0px 5px #dff0ff;
@@ -157,22 +178,6 @@ html{
     margin-bottom: 50px;
 }
 
-
-.button7{
-    margin-top: 150px ;
-    margin-left: 10px;
-    margin-right: auto;
-    text-align: center;
-   /* display: inline-block;*//*横に並んでいる*/
-    font-weight: bold;
-    padding: 6px 30px 4px 30px;
-    text-decoration: none;
-    color: #104426;
-    background: #e1f3e0;
-    border-bottom: solid 2px#080003;
-    border-radius: 15px 15px 0 0;
-    transition: .2s;
-}
 
 
 

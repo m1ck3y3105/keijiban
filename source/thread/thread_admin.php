@@ -47,8 +47,8 @@
         <?php if($thread_id == 0 || $user_name == ''){  ?>
         <!-- いろいろ対策 -->
 
-        <h1>エラーが発生しました</h1>
-        <a class="button7" href="source/index.php">トップへ</a>
+        <h2>エラーが発生しました</h2>
+        <a class="button8" href="source/index.php">トップへ</a>
 
         <?php }else{ ?>
         <!-- 正常に遷移すればこっちが表示される -->

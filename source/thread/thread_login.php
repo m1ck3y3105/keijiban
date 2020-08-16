@@ -68,8 +68,8 @@
     <!-- ログインしていないユーザに対する表示 -->
     <h2>ログインしてください</h2>
     <form action="source/thread/thread.php" method="GET">    
-        <div class="submitbtn">
-            <input type="submit" value="スレッド画面へ戻る">
+        <div class="submit">
+            <input class="submitbtn" type="submit" value="スレッド画面へ戻る">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
         </div>
     </form>
@@ -79,8 +79,8 @@
     <!-- スレッド作成者以外が管理ボタンを押した時 -->
     <h2>スレッド管理はスレッド作成者のみができる機能です</h2>
     <form action="source/thread/thread.php" method="GET">    
-        <div class="submitbtn">
-            <input type="submit" value="スレッド画面へ戻る">
+        <div class="submit">
+            <input class="submitbtn" type="submit" value="スレッド画面へ戻る">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
         </div>
     </form>
@@ -92,9 +92,9 @@
         <div class="loginbox">
             <h3>管理用パスワード：<input name="password" type="password"></h3>
         </div>    
-        <div class="submitbtn">
+        <div class="submit">
             <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
-            <input name="login" type="submit" value="ログイン">
+            <input class="submitbtn_mv" name="login" type="submit" value="ログイン">
         </div>
     </form>
 

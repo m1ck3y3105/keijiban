@@ -1,6 +1,14 @@
 <?php
-    $thread_id=$_POST["thread_id"];
-    $comment_id=$_POST["comment_id"];
+     $thread_id  = 0;
+     $comment_id = 0;
+
+     if(!empty($_POST["thread_id"])){
+        $thread_id=$_POST["thread_id"];
+     }
+
+     if(!empty($_POST["comment_id"])){
+        $comment_id=$_POST["comment_id"];
+     }
 ?>
 
 <!doctype html>
@@ -24,21 +32,21 @@
     <div id="header"></div>
     <div id="dele_come">
 
-        <?php if(empty($_POST["comment_id"])){
+        <?php if($thread_id==0 || $comment_id==0){
             echo "<h3>不正な実行です。</h3>";
             die("<a href='source/index.php'>トップへ</a>");
         } ?>
         <h3>本当に削除しますか？</h3>
         <form action="source/thread/delete_comment_check.php" method="POST">    
-            <div class="submitbtn">
-                <input name="yes" type="submit" value="はい">
+            <div class="submit">
+                <input class="submitbtn" name="yes" type="submit" value="はい">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
                 <input type='hidden' name='comment_id' value= <?php echo "{$comment_id}"; ?> >
             </div>
         </form>
         <form action="source/thread/thread.php" method="GET">    
-            <div class="submitbtn">
-                <input type="submit" value="いいえ">
+            <div class="submit">
+                <input class="submitbtn" type="submit" value="いいえ">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>

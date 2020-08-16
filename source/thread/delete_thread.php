@@ -35,25 +35,33 @@
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
+    <link rel="stylesheet" href="styles/block-dis.css">
+    <link rel="stylesheet" href="styles/yota2.css">
 </head>
 <body>
     <div id="dele_come">
 
         <?php if($thread_id == 0 || $user_name == ''){ ?>
-            <h3>不正な実行です。</h3>
-            <a href='source/index.php'>トップへ</a>
+            <h2>エラーが発生しました</h2>
+            <a class="button8" href="source/index.php">トップへ</a>
+
 
         <?php }else{ ?>
-        <h3>削除対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
-        <h3>本当に削除しますか？</h3>
+        <div class="a">
+            <div class="b">
+                <h3>削除対象スレッド：<?php echo "{$thread_name}"; ?> </h3>
+                <h3>本当に削除しますか？</h3>
+            </div>
+        </div>
+
         <form action="source/thread/delete_thread_check.php" method="POST">    
-            <div class="submitbtn">
-                <input name="yes" type="submit" value="はい">
+            <div class="submit">
+                <input class="submitbtn" name="yes" type="submit" value="はい">
             </div>
         </form>
         <form action="source/thread/thread_admin.php" method="POST">    
-            <div class="submitbtn">
-                <input name="no" type="submit" value="いいえ">
+            <div class="submit">
+                <input class="submitbtn" name="no" type="submit" value="いいえ">
             </div>
         </form>
 

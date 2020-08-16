@@ -30,6 +30,7 @@
 
       if($result1 && $result2 && $result3){
           $OK=2;
+         unset($_SESSION["thread_id"]);
       }
     }
 ?>
@@ -44,27 +45,56 @@
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
+    <link rel="stylesheet" href="styles/block-dis.css">
+    <link rel="stylesheet" href="styles/yota3.css">
 </head>
 <body>
 
     <?php if($OK == 0){ ?>
     <!-- いろいろ対策 -->
-    <h2>不正な実行です</h2>
-    <a class="button1" href="source/index.php">トップへ</a>
+    <div class="box-main-photo">
+	    <div class="entry-header">
+            <h2>スレッドが存在しません</h2>
+        </div>
+	    <div class="background-image"></div>
+    </div>
+    <br>
+    <a class="button9" href="source/index.php">トップへ</a>
+
 
     <?php }else if($OK == 1){ ?>
     <!-- 削除失敗 -->
-    <h2>スレッドが削除できませんでした</h2>
-    <form action="source/thread/thred_admin.php" method="get">    
-        <div class="submitbtn">
-            <input name="return_thread" type="submit" value="スレッド管理画面へ戻る">
+    <div class="box-main-photo">
+	    <div class="entry-header">
+            <h2>スレッドが削除できませんでした</h2>
+            <form action="source/thread/thred_admin.php" method="get">    
+            </form>
         </div>
-    </form>
-
+	    <div class="background-image"></div>
+    </div>
+    <div class="button9">
+    <a class="button9" href="source/thread/thread_admin.php">スレッド管理画面へ戻る</a>
+    <!-- <form action="source/thread/thred_admin.php" method="get">    
+            <input name="return_thread" type="submit" value="スレッド管理画面へ戻る">
+        </form> -->
+    </div>
     <?php }else if($OK == 2){ ?>
-    <h2>スレッドが正常に削除されました</h2>
-    <a class="button1" href="source/index.php">トップへ</a>
+    
+    <div class="box-main-photo">
+	    <div class="entry-header">
+            <h2>スレッドが正常に削除されました</h2>
+	    </div>
+	    <div class="background-image"></div>
+    </div>
+    <br>
+    <a class="button9" href="source/index.php">トップへ</a>
+
     <?php } ?> 
     
 </body>
+<footer>
+        <div class="copylight2">
+            <p>Created by Yota</p>
+        </div>
+</footer>
 </html>
