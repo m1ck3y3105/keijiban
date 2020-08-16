@@ -72,14 +72,11 @@
         </div>
 	    <div class="background-image"></div>
     </div>
-    <div class="button9">
     <a class="button9" href="source/thread/thread_admin.php">スレッド管理画面へ戻る</a>
-    <!-- <form action="source/thread/thred_admin.php" method="get">    
-            <input name="return_thread" type="submit" value="スレッド管理画面へ戻る">
-        </form> -->
-    </div>
-    <?php }else if($OK == 2){ ?>
     
+
+    <?php }else if($OK == 2){ ?>
+    <!-- 削除成功 -->
     <div class="box-main-photo">
 	    <div class="entry-header">
             <h2>スレッドが正常に削除されました</h2>
@@ -89,6 +86,7 @@
     <br>
     <a class="button9" href="source/index.php">トップへ</a>
 
+    
     <?php } ?> 
     
 </body>

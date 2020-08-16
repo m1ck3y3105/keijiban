@@ -244,18 +244,19 @@
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
         <form action="source/thread/thread_login.php" method="GET">    
-            <div class="submit_com">
+            <div class="submit_thr">
                 <input class="submitbtn_own" type="submit" value="スレッド管理">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
-        <!-- いいねボタン -->
+        <!-- いいねボタン -
         <form action="">
             <div class="favbtn">
               <input id="fav" type="radio" name="star" />
               <label for="fav">★</label>
             </div>
         </form>  
+        -->
         <h3 class="aab"><?php echo "{$thread_text}"; ?>
         <dt>作成者：<?php echo "{$thread_username}"; ?></dt>
         <dt>作成日：<?php echo "{$thread_date}"; ?></dt>
@@ -303,7 +304,8 @@
                        <dt>投稿日:{$row2[2]}</dt>";
             }
             //自分のコメントにだけ「コメント削除」ボタンが表示される
-            if($user_name==$row2[0]){
+            //スレッド作成者は全てのコメントを削除することができる
+            if($user_name==$row2[0] || $user_name==$thread_username){
                 echo "<form action='source/thread/delete_comment.php' method='POST'>   
                         <div class='submit_com'>
                           <input class=submitbtn_com name='delete_comment' type='submit' value='コメント削除'>
@@ -334,7 +336,32 @@
     <h5><br>スレッドにコメントをする場合はログインしてください</h5>
 
     <?php } ?>
-    
+
+        <form method="post" action="" >
+            <button type="submit" class="good_button" title="いいね！">
+                <img class="_1pbs inlineBlock img" src="images/good.png" alt="" width="16" height="16">
+                <span class="_49vh _2pi7">いいね！</span>
+            </button>
+            <span class="hukidasi" >
+                <?php 
+                $good_number=100;
+                if($good_number < 10){
+                    echo "<img src='images/hukidasi4.jpg' alt='' width='32' height='32'>
+                          <span class='good_number_1'>{$good_number}</span>";
+                }
+                else if($good_number > 9 && $good_number < 100){
+                    echo "<img src='images/hukidasi4.jpg' alt='' width='48' height='32'>
+                          <span class='good_number_2'>{$good_number}</span>";
+                }
+                else if($good_number > 99){
+                    echo "<img src='images/hukidasi4.jpg' alt='' width='64' height='32'>
+                          <span class='good_number_3'>{$good_number}</span>";
+                }
+                
+                ?>
+            </span>
+            
+        </form>
 </body>
 <div id="footer"></div>
 </html>

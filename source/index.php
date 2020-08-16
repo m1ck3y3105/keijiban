@@ -106,7 +106,7 @@
                     <div class="time">
                         <div class="time2">
                             <h3>検索設定 : 
-                                <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" checked>コメント本文</label>
+                                <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" checked>スレッドタイトル</label>
                                 <label for="r2"><input type="radio"  name="menu"  id="r2" value="user"        >投稿者ID</label>
                             </h3>
                             <h3>時間指定 :

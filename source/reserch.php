@@ -5,23 +5,25 @@
     $sort = 'new';
     $from = '';
     $to = '';
-    $search=0;
     $menu='';
+    $search=0;
 
-    /*
     if(isset($_GET['key'])) {
         $key = $_GET['key'];
     }
-    if(isset($_GET['sort'])) {
-         $sort = $_GET['sort'];
-     }
+    if(isset($_GET['sort'])){
+        $sort = $_GET['sort'];
+    }
     if(isset($_GET['from'])) {
         $from = $_GET['from'];
     }
     if(isset($_GET['to'])) {
         $to = $_GET['to'];
     }
-    */
+    if(isset($_GET['menu'])) {
+        $menu = $_GET['menu'];
+    }
+
 
     #スレッド一覧に４つのスレッドを表示するためのパラメータの準備
     if(!empty($_GET["first"]) && $_GET["first"]>0){
@@ -36,30 +38,26 @@
     }
     $limit = 4;
 
+
     #検索のキーワードと時間範囲を取得
-    if(!empty($_GET["key"]) || !empty($_GET["from"]) || !empty($_GET["to"])){
-        if(!empty($_GET["key"])){
+    if($key != '' || $from != '' || $to != ''){
+        if($key != ''){
             $search = 1;
         }
         else{
             $search = 2;
         }
-        $key = $_GET["key"];
-        $menu = $_GET["menu"];
-        $from="";
-        $to="";
+
         $from_db="";
         $to_db="";
   
-        if(!empty($_GET["from"])){
-            $from = $_GET["from"];
+        if($from != ''){
             $from_front=substr($from,0,10);
             $from_back=substr($from,11,5);
             $from_db = "{$from_front}" . " " . "{$from_back}" . ":00";
         }
   
-        if(!empty($_GET["to"])){
-            $to = $_GET["to"];
+        if($to != ''){
             $to_front=substr($to,0,10);
             $to_back=substr($to,11,5);
             $to_db = "{$to_front}" . " " . "{$to_back}" . ":00";
@@ -67,9 +65,6 @@
     }
 
     #ソートのパラメータを取得(指定されてない場合は新着順)
-    if(!empty($_GET["sort"])){
-        $sort=$_GET["sort"];
-    }
 
     $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
@@ -112,7 +107,7 @@
                 $sql1 .= "ORDER BY thread_date DESC ";
             }
             else if($sort=="pop"){
-                $sql1 .= "SORDER BY good_count DESC ";
+                $sql1 .= "ORDER BY good_count DESC ";
         
             }
             else if($sort=="comment"){
@@ -155,7 +150,7 @@
                 $sql1 .= "ORDER BY thread_date DESC ";
             }
             else if($sort=="pop"){
-                $sql1 .= "SORDER BY good_count DESC ";
+                $sql1 .= "ORDER BY good_count DESC ";
         
             }
             else if($sort=="comment"){
@@ -194,15 +189,23 @@
         });
     </script>
     <script>
+        
+        var reserch_menu;
+
         window.onload = function() {
             var key = JSON.parse('<?php echo json_encode($key) ?>'); 
             var sort = JSON.parse('<?php echo json_encode($sort) ?>');
+            var menu = JSON.parse('<?php echo json_encode($menu) ?>');
             var t_from = JSON.parse('<?php echo json_encode($from) ?>');
             var t_to = JSON.parse('<?php echo json_encode($to) ?>');
+
+            
             document.getElementById('s_menu').value = (sort !== '') ? (sort) : ('old');
             document.getElementById('inputkeyword').value = key;
-            document.getElementById('from').value = (t_from !== '') ? (t_from) : ('');
-            document.getElementById('to').value = (t_to !== '') ? (t_to) : ('');
+            document.getElementById('not').value = (t_from !== '') ? (t_from) : ('');
+            document.getElementById('no').value = (t_to !== '') ? (t_to) : ('');
+            reserch_menu = menu;
+            
         }
 
         function Set_search(mode) {
@@ -238,19 +241,16 @@
         }
 
         function Change_sort() {
+            const key = document.getElementById("inputkeyword").value;
+            const from = document.getElementById("not").value;
+            const to = document.getElementById("no").value;
             const sort = document.getElementById("s_menu").value;
-            history.pushState("","","source/index.php?" + "sort=" + sort);
+            const menu = reserch_menu;
+
+            history.pushState("","","source/reserch.php?" + "key=" + key + "&menu=" + menu + '&from=' + from + '&to=' + to + "&sort=" + sort);
             location.reload();
         }
 
-        function func1() {
-            document.getElementById("not").disabled = true;
-            document.getElementById("no").disabled = true;
-        }/*アリとなしの選択*/
-        function func2() {
-            document.getElementById("not").disabled = false;
-            document.getElementById("no").disabled = false;
-        }
     </script>
 </head>
 <body>
@@ -262,7 +262,7 @@
     <!-- できれば、エンターキー押した時と検索ボタン押した時の処理同じにしてほしい -->
     <div style="text-align: center;">
         <div class="timer">
-            <form action="source/reserch.php" method="get" name="reserch-form">
+            <form action="source/reserch.php" method="get" name="reserch-form" id="reserch">
                 <div class="tile2">
                     <div id="reserch">
                         <input id="inputkeyword" type="text" name="key" placeholder="キーワードを入力">

@@ -64,7 +64,7 @@
             <div id="new">
                 <div class="newthr">
                     <h3><label for="title">タイトル : </label></h3>
-                    <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" required>
+                    <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" placeholder="スレッドタイトルを入力" required>
                 </div>
                 <div class="password-all">
                     <div class="newthr">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="newthr">
                     <h3><label for="comment">内容 : </label></h3>
-                    <textarea id="comment" name="comment" title="スレッドの内容"></textarea>
+                    <textarea id="comment" name="comment" title="スレッドの内容" placeholder="スレッドの内容を入力"></textarea>
                 </div>
                 <center>
                     <input class="submitbtn" type="submit" value="スレッド新規作成">
