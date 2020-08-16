@@ -132,8 +132,19 @@ textarea{
     text-align:center;
     margin: 10px;
 }
+.submit_thr{
+    text-align:right;   
+    position: absolute;
+    top: 28px;
+    right: 10px;
+
+}
 .submit_com{
     text-align:right;   
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
 }
 .submitbtn{
     /* margin-top: 5vh;
@@ -148,7 +159,7 @@ textarea{
      color: #000a64;
      background: #d7e2f3;
      border-bottom: solid 4px#4d61b8;
-     transition: .4s;
+     transition: .4s;     
 }
 .submitbtn:hover{
     background: #4d61b8;
@@ -239,6 +250,7 @@ textarea{
 .thread{
     padding: 10px;
     background-color: rgb(219, 233, 181);
+    position: relative;
 }
 .aab{
     border: 10px;
@@ -251,12 +263,15 @@ textarea{
     text-align: left;
     background-color: rgb(185, 185, 185);
     padding: 10px;
+    position: relative;
 }
 .abcd{
     border: 10px;
     text-align: left;
     background-color: rgb(255, 255, 255);
     padding: 10px;
+    position: relative;
+
 }
 .aab dt{
     text-align: right;
@@ -425,5 +440,30 @@ input #thread_submit{
     position: relative;
 }
 
+.good_button{
+    background-color: rgb(168, 238, 177);
+}
+
+.hukidasi{
+    position: relative;
+}
+
+.good_number_1{
+    position: absolute;
+    top: -8px;
+    left: 10px;
+}
+
+.good_number_2{
+    position: absolute;
+    top: -8px;
+    left: 12px;
+}
+
+.good_number_3{
+    position: absolute;
+    top: -8px;
+    left: 14px;
+}
 
 

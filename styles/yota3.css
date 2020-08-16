@@ -11,7 +11,7 @@ html{
 	position: absolute;
 	width: 100%;
 	height: 500px;
-	background: url("https://www.pakutaso.com/shared/img/thumb/026horror0523_TP_V.jpg") 
+	background: url("../images/hand.jpg") 
 		black no-repeat center center;
 	background-size: cover;
 	transition: all 0.5s ease-out;
