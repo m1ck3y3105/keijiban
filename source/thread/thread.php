@@ -6,7 +6,7 @@
   $search = 0;
   $user_name='匿名';
 
-  $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
   //現在見ているスレッドのIDを保存
   if(!empty($_GET["thread_id"])){
