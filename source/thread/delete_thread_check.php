@@ -19,18 +19,21 @@
       
       $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
 
-      $sql1="DELETE FROM restrict_admin WHERE thread_id= {$thread_id}";
+      $sql1="DELETE FROM good_admin WHERE thread_id= {$thread_id}";
       $result1 = pg_query($connect,$sql1);
 
-      $sql2="DELETE FROM comment_admin WHERE thread_id= {$thread_id}";
+      $sql2="DELETE FROM restrict_admin WHERE thread_id= {$thread_id}";
       $result2 = pg_query($connect,$sql2);
 
-      $sql3="DELETE FROM thread_admin WHERE thread_id= {$thread_id}";
+      $sql3="DELETE FROM comment_admin WHERE thread_id= {$thread_id}";
       $result3 = pg_query($connect,$sql3);
 
-      if($result1 && $result2 && $result3){
+      $sql4="DELETE FROM thread_admin WHERE thread_id= {$thread_id}";
+      $result4 = pg_query($connect,$sql4);
+
+      if($result1 && $result2 && $result3 && $result4){
           $OK=2;
-         unset($_SESSION["thread_id"]);
+          unset($_SESSION["thread_id"]);
       }
     }
 ?>
