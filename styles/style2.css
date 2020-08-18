@@ -304,8 +304,9 @@ textarea{
 /* 前へ次へボタン */
 
 .btn-sticky1 {
+    margin:20px;
     display: inline-block;
-    margin-right: 10px;
+    padding: 5px;
     /* padding: 0.5em 1em; */
     text-decoration: none;
     background: #f7f7f7;
@@ -324,7 +325,11 @@ textarea{
     transition: .4s;
    }
   .btn-sticky2 {
-    display: inline-block;
+    margin:20px;
+    padding: 5px;
+    float: right;
+    /* position: absolute;  */
+    /* display: inline-block; */
     margin-left: 10px;
     /* padding: 0.5em 1em; */
     text-decoration: none;
