@@ -114,6 +114,8 @@
 
         <?php } ?>
     </div>
+    <div class="heart"><img src="images/hand-removebg-preview.png"></div>
+<p>Hover on a hand</p>   
 </body>
 
 </html>
