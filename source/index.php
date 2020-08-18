@@ -106,7 +106,7 @@
                     <div class="time">
                         <div class="time2">
                             <h3>検索設定 : 
-                                <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" checked>コメント本文</label>
+                                <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" checked>スレッドタイトル</label>
                                 <label for="r2"><input type="radio"  name="menu"  id="r2" value="user"        >投稿者ID</label>
                             </h3>
                             <h3>時間指定 :
@@ -123,7 +123,7 @@
         <div class="tile3">
             <div class='search_result'>
                 <div class="sortmenu">
-                    <h4>ソート順：
+                    <h4>ソート順<br>
                         <select id="s_menu" onChange="Change_sort()">
                             <option value="new"     <?php if($sort=='new'){ echo "selected";} ?> >新着順</option>
                             <option value="pop"     <?php if($sort=='pop'){ echo "selected";} ?> >人気順</option>
@@ -142,16 +142,18 @@
                     $thread_id=$row[0];
                     $thread_name=$row[1];
                     $thread_user=$row[2];
-                    $thread_date=$row[3]; 
+                    $thread_date=substr($row[3],0,16);  
                     $good_count=$row[4];    
                     $comment_count=$row[5]; 
+
+
                             
                     echo "<div class = 'display_thread'>
                             <form name='display_thread' action='source/thread/thread.php' method='get'>
                                 <div class='thread_title'>{$thread_name}</div>
-                                <div class='thread_user'>作成者：{$thread_user}</div>
-                                <div class='thread_info'>作成日：{$thread_date}　いいね:{$good_count}　コメント数：{$comment_count}</div>
-                                <div class='move_thread'><input  type='submit' id='thread_submit' value='移動'></div>
+                                <div class='thread_user'>作成者:{$thread_user}</div>
+                                <div class='thread_info'>作成日:{$thread_date}　いいね:{$good_count}　コメント数:{$comment_count}</div>
+                                <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit' value='移動 >'></div>
                                 <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>
                             </form>
                         </div>";

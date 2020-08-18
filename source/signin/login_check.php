@@ -29,6 +29,7 @@
     <title>掲示板サイト</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/login.css">
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -39,29 +40,34 @@
         });
     </script>
 </head>
+<div id="header"></div>
 <body>
-    <div id="header"></div>
 
     <div id="loginch">
+
     <?php if($OK == 0){ ?>
     <!-- 何も入力されてないとき＋直接遷移されたときの表示 -->
-    <h2>入力してください</h2>
-    <a class="button1" href="source/signin/login.php">ログイン画面へ</a>
+
+        <h3>入力してください</h3>
+        <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
 
     <?php }else if($OK == 1){ ?>
     <!-- パスワードが違った場合の表示 -->
-    <h2>パスワードが違います</h2>
-    <a class="button1" href="source/signin/login.php">ログイン画面へ</a>
+
+        <h3>パスワードが違います</h3>
+        <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
     
 
     <?php }else if($OK == 2){ ?>
     <!-- ログインに成功した時の表示 -->
-    <h3>ログインできました</h3>
-    <a class="button1" href="source/index.php">トップへ</a>
+
+        <h3>ログインできました</h3>
+        <a class="submitbtn" href="source/index.php">トップへ</a>
 
     <?php } ?>
+
     </div>
 
-    <div id="footer"></div>
 </body>
+<div id="footer"></div>
 </html>
