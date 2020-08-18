@@ -2,12 +2,13 @@
     session_start();
     $user_name='';
     $thread_id=0;
-    $OK=0;
+    $OK=2;
   
     // ログインしているユーザ名を取得
     if(!empty($_SESSION["user_name"])){
         $user_name=$_SESSION["user_name"];
     }
+    
     
     //スレッドIDを取得
     if(!empty($_SESSION["thread_id"])){
@@ -55,41 +56,25 @@
 
     <?php if($OK == 0){ ?>
     <!-- いろいろ対策 -->
-    <div class="box-main-photo">
-	    <div class="entry-header">
-            <h2>スレッドが存在しません</h2>
-        </div>
-	    <div class="background-image"></div>
-    </div>
-    <br>
+    <div class="heart"><img src="../images/hand.jpg"></div>
+    <div class="entry-header">スレッドが存在しません</div>
     <a class="button9" href="source/index.php">トップへ</a>
 
 
     <?php }else if($OK == 1){ ?>
     <!-- 削除失敗 -->
-    <div class="box-main-photo">
-	    <div class="entry-header">
-            <h2>スレッドが削除できませんでした</h2>
-            <form action="source/thread/thred_admin.php" method="get">    
-            </form>
-        </div>
-	    <div class="background-image"></div>
-    </div>
+    <div class="heart"><img src="../images/hand.jpg"></div>
+    <div class="entry-header">スレッドが削除できませんでした</div>
     <a class="button9" href="source/thread/thread_admin.php">スレッド管理画面へ戻る</a>
     
 
     <?php }else if($OK == 2){ ?>
     <!-- 削除成功 -->
-    <div class="box-main-photo">
-	    <div class="entry-header">
-            <h2>スレッドが正常に削除されました</h2>
-	    </div>
-	    <div class="background-image"></div>
-    </div>
-    <br>
+    <div class="heart"><img src="../images/hand.jpg"></div>
+    <div class="entry-header">スレッドが正常に削除されました</div>
     <a class="button9" href="source/index.php">トップへ</a>
 
-    
+
     <?php } ?> 
     
 </body>

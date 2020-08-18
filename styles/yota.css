@@ -36,13 +36,13 @@
 */
 #loginch {
     margin: 50px;
+    padding:30px;
     padding-top: 10px;
     color: #000000;
     border: double;
     border-radius: 10px;
     font-size: 25px;
     text-align: center;
-
 }
 .main_message{
     text-align: center;
