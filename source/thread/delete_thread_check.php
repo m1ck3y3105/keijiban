@@ -2,12 +2,13 @@
     session_start();
     $user_name='';
     $thread_id=0;
-    $OK=0;
+    $OK=2;
   
     // ログインしているユーザ名を取得
     if(!empty($_SESSION["user_name"])){
         $user_name=$_SESSION["user_name"];
     }
+    
     
     //スレッドIDを取得
     if(!empty($_SESSION["thread_id"])){
