@@ -2,13 +2,16 @@
   session_start();
 
   $thread_id=0;
+  $user_id=0;
   $restrict_user=0;
   $search = 0;
   $user_name='匿名';
+  $good_status = '';
+  $good_count = 0;
 
   $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
-  //現在見ているスレッドのIDを保存
+  //現在見ているスレッドのIDを保取得
   if(!empty($_GET["thread_id"])){
     $thread_id=$_GET["thread_id"];
   }
@@ -16,58 +19,82 @@
   // ログインしているユーザ名を取得 + スレッド作成者による制限情報をチェック
   if(!empty($_SESSION["user_name"]) && $thread_id!=0 ){
       $user_name=$_SESSION["user_name"];
-      
-      $sql0="SELECT restrict_status FROM restrict_admin,user_admin 
-             WHERE user_admin.user_name=$1 and restrict_admin.user_id=user_admin.user_id
-             and restrict_admin.thread_id=$thread_id";
-      $array0 = array("user_name" => "{$user_name}");
-      $result0 = pg_query_params($connect,$sql0,$array0);
-      $row0 = pg_fetch_row($result0);
-      $restrict_status = $row0[0];
-      
-      if($restrict_status=='t'){
-        $restrict_user=1;
-      }
 
-  }
-
-  // コメントが入力された時の処理
-  if(!empty($_POST["your-message"])){
-      $your_message=$_POST["your-message"];
-
-      //ユーザネームからユーザIDを取得
+      //ユーザ名からユーザIDを取得
       $sql1="SELECT user_id FROM user_admin WHERE user_name=$1";
       $array1 = array("user_name" => "{$user_name}");
       $result1 = pg_query_params($connect,$sql1,$array1);
       $row1 = pg_fetch_row($result1);
       $user_id = $row1[0];
 
+      //ユーザIDから制限情報を取得
+      $sql2="SELECT restrict_status FROM restrict_admin WHERE user_id={$user_id} and thread_id={$thread_id}";
+      $result2 = pg_query($connect,$sql2);
+      $row2 = pg_fetch_row($result2);
+      $restrict_status = $row2[0];
+      
+      if($restrict_status=='t'){
+          $restrict_user=1;
+      }
+  }
+
+  // いいねボタンといいね解除ボタンがクリックされた時の処理
+  if(!empty($_POST["good"]) || !empty($_POST["good_release"])){
+      if(!empty($_POST["good"])){
+          $sql0="INSERT INTO good_admin
+                 (thread_id,user_id,good_status)
+                 SELECT {$thread_id},{$user_id},true
+                 WHERE NOT EXISTS
+                 (SELECT good_id FROM good_admin
+                 WHERE thread_id={$thread_id} and user_id={$user_id})";
+          $result0 = pg_query($connect,$sql0);
+
+          $sql0="UPDATE good_admin SET good_status='true'
+                 WHERE thread_id={$thread_id} and user_id={$user_id}";
+          $result0 = pg_query($connect,$sql0);
+      }
+      else if(!empty($_POST["good_release"])){
+          $sql0="UPDATE good_admin SET good_status='false'
+                 WHERE thread_id={$thread_id} and user_id={$user_id}";
+          $result0 = pg_query($connect,$sql0);
+      }
+  }
+
+  //いいねの情報をチェック
+  if($thread_id != 0 && $user_id != 0){
+      $sql0="SELECT good_status FROM good_admin WHERE user_id={$user_id} and thread_id={$thread_id}";
+      $result0 = pg_query($connect,$sql0);
+      $row0 = pg_fetch_row($result0);
+      $good_status = $row0[0];
+  }
+
+
+  // コメントが入力された時の処理
+  if(!empty($_POST["your-message"])){
+      $your_message=$_POST["your-message"];
       $datetime=date("Y-m-d H:i:s");
       
       //コメントをテーブルに挿入
-      $sql2="INSERT INTO comment_admin
+      $sql1="INSERT INTO comment_admin
             (thread_id,comment_text,comment_date,comment_userid)
             values({$thread_id},$1,'{$datetime}',{$user_id})";
-      $array2 = array("your_message" => "{$your_message}");
-      $result2 = pg_query_params($connect,$sql2,$array2);
+      $array1 = array("your_message" => "{$your_message}");
+      $result1 = pg_query_params($connect,$sql1,$array1);
 
 
       //投稿者制限テーブルにユーザ情報を保存
       //(初期値は解除、もうデータが入っている場合は挿入しない)
-      $sql3="INSERT INTO restrict_admin
+      $sql2="INSERT INTO restrict_admin
             (thread_id,user_id,restrict_status)
             SELECT {$thread_id},{$user_id},false
             WHERE NOT EXISTS
             (SELECT restrict_id FROM restrict_admin
             WHERE thread_id={$thread_id} and user_id={$user_id})";
-      $result3 = pg_query($connect,$sql3);
+      $result2 = pg_query($connect,$sql2);
 
-      $sql4="UPDATE thread_admin SET last_date = '{$datetime}' WHERE thread_id='{$thread_id}'";
-      $result4 = pg_query($connect,$sql4);
   }
 
-  # スレッド内検索ボタンが押されたときにパラメータをURLから取得
-      
+  # スレッド内検索ボタンが押されたときの処理
   if(!empty($_GET["key"]) || !empty($_GET["from"]) || !empty($_GET["to"])){
       if(!empty($_GET["key"])){
           $search = 1;
@@ -212,6 +239,14 @@
         //数えたコメントの数をスレッドテーブルに挿入する
         $sql4="UPDATE thread_admin SET comment_count = {$comment_count} WHERE thread_id = {$thread_id}";
         $result4 = pg_query($connect,$sql4);
+
+        $sql5="SELECT COUNT(good_id) FROM good_admin WHERE thread_id={$thread_id} and good_status='true'";
+        $result5 = pg_query($connect,$sql5);
+        $row5 = pg_fetch_row($result5);
+        $good_count = $row5[0];
+
+        $sql6="UPDATE thread_admin SET good_count = {$good_count} WHERE thread_id = {$thread_id}";
+        $result6 = pg_query($connect,$sql6);
       }
       else{
         die("スレッドが存在しません");
@@ -244,18 +279,19 @@
     <div class="thread">
         <?php echo "<h2>{$thread_name}</h2>" ?>
         <form action="source/thread/thread_login.php" method="GET">    
-            <div class="submit_com">
+            <div class="submit_thr">
                 <input class="submitbtn_own" type="submit" value="スレッド管理">
                 <input type='hidden' name='thread_id' value= <?php echo "{$thread_id}"; ?> >
             </div>
         </form>
-        <!-- いいねボタン -->
+        <!-- いいねボタン -
         <form action="">
             <div class="favbtn">
               <input id="fav" type="radio" name="star" />
               <label for="fav">★</label>
             </div>
         </form>  
+        -->
         <h3 class="aab"><?php echo "{$thread_text}"; ?>
         <dt>作成者：<?php echo "{$thread_username}"; ?></dt>
         <dt>作成日：<?php echo "{$thread_date}"; ?></dt>
@@ -302,8 +338,10 @@
                        <h4>{$row2[1]}</h4>
                        <dt>投稿日:{$row2[2]}</dt>";
             }
+
             //自分のコメントにだけ「コメント削除」ボタンが表示される
-            if($user_name==$row2[0]){
+            //スレッド作成者は全てのコメントを削除することができる
+            if($user_name==$row2[0] || $user_name==$thread_username){
                 echo "<form action='source/thread/delete_comment.php' method='POST'>   
                         <div class='submit_com'>
                           <input class=submitbtn_com name='delete_comment' type='submit' value='コメント削除'>
@@ -334,7 +372,46 @@
     <h5><br>スレッドにコメントをする場合はログインしてください</h5>
 
     <?php } ?>
-    
+
+
+    <?php if($user_name!='匿名' ){ ?>
+     
+        <form method="post" action="" >
+
+            <?php if($good_status == 't'){ ?>
+            <button type="submit" class="good_button" name="good_release" value="good_release" title="いいね！の解除">
+                <img src="images/good.png" alt="" width="16" height="16">
+                <span>いいね！を解除する</span>
+            </button>
+
+            <?php }else{ ?>
+            <button type="submit" class="good_button" name="good" value="good" title="いいね！">
+                <img class="_1pbs inlineBlock img" src="images/good.png" alt="" width="16" height="16">
+                <span class="_49vh _2pi7">いいね！</span>
+            </button>
+
+            <?php } ?>
+
+            <span class="hukidasi" >
+                <?php 
+                if($good_count < 10){
+                    echo "<img src='images/hukidasi4.jpg' alt='' width='32' height='32'>
+                          <span class='good_number_1'>{$good_count}</span>";
+                }
+                else if($good_count > 9 && $good_count < 100){
+                    echo "<img src='images/hukidasi4.jpg' alt='' width='48' height='32'>
+                          <span class='good_number_2'>{$good_count}</span>";
+                }
+                else if($good_count > 99){
+                    echo "<img src='images/hukidasi4.jpg' alt='' width='64' height='32'>
+                          <span class='good_number_3'>{$good_count}</span>";
+                }
+                ?>
+            </span>
+        </form>
+
+     <?php } ?>
+
 </body>
 <div id="footer"></div>
 </html>

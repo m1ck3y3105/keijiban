@@ -82,8 +82,9 @@
     <?php if($OK==0){  ?>
     <!-- いろいろ対策 -->
 
-    <h1>エラーが発生しました</h1>
-    <a class="button6" href="source/index.html">トップへ</a>
+    <h2>エラーが発生しました</h2>
+    <a class="button8" href="source/index.php">トップへ</a>
+
 
     <?php }else if($OK==1 || $error==1){?>
     <!-- DBにブロックに関する情報を正常に保存できなかったとき -->
