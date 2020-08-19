@@ -19,7 +19,7 @@
           $OK = 2 ;
           $password=$_POST["password"];
 
-          $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+          $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
           //スレッドIDからスレッドパスワードを取得
           $sql1="SELECT thread_pass FROM thread_admin WHERE thread_id=$1";
@@ -69,7 +69,6 @@
 
     <?php }else if($OK == 1){ ?>
     <!-- パスワードを入力してないとき -->
-
         <h2>入力してください</h2>
         <form action="source/thread/thread_login.php" method="GET">    
             <div class="submit">
@@ -80,7 +79,6 @@
 
     <?php }else if($OK == 2){ ?>
     <!-- 入力されたパスワードが違うとき -->
-
         <h2>入力されたパスワードが違います</h2>
         <form action="source/thread/thread_login.php" method="GET">    
             <div class="submit">
@@ -91,7 +89,6 @@
 
     <?php }else if($OK == 3){ ?>
     <!-- 入力したパスワードが正しい時 -->
-
         <h5>スレッド管理者ログインができました</h5>
         <form action="source/thread/thread_admin.php" method="POST">    
             <div class="submit">
@@ -99,7 +96,6 @@
                 <input class="submitbtn" name="login" type="submit" value="スレッド管理ページへ">
             </div>
         </form>
-
     <?php } ?>
 
     </div>

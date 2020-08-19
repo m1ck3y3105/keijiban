@@ -15,7 +15,7 @@
    }
    $limit = 4;
 
-   $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+   $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
    #スレッドがいくつあるか数える
    $sql1="SELECT COUNT(thread_id) FROM thread_admin";

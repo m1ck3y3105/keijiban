@@ -6,7 +6,6 @@
     if(!empty($_POST["thread_id"]) && !empty($_POST["comment_id"])){
       $OK=1;
       $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
-
       $thread_id = $_POST["thread_id"];
       $comment_id = $_POST["comment_id"];
 

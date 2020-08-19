@@ -8,7 +8,7 @@
       $user_name = $_POST["user_name"];
       $password = $_POST["password"];
 
-      $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
 
       $sql1="SELECT login_pass FROM user_admin where user_name= $1";
       $array1 = array("user_name" => "{$user_name}");
@@ -47,7 +47,6 @@
 
     <?php if($OK == 0){ ?>
     <!-- 何も入力されてないとき＋直接遷移されたときの表示 -->
-
         <h3>入力してください</h3>
         <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
 
@@ -56,14 +55,11 @@
 
         <h3>パスワードが違います</h3>
         <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
-    
 
     <?php }else if($OK == 2){ ?>
     <!-- ログインに成功した時の表示 -->
-
         <h3>ログインできました</h3>
         <a class="submitbtn" href="source/index.php">トップへ</a>
-
     <?php } ?>
 
     </div>
