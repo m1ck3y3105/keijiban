@@ -45,14 +45,35 @@
 
     <div id="loginch">
 
+<<<<<<< HEAD
+        <?php if($OK == 0){ ?>
+        <!-- 何も入力されてないとき＋直接遷移されたときの表示 -->
+
+            <h3>入力してください</h3>
+            <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
+=======
     <?php if($OK == 0){ ?>
     <!-- 何も入力されてないとき＋直接遷移されたときの表示 -->
         <h3>入力してください</h3>
         <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
+>>>>>>> 405fdc63f5a78de21f0dbbcb366fadb0a49a848e
 
-    <?php }else if($OK == 1){ ?>
-    <!-- パスワードが違った場合の表示 -->
+        <?php }else if($OK == 1){ ?>
+        <!-- パスワードが違った場合の表示 -->
 
+<<<<<<< HEAD
+            <h3>パスワードが違います</h3>
+            <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
+        
+
+        <?php }else if($OK == 2){ ?>
+        <!-- ログインに成功した時の表示 -->
+
+            <h3>ログインできました</h3>
+            <a class="submitbtn" href="source/index.php">トップへ</a>
+
+        <?php } ?>
+=======
         <h3>パスワードが違います</h3>
         <a class="submitbtn" href="source/signin/login.php">ログイン画面へ</a>
 
@@ -61,6 +82,7 @@
         <h3>ログインできました</h3>
         <a class="submitbtn" href="source/index.php">トップへ</a>
     <?php } ?>
+>>>>>>> 405fdc63f5a78de21f0dbbcb366fadb0a49a848e
 
     </div>
 
