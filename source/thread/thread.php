@@ -5,11 +5,11 @@
   $user_id=0;
   $restrict_user=0;
   $search = 0;
-  $user_name='匿名';
+  $user_name='';
   $good_status = '';
   $good_count = 0;
 
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
   //現在見ているスレッドのIDを保取得
   if(!empty($_GET["thread_id"])){
@@ -129,7 +129,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <base href="/"></base>
+  <base href="/~group02/"></base>
   <meta charset="UTF-8">
   <title>掲示板サイト</title>
   <link rel="stylesheet" href="styles/style.css">
@@ -362,9 +362,9 @@
     <?php if($restrict_user==1){  ?>
     <h5><br>スレッド作成者によって投稿を制限されています</h5>
 
-    <?php }else if($user_name!='匿名' ){ ?>
+    <?php }else if($user_name!='' ){ ?>
     <form action="" method="POST">
-      <textarea id="message" name="your-message" placeholder="コメント入力" value=""></textarea>
+      <textarea id="message" name="your-message" maxlength='140' placeholder="コメント入力" value=""　></textarea>
       <input type="submit" name="message-button" class="button" value="投稿">
     </form>
 
@@ -374,7 +374,7 @@
     <?php } ?>
 
 
-    <?php if($user_name!='匿名' ){ ?>
+    <?php if($user_name!='' ){ ?>
      
         <form method="post" action="" >
 

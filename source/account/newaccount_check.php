@@ -15,7 +15,7 @@
           $OK = 2;
           error_reporting(0);
  
-          $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+          $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
           $sql1="INSERT INTO user_admin(user_name,login_pass) VALUES($1,$2)";
           $array1 = array("user_name" => "{$user_name}", "password" => "{$password}");
           $result1 = pg_query_params($connect,$sql1,$array1);
@@ -32,12 +32,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <base href="/"></base>
+    <base href="/~group02/"></base>
     <title>掲示板サイト</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
+    <link rel="stylesheet" href="styles/login.css">
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
         $(function () {

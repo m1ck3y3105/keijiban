@@ -14,7 +14,7 @@
       $thread_id=$_SESSION["thread_id"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
   //スレッドIDからスレッドタイトルを取得
   $sql1="SELECT thread_name,thread_userid FROM thread_admin WHERE thread_id=$1";
@@ -67,7 +67,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/"></base>
+    <base href="/~group02/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">

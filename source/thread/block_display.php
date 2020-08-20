@@ -13,7 +13,7 @@
       $thread_id=$_SESSION["thread_id"];
   }
 
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
   //スレッドIDからスレッドタイトルを取得
   $sql1="SELECT thread_name,thread_userid FROM thread_admin WHERE thread_id=$1";
@@ -32,19 +32,18 @@
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <base href="/"></base>
+    <base href="/~group02/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style2.css">
     <link rel="stylesheet" href="styles/yota.css">
     <link rel="stylesheet" href="styles/tiles.css">
     <link rel="stylesheet" href="styles/block-dis.css">
-
+  　<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
@@ -115,6 +114,6 @@
 
         <?php } ?>
     </div>
- 
 </body>
+
 </html>

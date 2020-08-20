@@ -1,5 +1,5 @@
 <?php
-   $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+   $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
    
    $sql1="SELECT thread_id,thread_name,comment_count FROM thread_admin ORDER BY comment_count DESC";
    

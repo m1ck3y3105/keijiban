@@ -5,7 +5,7 @@
 
     if(!empty($_POST["thread_id"]) && !empty($_POST["comment_id"])){
       $OK=1;
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+      $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
       $thread_id = $_POST["thread_id"];
       $comment_id = $_POST["comment_id"];
@@ -29,7 +29,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/"></base>
+    <base href="/~group02/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">

@@ -2,13 +2,12 @@
     session_start();
     $user_name='';
     $thread_id=0;
-    $OK=2;
+    $OK=0;
   
     // ログインしているユーザ名を取得
     if(!empty($_SESSION["user_name"])){
         $user_name=$_SESSION["user_name"];
     }
-    
     
     //スレッドIDを取得
     if(!empty($_SESSION["thread_id"])){
@@ -18,7 +17,7 @@
     if($thread_id != 0 && $user_name != ''){
       $OK=1;
       
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+      $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
       $sql1="DELETE FROM good_admin WHERE thread_id= {$thread_id}";
       $result1 = pg_query($connect,$sql1);
@@ -42,7 +41,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/"></base>
+    <base href="/~group02/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -56,25 +55,41 @@
 
     <?php if($OK == 0){ ?>
     <!-- いろいろ対策 -->
-    <div class="heart"><img src="../images/hand.jpg"></div>
-    <div class="entry-header">スレッドが存在しません</div>
+    <div class="box-main-photo">
+	    <div class="entry-header">
+            <h2>スレッドが存在しません</h2>
+        </div>
+	    <div class="background-image"></div>
+    </div>
+    <br>
     <a class="button9" href="source/index.php">トップへ</a>
 
 
     <?php }else if($OK == 1){ ?>
     <!-- 削除失敗 -->
-    <div class="heart"><img src="../images/hand.jpg"></div>
-    <div class="entry-header">スレッドが削除できませんでした</div>
+    <div class="box-main-photo">
+	    <div class="entry-header">
+            <h2>スレッドが削除できませんでした</h2>
+            <form action="source/thread/thred_admin.php" method="get">    
+            </form>
+        </div>
+	    <div class="background-image"></div>
+    </div>
     <a class="button9" href="source/thread/thread_admin.php">スレッド管理画面へ戻る</a>
     
 
     <?php }else if($OK == 2){ ?>
     <!-- 削除成功 -->
-    <div class="heart"><img src="../images/hand.jpg"></div>
-    <div class="entry-header">スレッドが正常に削除されました</div>
+    <div class="box-main-photo">
+	    <div class="entry-header">
+            <h2>スレッドが正常に削除されました</h2>
+	    </div>
+	    <div class="background-image"></div>
+    </div>
+    <br>
     <a class="button9" href="source/index.php">トップへ</a>
 
-
+    
     <?php } ?> 
     
 </body>

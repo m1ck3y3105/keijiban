@@ -177,36 +177,7 @@ html{
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.heart {
-    /* font-size: 80px;
-    color: #FF3D67;
-    margin: 100px 0 0; */
-    background-size: cover;
-    opacity: 0.3;
-}
-.heart:hover {
-  -webkit-animation: heart-anim 1s linear 3s;
-  animation: heart-anim 1s linear .3s;
-}
 
-/* Animation setting */
-@-webkit-keyframes heart-anim {
-  to {
-    opacity: 0;
-    -webkit-transform: scale(5);
-  }
-}
-@keyframes heart-anim {
-  to {
-    opacity: 0;
-    transform: scale(5);
-  }
-}
-
-/* Basic style */
-body .heart{
-  text-align: center;
-}
 
 
 
