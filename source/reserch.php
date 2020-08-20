@@ -66,7 +66,7 @@
 
     #ソートのパラメータを取得(指定されてない場合は新着順)
 
-    $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
+    $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
 
     $sql1="SELECT thread_admin.thread_id, thread_admin.thread_name, user_admin.user_name, 
     thread_admin.thread_date, thread_admin.good_count, thread_admin.comment_count  
@@ -175,7 +175,7 @@
 ?>
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
     <title>スレッド検索</title>
     <link rel="stylesheet" href="styles/style.css">

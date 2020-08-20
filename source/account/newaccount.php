@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <title>掲示板サイト</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">

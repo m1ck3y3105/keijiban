@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
 </head>
 <body>

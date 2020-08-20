@@ -6,7 +6,7 @@
             error_reporting(0);
             $newname = $_POST["newname"];
 
-            $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
+            $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
 
             $sql1="UPDATE user_admin SET user_name = '{$newname}' WHERE user_name='{$user_name}'";
             $result1 = pg_query($connect,$sql1);

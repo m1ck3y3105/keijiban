@@ -1,6 +1,6 @@
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">

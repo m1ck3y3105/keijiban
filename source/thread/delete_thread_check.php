@@ -17,7 +17,7 @@
     if($thread_id != 0 && $user_name != ''){
       $OK=1;
       
-      $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
+      $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
 
       $sql1="DELETE FROM good_admin WHERE thread_id= {$thread_id}";
       $result1 = pg_query($connect,$sql1);
@@ -41,7 +41,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">

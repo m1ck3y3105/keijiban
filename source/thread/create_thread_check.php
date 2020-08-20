@@ -14,7 +14,7 @@
     
             $datetime=date("Y-m-d H:i:s");
     
-            $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
+            $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
     
             $sql1="SELECT user_id FROM user_admin where user_name='{$user_name}'";
             $result1 = pg_query($connect,$sql1);
@@ -41,7 +41,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">

@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <base href="/~group02/"></base>
+        <base href="/"></base>
         <meta charset="UTF-8">
         <title>スレッド新規作成</title>
         <link rel="stylesheet" href="styles/style.css">

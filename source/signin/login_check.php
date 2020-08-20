@@ -8,7 +8,7 @@
       $user_name = $_POST["user_name"];
       $password = $_POST["password"];
 
-      $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
+      $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
 
       $sql1="SELECT login_pass FROM user_admin where user_name= $1";
       $array1 = array("user_name" => "{$user_name}");
@@ -25,7 +25,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/~group02/"></base>
+    <base href="/"></base>
     <title>掲示板サイト</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
