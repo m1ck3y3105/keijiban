@@ -69,7 +69,7 @@
                 <div class="password-all">
                     <div class="newthr">
                         <h3><label for="password">管理者パスワード : </h3></label>
-                            <input type="password" placeholder="Password" name="password" id="password">
+                            <input id="newname" type="text" name="newname" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required >
                         </form>
                     </div>
                     <div class="password-check">
