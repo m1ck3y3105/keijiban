@@ -14,7 +14,7 @@
     
             $datetime=date("Y-m-d H:i:s");
     
-            $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+            $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
     
             $sql1="SELECT user_id FROM user_admin where user_name='{$user_name}'";
             $result1 = pg_query($connect,$sql1);
@@ -62,7 +62,7 @@
     <?php if($OK == 0){ ?>
     <!-- 直接遷移されたときの表示 -->
     <h2>不正な遷移です</h2>
-    <a class="submitbtn" href="source/index.php">トップへ</a>
+    <a class="" href="source/index.php">トップへ</a>
 
     <?php }else if($OK == 1){ ?>
     <!-- 入力が足りない場合の表示 -->

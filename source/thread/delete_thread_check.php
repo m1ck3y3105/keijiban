@@ -2,13 +2,12 @@
     session_start();
     $user_name='';
     $thread_id=0;
-    $OK=2;
+    $OK=0;
   
     // ログインしているユーザ名を取得
     if(!empty($_SESSION["user_name"])){
         $user_name=$_SESSION["user_name"];
     }
-    
     
     //スレッドIDを取得
     if(!empty($_SESSION["thread_id"])){
@@ -18,7 +17,7 @@
     if($thread_id != 0 && $user_name != ''){
       $OK=1;
       
-      $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+      $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
 
       $sql1="DELETE FROM good_admin WHERE thread_id= {$thread_id}";
       $result1 = pg_query($connect,$sql1);

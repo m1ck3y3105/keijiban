@@ -14,15 +14,20 @@
             $("#footer").load("source/footer.html");
         });
     </script>
+    <!-- <script type="text/javascript">
+        function sliceMaxLength(elem, maxlength){
+            elem.value = elem.value.slice(0,maxLength);
+        }
+    </script> -->
 </head>
 <body>
     <div id="header"></div>
     <div id="newac">
         <form action="source/account/newaccount_check.php" method="POST">
             <div class="loginbox">
-                <h3>ユーザID：<input name="user_name" type="text"></h3>
-                <h3>パスワード：<input id="newname" type="text" name="newname" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required ></h3>
-                <h3>パスワード再入力：<input id="newname" type="text" name="newname" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required ></h3>
+                <h3>ユーザID：<input name="user_name" type="text" maxlength='15'></h3>
+                <h3>パスワード：<input id="pass" type="text" name="pass" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required ></h3>
+                <h3>パスワード再入力：<input id="pass_check" type="text" name="pass_check" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required ></h3>
                 <div class="submit">
                     <input  class="submitbtn_mv" name="create_account" type="submit" value="アカウント作成">
                 </div>

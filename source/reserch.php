@@ -66,7 +66,7 @@
 
     #ソートのパラメータを取得(指定されてない場合は新着順)
 
-    $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+    $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
 
     $sql1="SELECT thread_admin.thread_id, thread_admin.thread_name, user_admin.user_name, 
     thread_admin.thread_date, thread_admin.good_count, thread_admin.comment_count  
@@ -199,13 +199,12 @@
             var t_from = JSON.parse('<?php echo json_encode($from) ?>');
             var t_to = JSON.parse('<?php echo json_encode($to) ?>');
 
-            
-            document.getElementById('s_menu').value = (sort !== '') ? (sort) : ('old');
+            // alert(menu);
+            document.getElementById('s_menu').value = (sort !== '') ? (sort) : ('new');
             document.getElementById('inputkeyword').value = key;
             document.getElementById('not').value = (t_from !== '') ? (t_from) : ('');
             document.getElementById('no').value = (t_to !== '') ? (t_to) : ('');
-            reserch_menu = menu;
-            
+            //reserch_menu = menu;\
         }
 
         function Set_search(mode) {
@@ -245,21 +244,21 @@
             const from = document.getElementById("not").value;
             const to = document.getElementById("no").value;
             const sort = document.getElementById("s_menu").value;
-            const menu = reserch_menu;
+            const menu = (document.getElementById('r1').checked) ? ('main') : ('user');
+
+            //alert(m);
+
+            //alert(menu);
 
             history.pushState("","","source/reserch.php?" + "key=" + key + "&menu=" + menu + '&from=' + from + '&to=' + to + "&sort=" + sort);
             location.reload();
         }
-
     </script>
 </head>
 <body>
     <div id="header"></div>
     
-    <!-- 今のところ、スレッド検索のフォーム（以下のソースコード）はindex.phpと同じにしている -->
     <div class="cen">スレッド検索</div>
-    <!-- 送信したい情報４つ（key,menu,from,to） -->
-    <!-- できれば、エンターキー押した時と検索ボタン押した時の処理同じにしてほしい -->
     <div style="text-align: center;">
         <div class="timer">
             <form action="source/reserch.php" method="get" name="reserch-form" id="reserch">
@@ -272,8 +271,8 @@
                 <div class="time">
                     <div class="time2">
                         <h3>検索設定 : 
-                            <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" checked>スレッドタイトル</label>
-                            <label for="r2"><input type="radio"  name="menu"  id="r2" value="user"        >作成者ID</label>
+                            <label for="r1"><input type="radio"  name="menu"  id="r1" value="main" <?php if($menu=='main') { echo "checked";} ?> >スレッドタイトル</label>
+                            <label for="r2"><input type="radio"  name="menu"  id="r2" value="user" <?php if($menu=='user') { echo "checked";} ?> >作成者ID</label>
                         </h3>
                         <h3>時間指定 :
                             <input type="datetime-local" name="from" id="not">～<input type="datetime-local" name="to" id="no">
@@ -293,9 +292,9 @@
             <div class="sortmenu">
                 <h4>ソート順<br>
                     <select id="s_menu" onChange="Change_sort()">
-                        <option value="new"     <?php if($sort=='new')    { echo "selected";} ?> >新着順</option>
-                        <option value="pop"     <?php if($sort=='pop')    { echo "selected";} ?> >人気順</option>
-                        <option value="comment" <?php if($sort=='comment'){ echo "selected";} ?> >コメントの多い順</option>
+                        <option value="new"      >新着順</option>
+                        <option value="pop"      >人気順</option>
+                        <option value="comment"  >コメントの多い順</option>
                     </select>
                 </h4>
             </div>
@@ -325,8 +324,8 @@
                             <div class='thread_title'>{$thread_name}</div>
                             <div class='thread_user'>作成者:{$thread_user}</div>
                             <div class='thread_info'>作成日:{$thread_date}　いいね:{$good_count}　コメント数:{$comment_count}</div>
-                            <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit' value='移動 >'></div>
-                            <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>
+                            <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit".$thread_id."' value='移動 >'></div>
+                            <input type='hidden' id='thread_id_".$thread_id."' name='thread_id' value='{$thread_id}'>
                         </form>
                     </div>";
  

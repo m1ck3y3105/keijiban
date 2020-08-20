@@ -1,5 +1,5 @@
 <?php
-    $user_name = "匿名";
+    $user_name = "";
     session_start();
     if(!empty($_SESSION["user_name"])){
          $user_name=$_SESSION["user_name"];
@@ -14,10 +14,19 @@
 <body>
     <header>
         <a href="source/index.php"><img src="images/S__1517240371.jpg" alt="次へ" title="ここをクリックするとトップに戻ります"></a>
-        <li class="login_name"><?php echo "{$user_name}さん" ?></li>
+        <li class="login_name">
+            <?php 
+            if($user_name != ""){
+                echo "{$user_name}さん";
+            }
+            else{
+                echo "ログインされていません";
+            }
+            ?>
+        </li>
 
         <div class="headermenu">
-            <?php if($user_name != "匿名"){ 
+            <?php if($user_name != ""){ 
                   echo '<a class="button1" href="source/account/change_name.php">ニックネーム変更</a>';
                   echo '<a class="button1" href="source/signin/logout.php">ログアウト</a>';
                   echo '<a class="button1" href="source/help.html">ヘルプ</a>';

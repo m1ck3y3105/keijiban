@@ -31,7 +31,7 @@
                     <h5>（全角、半角15文字以内）</h5>
                     <div class="nic">
                         <h3><label for="title">ニックネーム : </label></h3>
-                        <input id="newname" type="text" name="newname" title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required >
+                        <input id="newname" type="text" name="newname" maxlength='15' title="記号以外15文字以内" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required >
                     </div>
                     <h1><input class="submitbtn_mv" type="submit" value="更新"></h1>
                 </div>

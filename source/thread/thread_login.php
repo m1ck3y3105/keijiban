@@ -3,7 +3,7 @@
   $thread_id=0;
   $OK = 0;
 
-  $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
 
   // ログインしているユーザ名を取得
   if(!empty($_GET["thread_id"])){
