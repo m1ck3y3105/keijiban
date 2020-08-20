@@ -300,6 +300,13 @@ textarea{
 .favbtn label:hover, .favbtn label:hover ~ label, .favbtn input[type='radio']:checked ~ label{
     color: gold;
 }
+#message{
+    margin-top:10px;
+    resize: none;
+    width:70vw;
+    height:100px;
+    font-size: 23px;
+}
 /*---------------------------------------------------------*/
 /* 前へ次へボタン */
 
