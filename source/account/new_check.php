@@ -34,7 +34,7 @@
 
         $datetime=date("Y-m-d H:i:s");
 
-        $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
+        $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
 
         $sql1="SELECT user_id FROM user_admin where user_name='{$user_name}'";
         $result1 = pg_query($connect,$sql1);

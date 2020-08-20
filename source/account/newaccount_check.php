@@ -15,7 +15,7 @@
           $OK = 2;
           error_reporting(0);
  
-          $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
+          $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
           $sql1="INSERT INTO user_admin(user_name,login_pass) VALUES($1,$2)";
           $array1 = array("user_name" => "{$user_name}", "password" => "{$password}");
           $result1 = pg_query_params($connect,$sql1,$array1);

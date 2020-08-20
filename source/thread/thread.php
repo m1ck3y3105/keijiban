@@ -9,7 +9,7 @@
   $good_status = '';
   $good_count = 0;
 
-  $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
+  $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
 
   //現在見ているスレッドのIDを保取得
   if(!empty($_GET["thread_id"])){

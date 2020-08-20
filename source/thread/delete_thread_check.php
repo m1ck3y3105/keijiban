@@ -17,7 +17,7 @@
     if($thread_id != 0 && $user_name != ''){
       $OK=1;
       
-      $connect=pg_connect("dbname=group02 user=group02 password=msh2570 host=localhost");
+      $connect=pg_connect("dbname=postgres user=postgres password=msh2570 ");
 
       $sql1="DELETE FROM good_admin WHERE thread_id= {$thread_id}";
       $result1 = pg_query($connect,$sql1);
