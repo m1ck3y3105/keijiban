@@ -7,8 +7,8 @@ html{
     /* border: solid #ffc0c0; */
     border-width: 2px;
     border-radius: 10px;
-    width: 70vw;
-    height: 100px;
+    width: auto;
+    height: auto;
     padding: 15px;
 }
 .block-dis{
@@ -177,4 +177,3 @@ html{
     margin-top: 50px;
     margin-bottom: 50px;
 }
-

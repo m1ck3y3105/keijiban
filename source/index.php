@@ -15,7 +15,7 @@
    }
    $limit = 4;
 
-   $connect=pg_connect("dbname=postgres user=postgres password=msh2570");
+  $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
    #スレッドがいくつあるか数える
    $sql1="SELECT COUNT(thread_id) FROM thread_admin";
@@ -58,7 +58,7 @@
 <!doctype html>
 <html lang="ja">
     <head>
-        <base href="/"></base>
+        <base href="/~group02/"></base>
         <meta charset="UTF-8">
         <title>掲示板サイト</title>
         <link rel="stylesheet" href="styles/style.css">
@@ -153,8 +153,8 @@
                                 <div class='thread_title'>{$thread_name}</div>
                                 <div class='thread_user'>作成者:{$thread_user}</div>
                                 <div class='thread_info'>作成日:{$thread_date}　いいね:{$good_count}　コメント数:{$comment_count}</div>
-                                <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit' value='移動 >'></div>
-                                <input type='hidden' id='thread_id' name='thread_id' value='{$thread_id}'>
+                                <div class='move_thread'><input class=submitbtn_mv type='submit' id='thread_submit".$thread_id."' value='移動 >'></div>
+                                <input type='hidden' id='thread_id".$thread_id."' name='thread_id' value='{$thread_id}'>
                             </form>
                         </div>";
     

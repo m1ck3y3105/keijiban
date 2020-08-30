@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <base href="/"></base>
+    <base href="/~group02/"></base>
     <meta charset="UTF-8">
     <title>掲示板サイト</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -32,9 +32,11 @@
         $password=$_POST["password"];
         $comment=$_POST["comment"];
 
+        date_default_timezone_set('Asia/Tokyo');
+
         $datetime=date("Y-m-d H:i:s");
 
-        $connect=pg_connect("dbname=postgres user=postgres password=KMtkm1412");
+       $connect=pg_connect("dbname=group02 user=group02 password=Re_zero_1109 host=localhost");
 
         $sql1="SELECT user_id FROM user_admin where user_name='{$user_name}'";
         $result1 = pg_query($connect,$sql1);

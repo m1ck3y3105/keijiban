@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <base href="/"></base>
+        <base href="/~group02/"></base>
         <meta charset="UTF-8">
         <title>スレッド新規作成</title>
         <link rel="stylesheet" href="styles/style.css">
@@ -64,19 +64,19 @@
             <div id="new">
                 <div class="newthr">
                     <h3><label for="title">タイトル : </label></h3>
-                    <input id="title" type="text" name="title" title="30文字以内" pattern="{1,30}" placeholder="スレッドタイトルを入力" required>
+                    <input id="title" type="text" name="title" maxlength='30' title="30文字以内" pattern="{1,30}" placeholder="スレッドタイトルを入力" required>
                 </div>
                 <div class="password-all">
                     <div class="newthr">
                         <h3><label for="password">管理者パスワード : </h3></label>
-                            <input type="password" placeholder="Password" name="password" id="password">
-                        </form>
+			                  <input id="pass_ad" type="password" name="pass_ad" title="記号以外15文字以内" minlength="6" maxlength="15" pattern="([ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]{1,15})" required >
                     </div>
                     <div class="password-check">
-                    <input type="checkbox" id="password-check" >パスワードを表示する</input>
+                        <input type="checkbox" id="password-check" >パスワードを表示する</input>
                         <script>
-                            var pw = document.getElementById('password');
+                            var pw = document.getElementById('pass_ad');
                             var pwCheck = document.getElementById('password-check');
+                            //alert(pwCheck.checked);
                             pwCheck.addEventListener('change', function() {
                                 if(pwCheck.checked) {
                                     pw.setAttribute('type', 'text');
@@ -89,13 +89,11 @@
                 </div>
                 <div class="newthr">
                     <h3><label for="comment">内容 : </label></h3>
-                    <textarea id="comment" name="comment" title="スレッドの内容" placeholder="スレッドの内容を入力"></textarea>
+                    <textarea id="comment" name="comment" maxlength='140'title="スレッドの内容" placeholder="スレッドの内容を入力"></textarea>
                 </div>
                 <center>
                     <input class="submitbtn" type="submit" value="スレッド新規作成">
                 </center>
-                   
-                
             </div>
         </body>
     </form>   

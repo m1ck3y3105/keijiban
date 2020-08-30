@@ -300,19 +300,29 @@ textarea{
 .favbtn label:hover, .favbtn label:hover ~ label, .favbtn input[type='radio']:checked ~ label{
     color: gold;
 }
+#message{
+    margin-top:10px;
+    resize: none;
+    width:70vw;
+    height:100px;
+    font-size: 23px;
+}
 /*---------------------------------------------------------*/
 /* 前へ次へボタン */
 
 .btn-sticky1 {
-    position: absolute;
+    /* position: absolute;
     top: 8px;
-    left: 150px;
+    left: 150px; */
+    margin-top: 8px;
+    margin-left: 15%;
+    float: left;
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
     background: #f7f7f7;
-    border-left: solid 6px #eca5a5;/*左線*/
-    color: #eca5a5;/*文字色*/
+    border-left: solid 6px #80bb9e;/*左線*/
+    color: #80bb9e;/*文字色*/
     font-weight: bold;
     /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29); */
   }
@@ -321,20 +331,23 @@ textarea{
     transform: translateY(2px);
   }
   .btn-sticky1:hover{
-    background-color: #eca5a5;
+    background-color:#80bb9e;
     color: #e1f3e0;
     transition: .4s;
    }
   .btn-sticky2 {
-    position: absolute;
+    /* position: absolute;
     top: 8px;
-    right: 150px;
+    right: 150px; */
+    margin-top: 8px;
+    margin-right: 15%;
+    float: right;
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
     background: #f7f7f7;
-    border-right: solid 6px  #838de9;/*右線*/
-    color:  #838de9;/*文字色*/
+    border-right: solid 6px  #258656;/*右線*/
+    color:  #258656;/*文字色*/
     font-weight: bold;
     /*box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);*/
   }
@@ -343,7 +356,7 @@ textarea{
     transform: translateY(2px);
   }
   .btn-sticky2:hover{
-   background-color: #838de9;
+   background-color:   #258656;
    color: #e1f3e0;
    transition: .4s;
   }
